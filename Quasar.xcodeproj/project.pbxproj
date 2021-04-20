@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE280ADF262E0511004DEF43 /* QuasarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280ADE262E0511004DEF43 /* QuasarApp.swift */; };
+		BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AE0262E0511004DEF43 /* ContentView.swift */; };
+		BE280AE3262E0515004DEF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280AE2262E0515004DEF43 /* Assets.xcassets */; };
+		BE280AE6262E0515004DEF43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280AE5262E0515004DEF43 /* Preview Assets.xcassets */; };
+		BE280AF1262E0515004DEF43 /* QuasarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AF0262E0515004DEF43 /* QuasarTests.swift */; };
+		BE280AFC262E0515004DEF43 /* QuasarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AFB262E0515004DEF43 /* QuasarUITests.swift */; };
+		BE280B12262E0627004DEF43 /* CuriosityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B11262E0627004DEF43 /* CuriosityViewModel.swift */; };
+		BE280B17262E0632004DEF43 /* OpportunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B16262E0632004DEF43 /* OpportunityViewModel.swift */; };
+		BE280B1C262E063C004DEF43 /* PerseveranceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */; };
+		BE280B21262E0658004DEF43 /* SpiritViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B20262E0658004DEF43 /* SpiritViewModel.swift */; };
+		BE280B26262E066D004DEF43 /* POTDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B25262E066D004DEF43 /* POTDViewModel.swift */; };
+		BE280B2F262E0715004DEF43 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B2E262E0715004DEF43 /* Align.swift */; };
+		BE280B37262E0724004DEF43 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B36262E0724004DEF43 /* Colors.swift */; };
+		BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B3E262E0738004DEF43 /* DatePicker.swift */; };
+		BE280B44262E0742004DEF43 /* FeedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B43262E0742004DEF43 /* FeedMenu.swift */; };
+		BE280B4E262E0754004DEF43 /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B4D262E0754004DEF43 /* ImageOverlay.swift */; };
+		BE280B53262E075C004DEF43 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B52262E075C004DEF43 /* Navigation.swift */; };
+		BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */; };
+		BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B5F262E07E2004DEF43 /* CuriosityView.swift */; };
+		BE280B65262E07EE004DEF43 /* MarsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B64262E07EE004DEF43 /* MarsMenu.swift */; };
+		BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B69262E07F6004DEF43 /* OpportunityView.swift */; };
+		BE280B6F262E07FD004DEF43 /* PerseveranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B6E262E07FD004DEF43 /* PerseveranceView.swift */; };
+		BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B73262E0809004DEF43 /* RoverDetailView.swift */; };
+		BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B78262E0817004DEF43 /* SpiritView.swift */; };
+		BE280B7E262E0874004DEF43 /* POTDDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B7D262E0874004DEF43 /* POTDDetailView.swift */; };
+		BE280B83262E087F004DEF43 /* POTDExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B82262E087F004DEF43 /* POTDExplanation.swift */; };
+		BE280B88262E0889004DEF43 /* POTDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B87262E0889004DEF43 /* POTDImageView.swift */; };
+		BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B8C262E0891004DEF43 /* POTDView.swift */; };
+		BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B91262E09D2004DEF43 /* RESTClient.swift */; };
+		BE280B97262E0A1A004DEF43 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B96262E0A1A004DEF43 /* DataSource.swift */; };
+		BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B9B262E0A35004DEF43 /* Entities.swift */; };
+		BE280BA2262E0AA6004DEF43 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BE280BA1262E0AA6004DEF43 /* Kingfisher */; };
+		BE280BA7262E0B96004DEF43 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280BA6262E0B96004DEF43 /* Colors.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE280AED262E0515004DEF43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE280AD3262E0511004DEF43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE280ADA262E0511004DEF43;
+			remoteInfo = Quasar;
+		};
+		BE280AF8262E0515004DEF43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE280AD3262E0511004DEF43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE280ADA262E0511004DEF43;
+			remoteInfo = Quasar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE280ADB262E0511004DEF43 /* Quasar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quasar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE280ADE262E0511004DEF43 /* QuasarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuasarApp.swift; sourceTree = "<group>"; };
+		BE280AE0262E0511004DEF43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BE280AE2262E0515004DEF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE280AE5262E0515004DEF43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BE280AE7262E0515004DEF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE280AEC262E0515004DEF43 /* QuasarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuasarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE280AF0262E0515004DEF43 /* QuasarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuasarTests.swift; sourceTree = "<group>"; };
+		BE280AF2262E0515004DEF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE280AF7262E0515004DEF43 /* QuasarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuasarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE280AFB262E0515004DEF43 /* QuasarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuasarUITests.swift; sourceTree = "<group>"; };
+		BE280AFD262E0515004DEF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE280B11262E0627004DEF43 /* CuriosityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityViewModel.swift; sourceTree = "<group>"; };
+		BE280B16262E0632004DEF43 /* OpportunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewModel.swift; sourceTree = "<group>"; };
+		BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseveranceViewModel.swift; sourceTree = "<group>"; };
+		BE280B20262E0658004DEF43 /* SpiritViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritViewModel.swift; sourceTree = "<group>"; };
+		BE280B25262E066D004DEF43 /* POTDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDViewModel.swift; sourceTree = "<group>"; };
+		BE280B2E262E0715004DEF43 /* Align.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Align.swift; sourceTree = "<group>"; };
+		BE280B36262E0724004DEF43 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BE280B3E262E0738004DEF43 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		BE280B43262E0742004DEF43 /* FeedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenu.swift; sourceTree = "<group>"; };
+		BE280B4D262E0754004DEF43 /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
+		BE280B52262E075C004DEF43 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
+		BE280B5F262E07E2004DEF43 /* CuriosityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityView.swift; sourceTree = "<group>"; };
+		BE280B64262E07EE004DEF43 /* MarsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsMenu.swift; sourceTree = "<group>"; };
+		BE280B69262E07F6004DEF43 /* OpportunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityView.swift; sourceTree = "<group>"; };
+		BE280B6E262E07FD004DEF43 /* PerseveranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseveranceView.swift; sourceTree = "<group>"; };
+		BE280B73262E0809004DEF43 /* RoverDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailView.swift; sourceTree = "<group>"; };
+		BE280B78262E0817004DEF43 /* SpiritView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritView.swift; sourceTree = "<group>"; };
+		BE280B7D262E0874004DEF43 /* POTDDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDDetailView.swift; sourceTree = "<group>"; };
+		BE280B82262E087F004DEF43 /* POTDExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDExplanation.swift; sourceTree = "<group>"; };
+		BE280B87262E0889004DEF43 /* POTDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDImageView.swift; sourceTree = "<group>"; };
+		BE280B8C262E0891004DEF43 /* POTDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDView.swift; sourceTree = "<group>"; };
+		BE280B91262E09D2004DEF43 /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
+		BE280B96262E0A1A004DEF43 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		BE280B9B262E0A35004DEF43 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		BE280BA6262E0B96004DEF43 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE280AD8262E0511004DEF43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE280BA2262E0AA6004DEF43 /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE280AE9262E0515004DEF43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE280AF4262E0515004DEF43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE280AD2262E0511004DEF43 = {
+			isa = PBXGroup;
+			children = (
+				BE280ADD262E0511004DEF43 /* Quasar */,
+				BE280AEF262E0515004DEF43 /* QuasarTests */,
+				BE280AFA262E0515004DEF43 /* QuasarUITests */,
+				BE280ADC262E0511004DEF43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE280ADC262E0511004DEF43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE280ADB262E0511004DEF43 /* Quasar.app */,
+				BE280AEC262E0515004DEF43 /* QuasarTests.xctest */,
+				BE280AF7262E0515004DEF43 /* QuasarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE280ADD262E0511004DEF43 /* Quasar */ = {
+			isa = PBXGroup;
+			children = (
+				BE280BA6262E0B96004DEF43 /* Colors.xcassets */,
+				BE280ADE262E0511004DEF43 /* QuasarApp.swift */,
+				BE280AE0262E0511004DEF43 /* ContentView.swift */,
+				BE280B10262E05EB004DEF43 /* ViewModel */,
+				BE280B0F262E05E7004DEF43 /* UI */,
+				BE280B0E262E05E3004DEF43 /* Network */,
+				BE280B0C262E05D9004DEF43 /* Data */,
+				BE280AE2262E0515004DEF43 /* Assets.xcassets */,
+				BE280AE7262E0515004DEF43 /* Info.plist */,
+				BE280AE4262E0515004DEF43 /* Preview Content */,
+			);
+			path = Quasar;
+			sourceTree = "<group>";
+		};
+		BE280AE4262E0515004DEF43 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BE280AE5262E0515004DEF43 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BE280AEF262E0515004DEF43 /* QuasarTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE280AF0262E0515004DEF43 /* QuasarTests.swift */,
+				BE280AF2262E0515004DEF43 /* Info.plist */,
+			);
+			path = QuasarTests;
+			sourceTree = "<group>";
+		};
+		BE280AFA262E0515004DEF43 /* QuasarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE280AFB262E0515004DEF43 /* QuasarUITests.swift */,
+				BE280AFD262E0515004DEF43 /* Info.plist */,
+			);
+			path = QuasarUITests;
+			sourceTree = "<group>";
+		};
+		BE280B0C262E05D9004DEF43 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B96262E0A1A004DEF43 /* DataSource.swift */,
+				BE280B9B262E0A35004DEF43 /* Entities.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BE280B0E262E05E3004DEF43 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B91262E09D2004DEF43 /* RESTClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BE280B0F262E05E7004DEF43 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B2D262E0705004DEF43 /* Components */,
+				BE280B2C262E0700004DEF43 /* MarsRovers */,
+				BE280B2A262E06F0004DEF43 /* PictureOfTheDay */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BE280B10262E05EB004DEF43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B11262E0627004DEF43 /* CuriosityViewModel.swift */,
+				BE280B16262E0632004DEF43 /* OpportunityViewModel.swift */,
+				BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */,
+				BE280B20262E0658004DEF43 /* SpiritViewModel.swift */,
+				BE280B25262E066D004DEF43 /* POTDViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BE280B2A262E06F0004DEF43 /* PictureOfTheDay */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B7D262E0874004DEF43 /* POTDDetailView.swift */,
+				BE280B82262E087F004DEF43 /* POTDExplanation.swift */,
+				BE280B87262E0889004DEF43 /* POTDImageView.swift */,
+				BE280B8C262E0891004DEF43 /* POTDView.swift */,
+			);
+			path = PictureOfTheDay;
+			sourceTree = "<group>";
+		};
+		BE280B2C262E0700004DEF43 /* MarsRovers */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B5F262E07E2004DEF43 /* CuriosityView.swift */,
+				BE280B64262E07EE004DEF43 /* MarsMenu.swift */,
+				BE280B69262E07F6004DEF43 /* OpportunityView.swift */,
+				BE280B6E262E07FD004DEF43 /* PerseveranceView.swift */,
+				BE280B73262E0809004DEF43 /* RoverDetailView.swift */,
+				BE280B78262E0817004DEF43 /* SpiritView.swift */,
+			);
+			path = MarsRovers;
+			sourceTree = "<group>";
+		};
+		BE280B2D262E0705004DEF43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BE280B2E262E0715004DEF43 /* Align.swift */,
+				BE280B3E262E0738004DEF43 /* DatePicker.swift */,
+				BE280B43262E0742004DEF43 /* FeedMenu.swift */,
+				BE280B4D262E0754004DEF43 /* ImageOverlay.swift */,
+				BE280B52262E075C004DEF43 /* Navigation.swift */,
+				BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */,
+				BE280B36262E0724004DEF43 /* Colors.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE280ADA262E0511004DEF43 /* Quasar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE280B00262E0515004DEF43 /* Build configuration list for PBXNativeTarget "Quasar" */;
+			buildPhases = (
+				BE280AD7262E0511004DEF43 /* Sources */,
+				BE280AD8262E0511004DEF43 /* Frameworks */,
+				BE280AD9262E0511004DEF43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quasar;
+			packageProductDependencies = (
+				BE280BA1262E0AA6004DEF43 /* Kingfisher */,
+			);
+			productName = Quasar;
+			productReference = BE280ADB262E0511004DEF43 /* Quasar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE280AEB262E0515004DEF43 /* QuasarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE280B03262E0515004DEF43 /* Build configuration list for PBXNativeTarget "QuasarTests" */;
+			buildPhases = (
+				BE280AE8262E0515004DEF43 /* Sources */,
+				BE280AE9262E0515004DEF43 /* Frameworks */,
+				BE280AEA262E0515004DEF43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE280AEE262E0515004DEF43 /* PBXTargetDependency */,
+			);
+			name = QuasarTests;
+			productName = QuasarTests;
+			productReference = BE280AEC262E0515004DEF43 /* QuasarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE280AF6262E0515004DEF43 /* QuasarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE280B06262E0515004DEF43 /* Build configuration list for PBXNativeTarget "QuasarUITests" */;
+			buildPhases = (
+				BE280AF3262E0515004DEF43 /* Sources */,
+				BE280AF4262E0515004DEF43 /* Frameworks */,
+				BE280AF5262E0515004DEF43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE280AF9262E0515004DEF43 /* PBXTargetDependency */,
+			);
+			name = QuasarUITests;
+			productName = QuasarUITests;
+			productReference = BE280AF7262E0515004DEF43 /* QuasarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE280AD3262E0511004DEF43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					BE280ADA262E0511004DEF43 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					BE280AEB262E0515004DEF43 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = BE280ADA262E0511004DEF43;
+					};
+					BE280AF6262E0515004DEF43 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = BE280ADA262E0511004DEF43;
+					};
+				};
+			};
+			buildConfigurationList = BE280AD6262E0511004DEF43 /* Build configuration list for PBXProject "Quasar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE280AD2262E0511004DEF43;
+			packageReferences = (
+				BE280BA0262E0AA6004DEF43 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			productRefGroup = BE280ADC262E0511004DEF43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE280ADA262E0511004DEF43 /* Quasar */,
+				BE280AEB262E0515004DEF43 /* QuasarTests */,
+				BE280AF6262E0515004DEF43 /* QuasarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE280AD9262E0511004DEF43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE280BA7262E0B96004DEF43 /* Colors.xcassets in Resources */,
+				BE280AE6262E0515004DEF43 /* Preview Assets.xcassets in Resources */,
+				BE280AE3262E0515004DEF43 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE280AEA262E0515004DEF43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE280AF5262E0515004DEF43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE280AD7262E0511004DEF43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE280B1C262E063C004DEF43 /* PerseveranceViewModel.swift in Sources */,
+				BE280B65262E07EE004DEF43 /* MarsMenu.swift in Sources */,
+				BE280B37262E0724004DEF43 /* Colors.swift in Sources */,
+				BE280B2F262E0715004DEF43 /* Align.swift in Sources */,
+				BE280B26262E066D004DEF43 /* POTDViewModel.swift in Sources */,
+				BE280B4E262E0754004DEF43 /* ImageOverlay.swift in Sources */,
+				BE280B12262E0627004DEF43 /* CuriosityViewModel.swift in Sources */,
+				BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */,
+				BE280B83262E087F004DEF43 /* POTDExplanation.swift in Sources */,
+				BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */,
+				BE280B21262E0658004DEF43 /* SpiritViewModel.swift in Sources */,
+				BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */,
+				BE280B17262E0632004DEF43 /* OpportunityViewModel.swift in Sources */,
+				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
+				BE280B88262E0889004DEF43 /* POTDImageView.swift in Sources */,
+				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
+				BE280B97262E0A1A004DEF43 /* DataSource.swift in Sources */,
+				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
+				BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */,
+				BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */,
+				BE280B6F262E07FD004DEF43 /* PerseveranceView.swift in Sources */,
+				BE280B7E262E0874004DEF43 /* POTDDetailView.swift in Sources */,
+				BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */,
+				BE280ADF262E0511004DEF43 /* QuasarApp.swift in Sources */,
+				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
+				BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */,
+				BE280B44262E0742004DEF43 /* FeedMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE280AE8262E0515004DEF43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE280AF1262E0515004DEF43 /* QuasarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE280AF3262E0515004DEF43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE280AFC262E0515004DEF43 /* QuasarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE280AEE262E0515004DEF43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE280ADA262E0511004DEF43 /* Quasar */;
+			targetProxy = BE280AED262E0515004DEF43 /* PBXContainerItemProxy */;
+		};
+		BE280AF9262E0515004DEF43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE280ADA262E0511004DEF43 /* Quasar */;
+			targetProxy = BE280AF8262E0515004DEF43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BE280AFE262E0515004DEF43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE280AFF262E0515004DEF43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE280B01262E0515004DEF43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Quasar/Preview Content\"";
+				DEVELOPMENT_TEAM = 5K34VB7KMZ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Quasar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillKitay.Quasar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE280B02262E0515004DEF43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Quasar/Preview Content\"";
+				DEVELOPMENT_TEAM = 5K34VB7KMZ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Quasar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillKitay.Quasar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BE280B04262E0515004DEF43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5K34VB7KMZ;
+				INFOPLIST_FILE = QuasarTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillKitay.QuasarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quasar.app/Quasar";
+			};
+			name = Debug;
+		};
+		BE280B05262E0515004DEF43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5K34VB7KMZ;
+				INFOPLIST_FILE = QuasarTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillKitay.QuasarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quasar.app/Quasar";
+			};
+			name = Release;
+		};
+		BE280B07262E0515004DEF43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5K34VB7KMZ;
+				INFOPLIST_FILE = QuasarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillKitay.QuasarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quasar;
+			};
+			name = Debug;
+		};
+		BE280B08262E0515004DEF43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5K34VB7KMZ;
+				INFOPLIST_FILE = QuasarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillKitay.QuasarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quasar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE280AD6262E0511004DEF43 /* Build configuration list for PBXProject "Quasar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE280AFE262E0515004DEF43 /* Debug */,
+				BE280AFF262E0515004DEF43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE280B00262E0515004DEF43 /* Build configuration list for PBXNativeTarget "Quasar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE280B01262E0515004DEF43 /* Debug */,
+				BE280B02262E0515004DEF43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE280B03262E0515004DEF43 /* Build configuration list for PBXNativeTarget "QuasarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE280B04262E0515004DEF43 /* Debug */,
+				BE280B05262E0515004DEF43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE280B06262E0515004DEF43 /* Build configuration list for PBXNativeTarget "QuasarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE280B07262E0515004DEF43 /* Debug */,
+				BE280B08262E0515004DEF43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE280BA0262E0AA6004DEF43 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE280BA1262E0AA6004DEF43 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE280BA0262E0AA6004DEF43 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BE280AD3262E0511004DEF43 /* Project object */;
+}
