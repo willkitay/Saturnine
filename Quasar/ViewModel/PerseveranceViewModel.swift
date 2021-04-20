@@ -25,8 +25,18 @@ class PerseveranceViewModel: ObservableObject {
         dateComponents.day! -= 1
         date = Calendar.current.date(from: dateComponents)!
     }
+    
+    func loadPerseverancePhotos() {
+        getNextPerseverancePhotos { success in
+            if success {
+                print("Successfully fetched Perseverance")
+            } else {
+                print("Error: unable to load Perseverance")
+            }
+        }
+    }
 
-    func getNextPerseverancePhotos(completion: @escaping(Bool) -> Void) {
+    private func getNextPerseverancePhotos(completion: @escaping(Bool) -> Void) {
         dataSource.setDate(currentDate: date)
         dataSource.getPerseverancePhotos() { latestPhotos, _ in
             DispatchQueue.main.async {
@@ -38,20 +48,5 @@ class PerseveranceViewModel: ObservableObject {
                 }
             }
         }
-    }
-    
-    func loadPerseverancePhotos() {
-        getNextPerseverancePhotos { success in
-            if success {
-                print("Successfully fetched Perseverance")
-            }
-            else {
-                print("Error: unable to load Perseverance")
-            }
-        }
-    }
-    
-    private func setDate(newDate: Date) {
-        date = newDate
     }
 }

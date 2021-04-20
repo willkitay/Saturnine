@@ -25,8 +25,18 @@ class SpiritViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd"
         date = formatter.date(from: "2010/2/9")!
     }
+    
+    func loadSpiritPhotos() {
+        getNextSpiritPhotos { success in
+            if success {
+                print("Successfully fetched Spirit")
+            } else {
+                print("Error: unable to load Spirit")
+            }
+        }
+    }
 
-    func getNextSpiritPhotos(completion: @escaping(Bool) -> Void) {
+    private func getNextSpiritPhotos(completion: @escaping(Bool) -> Void) {
         dataSource.setDate(currentDate: date)
         dataSource.getSpiritPhotos() { latestPhotos, _ in
             DispatchQueue.main.async {
@@ -38,20 +48,5 @@ class SpiritViewModel: ObservableObject {
                 }
             }
         }
-    }
-    
-    func loadSpiritPhotos() {
-        getNextSpiritPhotos { success in
-            if success {
-                print("Successfully fetched Spirit")
-            }
-            else {
-                print("Error: unable to load Spirit")
-            }
-        }
-    }
-    
-    private func setDate(newDate: Date) {
-        date = newDate
     }
 }

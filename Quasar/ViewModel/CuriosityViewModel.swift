@@ -26,8 +26,18 @@ class CuriosityViewModel: ObservableObject {
         dateComponents.day! -= 3
         date = Calendar.current.date(from: dateComponents)!
     }
-
-    func getNextCuriosityPhotos(completion: @escaping(Bool) -> Void) {
+    
+    func loadCuriosityPhotos() {
+        getNextCuriosityPhotos { success in
+            if success {
+                print("Successfully fetched Curiosity")
+            } else {
+                print("Error: unable to load Curiosity")
+            }
+        }
+    }
+    
+    private func getNextCuriosityPhotos(completion: @escaping(Bool) -> Void) {
         dataSource.setDate(currentDate: date)
         dataSource.getCuriosityPhotos() { latestPhotos, _ in
             DispatchQueue.main.async {
@@ -39,20 +49,5 @@ class CuriosityViewModel: ObservableObject {
                 }
             }
         }
-    }
-    
-    func loadCuriosityPhotos() {
-        getNextCuriosityPhotos { success in
-            if success {
-                print("Successfully fetched Curiosity")
-            }
-            else {
-                print("Error: unable to load Curiosity")
-            }
-        }
-    }
-    
-    private func setDate(newDate: Date) {
-        date = newDate
     }
 }

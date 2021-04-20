@@ -26,6 +26,16 @@ class OpportunityViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd"
         date = formatter.date(from: "2018/6/5")!
     }
+    
+    func loadOpportunityPhotos() {
+        getNextOpportunityPhotos { success in
+            if success {
+                print("Successfully fetched Opportunity")
+            } else {
+                print("Error: unable to load Opportunity")
+            }
+        }
+    }
 
     private func getNextOpportunityPhotos(completion: @escaping(Bool) -> Void) {
         dataSource.setDate(currentDate: date)
@@ -39,20 +49,5 @@ class OpportunityViewModel: ObservableObject {
                 }
             }
         }
-    }
-    
-    func loadOpportunityPhotos() {
-        getNextOpportunityPhotos { success in
-            if success {
-                print("Successfully fetched Opportunity")
-            }
-            else {
-                print("Error: unable to load Opportunity")
-            }
-        }
-    }
-    
-    private func setDate(newDate: Date) {
-        date = newDate
     }
 }

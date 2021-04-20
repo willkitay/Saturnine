@@ -17,20 +17,6 @@ class POTDViewModel: ObservableObject {
         restClient = SimpleRESTClient()
         dataSource = DataSource(withClient: restClient)
     }
-
-    func getNextPOTD(completion: @escaping(Bool) -> Void) {
-        dataSource.getPicturesOfTheDay() { photos, _ in
-            DispatchQueue.main.async {
-                if var photos = photos {
-                    photos = photos.filter { $0.media_type == "image" }
-                    self.imageFeed.append(contentsOf: photos.reversed())
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            }
-        }
-    }
     
     func isLastPOTD(photo: PictureOfTheDay) -> Bool {
         if let last = self.imageFeed.last {
@@ -43,9 +29,22 @@ class POTDViewModel: ObservableObject {
         getNextPOTD { success in
             if success {
                 print("Successfully fetched Pictures of the Day")
-            }
-            else {
+            } else {
                 print("Error: unable to load Pictures of the Day")
+            }
+        }
+    }
+
+    private func getNextPOTD(completion: @escaping(Bool) -> Void) {
+        dataSource.getPicturesOfTheDay() { photos, _ in
+            DispatchQueue.main.async {
+                if var photos = photos {
+                    photos = photos.filter { $0.media_type == "image" }
+                    self.imageFeed.append(contentsOf: photos.reversed())
+                    completion(true)
+                } else {
+                    completion(false)
+                }
             }
         }
     }

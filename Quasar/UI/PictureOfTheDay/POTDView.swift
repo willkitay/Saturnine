@@ -31,9 +31,7 @@ struct POTDView: View {
     
     private func elementOnAppear(_ photo: PictureOfTheDay) {
         if viewModel.isLastPOTD(photo: photo) {
-            viewModel.getNextPOTD { success in
-                print("POTD received succesfully")
-            }
+            viewModel.loadPicturesOfTheDay()
         }
     }
 }

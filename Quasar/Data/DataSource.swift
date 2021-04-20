@@ -34,6 +34,10 @@ class DataSource {
         date = Date()
     }
     
+    func setDate(currentDate: Date) {
+        date = currentDate
+    }
+    
     func getPicturesOfTheDay(completion: @escaping([PictureOfTheDay]?, DataSourceError?) -> Void) {
         getData(atEndpoint: .PictureOfTheDay, withType: [PictureOfTheDay].self) { data, error in
             let picturesOfTheDay = data as? [PictureOfTheDay]
@@ -67,10 +71,6 @@ class DataSource {
             let spiritPhotos = data as? Spirit
             completion(spiritPhotos, error)
         }
-    }
-    
-    func setDate(currentDate: Date) {
-        date = currentDate
     }
 }
 
