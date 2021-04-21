@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingPictureOfTheDay = false
+    @State private var showingHubbleNews = false
     var potdViewModel = POTDViewModel()
     var perseveranceViewModel = PerseveranceViewModel()
     var opportunityViewModel = OpportunityViewModel()
     var curiosityViewModel = CuriosityViewModel()
     var spiritViewModel = SpiritViewModel()
+    var hubbleNewsViewModel = HubbleNewsViewModel()
 
     init() {
         potdViewModel.loadPicturesOfTheDay()
@@ -21,6 +23,7 @@ struct ContentView: View {
         opportunityViewModel.loadOpportunityPhotos()
         curiosityViewModel.loadCuriosityPhotos()
         spiritViewModel.loadSpiritPhotos()
+        hubbleNewsViewModel.loadNewsFeed()
     }
     
     var body: some View {
@@ -39,6 +42,14 @@ struct ContentView: View {
                         }
                         // Mars Rovers
                         MarsMenu(perseveranceViewModel: perseveranceViewModel, opportunityViewModel: opportunityViewModel, curiosityViewModel: curiosityViewModel, spiritViewModel: spiritViewModel)
+                        
+                        NavigationLink(destination: HubbleNewsView(viewModel: hubbleNewsViewModel), isActive: $showingHubbleNews) {
+                            Button(action: {
+                                showingHubbleNews = true
+                            }) {
+                                Text("Hubble News").modifier(CardChoiceView())
+                            }
+                        }
                     }
                     .padding()
                 }

@@ -14,6 +14,7 @@ enum Endpoint {
     case Opportunity
     case Curiosity
     case Spirit
+    case HubbleNews
 }
 
 enum DataSourceError {
@@ -72,6 +73,14 @@ class DataSource {
             completion(spiritPhotos, error)
         }
     }
+    
+    func getHubbleNews(completion: @escaping([HubbleNews]?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .HubbleNews, withType: [HubbleNews].self) { data, error in
+            let hubbleNews = data as? [HubbleNews]
+            completion(hubbleNews, error)
+        }
+    }
+    
 }
 
 //MARK:- Private
@@ -163,6 +172,12 @@ extension DataSource {
                     URLQueryItem(name: "api_key", value: nasaAPIKey),
                     URLQueryItem(name: "earth_date", value: dateToString(date: date))
                 ]
+                urlString = components.url
+            case .HubbleNews:
+                var components = URLComponents()
+                components.scheme = "https"
+                components.host = "hubblesite.org"
+                components.path = "/api/v3/external_feed/esa_feed"
                 urlString = components.url
             }
         return urlString
