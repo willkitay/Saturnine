@@ -94,7 +94,7 @@ struct Rover: Codable {
     }
 }
 
-struct HubbleNews: Codable {
+struct HubbleSite: Codable {
     let title: String?
     let pubDate: String?
     let description: String?

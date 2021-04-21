@@ -22,7 +22,7 @@
 		BE280B37262E0724004DEF43 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B36262E0724004DEF43 /* Colors.swift */; };
 		BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B3E262E0738004DEF43 /* DatePicker.swift */; };
 		BE280B44262E0742004DEF43 /* FeedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B43262E0742004DEF43 /* FeedMenu.swift */; };
-		BE280B4E262E0754004DEF43 /* ImageOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B4D262E0754004DEF43 /* ImageOverlay.swift */; };
+		BE280B4E262E0754004DEF43 /* TitleOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B4D262E0754004DEF43 /* TitleOverlay.swift */; };
 		BE280B53262E075C004DEF43 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B52262E075C004DEF43 /* Navigation.swift */; };
 		BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */; };
 		BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B5F262E07E2004DEF43 /* CuriosityView.swift */; };
@@ -32,8 +32,7 @@
 		BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B73262E0809004DEF43 /* RoverDetailView.swift */; };
 		BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B78262E0817004DEF43 /* SpiritView.swift */; };
 		BE280B7E262E0874004DEF43 /* POTDDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B7D262E0874004DEF43 /* POTDDetailView.swift */; };
-		BE280B83262E087F004DEF43 /* POTDExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B82262E087F004DEF43 /* POTDExplanation.swift */; };
-		BE280B88262E0889004DEF43 /* POTDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B87262E0889004DEF43 /* POTDImageView.swift */; };
+		BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */; };
 		BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B8C262E0891004DEF43 /* POTDView.swift */; };
 		BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B91262E09D2004DEF43 /* RESTClient.swift */; };
 		BE280B97262E0A1A004DEF43 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B96262E0A1A004DEF43 /* DataSource.swift */; };
@@ -42,6 +41,9 @@
 		BE280BA7262E0B96004DEF43 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280BA6262E0B96004DEF43 /* Colors.xcassets */; };
 		BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */; };
 		BE280BCB262E92F5004DEF43 /* HubbleNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BCA262E92F5004DEF43 /* HubbleNewsView.swift */; };
+		BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */; };
+		BE280BE1262FE890004DEF43 /* HubbleRecentImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */; };
+		BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE7D2263006AD00187BCE /* FullScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +85,7 @@
 		BE280B36262E0724004DEF43 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BE280B3E262E0738004DEF43 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		BE280B43262E0742004DEF43 /* FeedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenu.swift; sourceTree = "<group>"; };
-		BE280B4D262E0754004DEF43 /* ImageOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlay.swift; sourceTree = "<group>"; };
+		BE280B4D262E0754004DEF43 /* TitleOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleOverlay.swift; sourceTree = "<group>"; };
 		BE280B52262E075C004DEF43 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		BE280B5F262E07E2004DEF43 /* CuriosityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityView.swift; sourceTree = "<group>"; };
@@ -93,8 +95,7 @@
 		BE280B73262E0809004DEF43 /* RoverDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailView.swift; sourceTree = "<group>"; };
 		BE280B78262E0817004DEF43 /* SpiritView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritView.swift; sourceTree = "<group>"; };
 		BE280B7D262E0874004DEF43 /* POTDDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDDetailView.swift; sourceTree = "<group>"; };
-		BE280B82262E087F004DEF43 /* POTDExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDExplanation.swift; sourceTree = "<group>"; };
-		BE280B87262E0889004DEF43 /* POTDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDImageView.swift; sourceTree = "<group>"; };
+		BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
 		BE280B8C262E0891004DEF43 /* POTDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDView.swift; sourceTree = "<group>"; };
 		BE280B91262E09D2004DEF43 /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		BE280B96262E0A1A004DEF43 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		BE280BA6262E0B96004DEF43 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleNewsViewModel.swift; sourceTree = "<group>"; };
 		BE280BCA262E92F5004DEF43 /* HubbleNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleNewsView.swift; sourceTree = "<group>"; };
+		BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleRecentImagesViewModel.swift; sourceTree = "<group>"; };
+		BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleRecentImagesView.swift; sourceTree = "<group>"; };
+		BEACE7D2263006AD00187BCE /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +217,7 @@
 		BE280B0F262E05E7004DEF43 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BE280BC9262E92DF004DEF43 /* HubbleNews */,
+				BE280BC9262E92DF004DEF43 /* HubbleViews */,
 				BE280B2D262E0705004DEF43 /* Components */,
 				BE280B2C262E0700004DEF43 /* MarsRovers */,
 				BE280B2A262E06F0004DEF43 /* PictureOfTheDay */,
@@ -230,6 +234,7 @@
 				BE280B20262E0658004DEF43 /* SpiritViewModel.swift */,
 				BE280B25262E066D004DEF43 /* POTDViewModel.swift */,
 				BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */,
+				BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,10 +242,8 @@
 		BE280B2A262E06F0004DEF43 /* PictureOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
-				BE280B7D262E0874004DEF43 /* POTDDetailView.swift */,
-				BE280B82262E087F004DEF43 /* POTDExplanation.swift */,
-				BE280B87262E0889004DEF43 /* POTDImageView.swift */,
 				BE280B8C262E0891004DEF43 /* POTDView.swift */,
+				BE280B7D262E0874004DEF43 /* POTDDetailView.swift */,
 			);
 			path = PictureOfTheDay;
 			sourceTree = "<group>";
@@ -261,10 +264,12 @@
 		BE280B2D262E0705004DEF43 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */,
+				BEACE7D2263006AD00187BCE /* FullScreenView.swift */,
 				BE280B2E262E0715004DEF43 /* Align.swift */,
 				BE280B3E262E0738004DEF43 /* DatePicker.swift */,
 				BE280B43262E0742004DEF43 /* FeedMenu.swift */,
-				BE280B4D262E0754004DEF43 /* ImageOverlay.swift */,
+				BE280B4D262E0754004DEF43 /* TitleOverlay.swift */,
 				BE280B52262E075C004DEF43 /* Navigation.swift */,
 				BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */,
 				BE280B36262E0724004DEF43 /* Colors.swift */,
@@ -272,12 +277,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		BE280BC9262E92DF004DEF43 /* HubbleNews */ = {
+		BE280BC9262E92DF004DEF43 /* HubbleViews */ = {
 			isa = PBXGroup;
 			children = (
 				BE280BCA262E92F5004DEF43 /* HubbleNewsView.swift */,
+				BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */,
 			);
-			path = HubbleNews;
+			path = HubbleViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,16 +427,16 @@
 				BE280B37262E0724004DEF43 /* Colors.swift in Sources */,
 				BE280B2F262E0715004DEF43 /* Align.swift in Sources */,
 				BE280B26262E066D004DEF43 /* POTDViewModel.swift in Sources */,
-				BE280B4E262E0754004DEF43 /* ImageOverlay.swift in Sources */,
+				BE280B4E262E0754004DEF43 /* TitleOverlay.swift in Sources */,
 				BE280B12262E0627004DEF43 /* CuriosityViewModel.swift in Sources */,
 				BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */,
-				BE280B83262E087F004DEF43 /* POTDExplanation.swift in Sources */,
+				BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */,
 				BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */,
 				BE280B21262E0658004DEF43 /* SpiritViewModel.swift in Sources */,
 				BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */,
 				BE280B17262E0632004DEF43 /* OpportunityViewModel.swift in Sources */,
+				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
-				BE280B88262E0889004DEF43 /* POTDImageView.swift in Sources */,
 				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
 				BE280B97262E0A1A004DEF43 /* DataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
@@ -442,7 +448,9 @@
 				BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */,
 				BE280ADF262E0511004DEF43 /* QuasarApp.swift in Sources */,
 				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
+				BE280BE1262FE890004DEF43 /* HubbleRecentImagesView.swift in Sources */,
 				BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */,
+				BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */,
 				BE280B44262E0742004DEF43 /* FeedMenu.swift in Sources */,
 				BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */,
 			);

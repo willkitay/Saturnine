@@ -8,7 +8,7 @@
 import Foundation
 
 class HubbleNewsViewModel: ObservableObject {
-    @Published var newsFeed: [HubbleNews] = []
+    @Published var newsFeed: [HubbleSite] = []
     private var dataSource: DataSource
     private var restClient: RESTClient
     
