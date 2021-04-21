@@ -40,6 +40,8 @@
 		BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B9B262E0A35004DEF43 /* Entities.swift */; };
 		BE280BA2262E0AA6004DEF43 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BE280BA1262E0AA6004DEF43 /* Kingfisher */; };
 		BE280BA7262E0B96004DEF43 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280BA6262E0B96004DEF43 /* Colors.xcassets */; };
+		BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */; };
+		BE280BCB262E92F5004DEF43 /* HubbleNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BCA262E92F5004DEF43 /* HubbleNewsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		BE280B96262E0A1A004DEF43 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		BE280B9B262E0A35004DEF43 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		BE280BA6262E0B96004DEF43 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleNewsViewModel.swift; sourceTree = "<group>"; };
+		BE280BCA262E92F5004DEF43 /* HubbleNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleNewsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 		BE280B0F262E05E7004DEF43 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BE280BC9262E92DF004DEF43 /* HubbleNews */,
 				BE280B2D262E0705004DEF43 /* Components */,
 				BE280B2C262E0700004DEF43 /* MarsRovers */,
 				BE280B2A262E06F0004DEF43 /* PictureOfTheDay */,
@@ -224,6 +229,7 @@
 				BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */,
 				BE280B20262E0658004DEF43 /* SpiritViewModel.swift */,
 				BE280B25262E066D004DEF43 /* POTDViewModel.swift */,
+				BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +270,14 @@
 				BE280B36262E0724004DEF43 /* Colors.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BE280BC9262E92DF004DEF43 /* HubbleNews */ = {
+			isa = PBXGroup;
+			children = (
+				BE280BCA262E92F5004DEF43 /* HubbleNewsView.swift */,
+			);
+			path = HubbleNews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +435,7 @@
 				BE280B97262E0A1A004DEF43 /* DataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
 				BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */,
+				BE280BCB262E92F5004DEF43 /* HubbleNewsView.swift in Sources */,
 				BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */,
 				BE280B6F262E07FD004DEF43 /* PerseveranceView.swift in Sources */,
 				BE280B7E262E0874004DEF43 /* POTDDetailView.swift in Sources */,
@@ -429,6 +444,7 @@
 				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
 				BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */,
 				BE280B44262E0742004DEF43 /* FeedMenu.swift in Sources */,
+				BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

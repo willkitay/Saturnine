@@ -93,3 +93,21 @@ struct Rover: Codable {
         case status = "status"
     }
 }
+
+struct HubbleNews: Codable {
+    let title: String?
+    let pubDate: String?
+    let description: String?
+    let link: String?
+    let image: String?
+    let thumbnail: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case pubDate = "pub_date"
+        case description = "description"
+        case link = "link"
+        case image = "image"
+        case thumbnail = "thumbnail"
+    }
+}
