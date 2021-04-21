@@ -11,7 +11,11 @@ import Kingfisher
 import WebKit
 
 struct POTDDetailView: View {
-    var photo: PictureOfTheDay
+    var url: String
+    var title: String
+    var explanation: String
+    var copyright: String
+    var date: String
 
     var body: some View {
         ZStack {
@@ -19,40 +23,17 @@ struct POTDDetailView: View {
             ScrollView {
                 VStack() {
                     VStack {
-                        NavigationLink(destination: POTDFullScreenView(photo: photo)) {
-                            if photo.media_type == "image" {
-                                KFImage(URL(string: photo.url!))
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }
+                        NavigationLink(destination: FullScreenView(url: url, title: title)) {
+                            KFImage(URL(string: url))
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
                         }
                     }
-                    PhotoExplanation(photo: photo)
+                    PhotoDetailsView(explanation: explanation, copyright: copyright, date: date, title: title)
                 }
             }
             .navigationBarColor(backgroundColor: .background, titleColor: .white)
-            .navigationTitle(photo.title!)
-        }
-    }
-}
-
-struct POTDFullScreenView: View {
-    var photo: PictureOfTheDay
-    
-    var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea(.all)
-            if let url = photo.url, let title = photo.title {
-                ZoomableScrollView {
-                    ZStack {
-                        Color.black.ignoresSafeArea(.all)
-                        KFImage(URL(string: url))
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .navigationTitle("\(title)")
-                    }
-                }
-            }
+            .navigationTitle(title)
         }
     }
 }

@@ -15,6 +15,7 @@ enum Endpoint {
     case Curiosity
     case Spirit
     case HubbleNews
+    case HubbleRecentImages
 }
 
 enum DataSourceError {
@@ -74,10 +75,17 @@ class DataSource {
         }
     }
     
-    func getHubbleNews(completion: @escaping([HubbleNews]?, DataSourceError?) -> Void) {
-        getData(atEndpoint: .HubbleNews, withType: [HubbleNews].self) { data, error in
-            let hubbleNews = data as? [HubbleNews]
+    func getHubbleNews(completion: @escaping([HubbleSite]?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .HubbleNews, withType: [HubbleSite].self) { data, error in
+            let hubbleNews = data as? [HubbleSite]
             completion(hubbleNews, error)
+        }
+    }
+    
+    func getHubbleRecentImages(completion: @escaping([HubbleSite]?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .HubbleRecentImages, withType: [HubbleSite].self) { data, error in
+            let hubbleImages = data as? [HubbleSite]
+            completion(hubbleImages, error)
         }
     }
     
@@ -178,6 +186,12 @@ extension DataSource {
                 components.scheme = "https"
                 components.host = "hubblesite.org"
                 components.path = "/api/v3/external_feed/esa_feed"
+                urlString = components.url
+            case .HubbleRecentImages:
+                var components = URLComponents()
+                components.scheme = "https"
+                components.host = "hubblesite.org"
+                components.path = "/api/v3/external_feed/st_live"
                 urlString = components.url
             }
         return urlString

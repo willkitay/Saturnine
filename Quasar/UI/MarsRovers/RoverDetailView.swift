@@ -21,7 +21,7 @@ struct RoverDetailView: View {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(showsIndicators: true) {
                 VStack {
-                    NavigationLink(destination: FullScreenView(url: url)) {
+                    NavigationLink(destination: FullScreenView(url: url, title: cameraDescription)) {
                         RoverImage(url: url).overlay(TitleOverlay(text: camera), alignment: .bottomTrailing)
                     }
                     RoverDescription(url: url, date: date, rover: rover, sol: sol, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)
@@ -31,23 +31,6 @@ struct RoverDetailView: View {
             .background(Color.background2)
             .cornerRadius(10)
             .padding()
-        }
-    }
-}
-
-struct FullScreenView: View {
-    var url: String
-
-    var body: some View {
-        ZStack {Color.background.edgesIgnoringSafeArea(.all)
-            ZoomableScrollView {
-                ZStack {
-                    Color.background.edgesIgnoringSafeArea(.all)
-                    KFImage(URL(string: url))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-            }
         }
     }
 }

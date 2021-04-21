@@ -10,12 +10,14 @@ import SwiftUI
 struct ContentView: View {
     @State private var showingPictureOfTheDay = false
     @State private var showingHubbleNews = false
+    @State private var showingHubbleRecentImages = false
     var potdViewModel = POTDViewModel()
     var perseveranceViewModel = PerseveranceViewModel()
     var opportunityViewModel = OpportunityViewModel()
     var curiosityViewModel = CuriosityViewModel()
     var spiritViewModel = SpiritViewModel()
     var hubbleNewsViewModel = HubbleNewsViewModel()
+    var hubbleRecentImages = HubbleRecentImagesViewModel()
 
     init() {
         potdViewModel.loadPicturesOfTheDay()
@@ -24,6 +26,7 @@ struct ContentView: View {
         curiosityViewModel.loadCuriosityPhotos()
         spiritViewModel.loadSpiritPhotos()
         hubbleNewsViewModel.loadNewsFeed()
+        hubbleRecentImages.loadRecentImages()
     }
     
     var body: some View {
@@ -50,6 +53,15 @@ struct ContentView: View {
                                 Text("Hubble News").modifier(CardChoiceView())
                             }
                         }
+                        
+                        NavigationLink(destination: HubbleRecentImagesView(viewModel: hubbleRecentImages), isActive: $showingHubbleRecentImages) {
+                            Button(action: {
+                                showingHubbleRecentImages = true
+                            }) {
+                                Text("Hubble Telescope Live").modifier(CardChoiceView())
+                            }
+                        }
+                        
                     }
                     .padding()
                 }
