@@ -1,6 +1,9 @@
 
 # Quasar
-An iOS app that displays NASA's Astronomy Picture of the Day and the Mars Rovers.
+An iOS app that displays various space related feeds:
+* NASA's Astronomy Picture of the Day
+* Mars Rovers - Perseverance, Opportunity, Curiosity, Spirit
+* Hubble Telescope News
 
 * Built with SwiftUI and UIKit.
 * Uses Kingfisher for asynchronous image loading and caching.
