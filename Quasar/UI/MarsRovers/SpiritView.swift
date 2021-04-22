@@ -28,16 +28,16 @@ struct SpiritView: View {
                             selection: $viewModel.date,
                             in: dateRange,
                             displayedComponents: .date
-                        )
-                        .onChange(of: viewModel.date, perform: { _ in
-                            withAnimation {
-                                showDatePicker = false
-                            }
-                        })
-                        .datePickerStyle(WheelDatePickerStyle())
-                        .labelsHidden()
-                        .colorScheme(.dark)
-                        .accentColor(.paleGreen)
+                            )
+                            .onChange(of: viewModel.date, perform: { _ in
+                                withAnimation {
+                                    showDatePicker = false
+                                }
+                            })
+                            .datePickerStyle(WheelDatePickerStyle())
+                            .labelsHidden()
+                            .colorScheme(.dark)
+                            .accentColor(.paleGreen)
                     }
                 }.animation(.easeInOut)
                 
@@ -53,9 +53,7 @@ struct SpiritView: View {
                                    let camera = photo.camera?.name,
                                    let cameraDescription = photo.camera?.fullName {
                                     NavigationLink(destination: RoverDetailView(url: url, date: date, sol: sol, rover: rover, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)) {
-                                        RoverImage(url: url).onAppear()
-//                                            .overlay(TitleOverlay(text: "Sol " + String(sol)), alignment: .bottomTrailing)
-                                            .padding([.leading, .trailing])
+                                        ImageView(title: camera, url: url)
                                     }
                                 }
                             }

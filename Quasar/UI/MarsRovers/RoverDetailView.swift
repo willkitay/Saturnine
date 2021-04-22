@@ -22,32 +22,12 @@ struct RoverDetailView: View {
             ScrollView(showsIndicators: true) {
                 VStack {
                     NavigationLink(destination: FullScreenView(url: url, title: cameraDescription)) {
-                        RoverImage(url: url).overlay(TitleOverlay(text: camera), alignment: .bottomTrailing)
+                        ImageView(title: camera, url: url)
                     }
                     RoverDescription(url: url, date: date, rover: rover, sol: sol, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)
                 }
             }
-            .foregroundColor(.white)
-            .background(Color.background2)
-            .cornerRadius(10)
-            .padding()
         }
-    }
-}
-
-struct RoverImage: View {
-    var url: String
-    
-    var body: some View {
-        KFImage(URL(string: url))
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 0.1)
-            )
-            .padding(.bottom, 2)
     }
 }
 
@@ -69,6 +49,10 @@ struct RoverDescription: View {
             Text("●  \(camera)").padding()
             Text("●  \(cameraDescription)").padding()
         }
+        .frame(width: 370)
+        .background(Color.background2)
+        .cornerRadius(5)
+        .padding(10)
         .foregroundColor(.white)
     }
 }

@@ -17,12 +17,12 @@ struct SpaceXView: View {
             ScrollView(showsIndicators: true) {
                 LazyVStack (alignment: .leading) {
                     ForEach(viewModel.launchFeed, id: \.date) { launch in
-                        if let image = launch.links?.flickr?.original?.first,
+                        if let url = launch.links?.flickr?.original?.first,
                            let explanation = launch.details,
                            let date = launch.date,
                            let title = launch.name {
-                            NavigationLink(destination: SpaceXDetailView(url: image, title: title, explanation: explanation, date: date)) {
-                                SpaceXImageView(title: title, url: image)
+                            NavigationLink(destination: DetailView(url: url, title: title, explanation: explanation, date: formatDateFromStringToString(date: date))) {
+                                ImageView(title: title, url: url)
                             }
                         }
                     }
@@ -32,24 +32,14 @@ struct SpaceXView: View {
     }
 }
 
-struct SpaceXImageView: View {
-    var title: String
-    var url: String
-    
-    var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            KFImage(URL(string: url))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 0.1)
-                )
-                .padding(.leading)
-                .padding(.bottom, 2)
-                .overlay(TitleOverlay(text: title), alignment: .bottomTrailing).padding(.trailing)
-        }
-    }
-}
+private func formatDateFromStringToString(date: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 
+    guard let date = dateFormatter.date(from: date) else { return "error date is nil" }
+    
+    dateFormatter.dateStyle = .medium
+    let formattedDate = dateFormatter.string(from: date)
+    return formattedDate
+}

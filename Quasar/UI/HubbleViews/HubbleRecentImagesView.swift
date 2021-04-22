@@ -14,87 +14,26 @@ struct HubbleRecentImagesView: View {
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
-            ScrollView() {
-                VStack {
-                    ForEach(viewModel.imageFeed, id: \.title) { photo in
+            ScrollView(showsIndicators: true) {
+                ForEach(viewModel.imageFeed, id: \.title) { photo in
+                    LazyVStack {
                         if let title = photo.title,
                            let explanation = photo.description,
                            let date = photo.pubDate,
-                           let image = photo.image {
-                            NavigationLink(destination: HubbleDetailView(title: title, image: image, explanation: explanation, date: date)) {
-                                HubbleImageView(image: image, title: title)
+                           let url = photo.image {
+                            NavigationLink(destination: DetailView(url: validateUrl(url: url), title: title, explanation: explanation, date: formatDateFromStringToString(date: date))) {
+                                ImageView(title: title, url: validateUrl(url: url))
                             }
                         }
                     }
                 }
-            }
-        }
-        .navigationBarTitle("Hubble Telescope Live", displayMode: .large)
-    }
-}
-
-struct HubbleImageView: View {
-    var image: String
-    var title: String
-    
-    var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            KFImage(URL(string: "https:" + image))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 0.1)
-                )
-                .padding(.leading)
-                .padding(.bottom, 2)
-                .overlay(TitleOverlay(text: title), alignment: .bottomTrailing).padding(.trailing)
+            }.navigationBarTitle("Hubble Telescope Live", displayMode: .large)
         }
     }
-}
-
-struct HubbleDetailView: View {
-    var title: String
-    var image: String
-    var explanation: String
-    var date: String
     
-    var body: some View {
-        ZStack {
-            Color.background.edgesIgnoringSafeArea(.all)
-            ScrollView {
-                VStack() {
-                    VStack {
-                        NavigationLink(destination: FullScreenView(url: "https:\(image)", title: title)) {
-                            KFImage(URL(string: "https:" + image))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }
-                        PhotoDetailsView(explanation: explanation, copyright: " ", date: formatDateFromStringToString(date: date), title: title)
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct HubbleFullScreenView: View {
-    var url: String
-    var title: String
-    
-    var body: some View {
-        ZStack {
-            Color.background.ignoresSafeArea(.all)
-            ZoomableScrollView {
-                ZStack {
-                    Color.background.ignoresSafeArea(.all)
-                    KFImage(URL(string: url))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-            }
-        }
+    func validateUrl(url: String) -> String {
+        let urlString = "https:\(url)"
+        return urlString
     }
 }
 

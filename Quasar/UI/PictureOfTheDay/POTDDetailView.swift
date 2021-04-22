@@ -6,32 +6,4 @@
 //
 
 import SwiftUI
-import Kingfisher
-
-struct POTDDetailView: View {
-    var url: String
-    var title: String
-    var explanation: String
-    var copyright: String
-    var date: String
-
-    var body: some View {
-        ZStack {
-            Color.background.edgesIgnoringSafeArea(.all)
-            ScrollView {
-                VStack() {
-                    VStack {
-                        NavigationLink(destination: FullScreenView(url: url, title: title)) {
-                            KFImage(URL(string: url))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }
-                    }
-                    PhotoDetailsView(explanation: explanation, copyright: copyright, date: date, title: title)
-                }
-            }
-            .navigationBarColor(backgroundColor: .background, titleColor: .white)
-            .navigationTitle(title)
-        }
-    }
-}
+import Kingfi
