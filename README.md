@@ -19,7 +19,6 @@ An iOS app that displays various space related feeds:
 ![SpaceXLaunches](GifDemo/gif6.gif)
 ![Datepicker](GifDemo/gif3.gif)
 ![HubbleNews](GifDemo/gif4.gif)
-![Datepicker](GifDemo/gif5.gif)
 
 
 
