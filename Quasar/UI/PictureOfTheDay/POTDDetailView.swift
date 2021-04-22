@@ -7,8 +7,6 @@
 
 import SwiftUI
 import Kingfisher
-//import ImageScrollView
-import WebKit
 
 struct POTDDetailView: View {
     var url: String

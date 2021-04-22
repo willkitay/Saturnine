@@ -111,3 +111,35 @@ struct HubbleSite: Codable {
         case thumbnail = "thumbnail"
     }
 }
+
+struct SpaceX: Codable {
+    let name: String?
+    let date: String?
+    let details: String?
+    let links: Links?
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case date = "date_utc"
+        case details = "details"
+        case links = "links"
+    }
+}
+
+struct Links: Codable {
+    let wikipedia: String?
+    let flickr: Flickr?
+    
+    enum CodingKeys: String, CodingKey {
+        case wikipedia = "wikipedia"
+        case flickr =  "flickr"
+    }
+}
+
+struct Flickr: Codable {
+    let original: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case original = "original"
+    }
+}
