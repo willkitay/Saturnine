@@ -27,3 +27,11 @@ struct FullScreenView: View {
     }
 }
 
+struct FullScreenView_Previews: PreviewProvider {
+    static var url = "https://apod.nasa.gov/apod/image/1509/TexasEclipse_Westlake_2642.jpg"
+    static var title = "A Partial Solar Eclipse over Texas"
+    static var previews: some View {
+        FullScreenView(url: url, title: title)
+    }
+}
+

@@ -27,17 +27,16 @@ struct CuriosityView: View {
                             "Curiosity",
                             selection: $viewModel.date,
                             in: dateRange,
-                            displayedComponents: .date
-                        )
-                        .onChange(of: viewModel.date, perform: { _ in
-                            withAnimation {
-                                showDatePicker = false
-                            }
-                        })
-                        .datePickerStyle(WheelDatePickerStyle())
-                        .labelsHidden()
-                        .colorScheme(.dark)
-                        .accentColor(.paleGreen)
+                            displayedComponents: .date)
+                            .onChange(of: viewModel.date, perform: { _ in
+                                withAnimation {
+                                    showDatePicker = false
+                                }
+                            })
+                            .datePickerStyle(WheelDatePickerStyle())
+                            .labelsHidden()
+                            .colorScheme(.dark)
+                            .accentColor(.paleGreen)
                     }
                 }.animation(.easeInOut)
                 
@@ -53,9 +52,7 @@ struct CuriosityView: View {
                                    let camera = photo.camera?.name,
                                    let cameraDescription = photo.camera?.fullName {
                                     NavigationLink(destination: RoverDetailView(url: url, date: date, sol: sol, rover: rover, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)) {
-                                        RoverImage(url: url).onAppear()
-//                                            .overlay(TitleOverlay(text: "Sol " + String(sol)), alignment: .bottomTrailing)
-                                            .padding([.leading, .trailing])
+                                        ImageView(title: camera, url: url)
                                     }
                                 }
                             }
@@ -75,7 +72,6 @@ struct CuriosityView: View {
                         .foregroundColor(.white)
                 }
             }
-        }
-        .navigationBarTitle("Curiosity Rover")
+        }.navigationBarTitle("Curiosity Rover")
     }
 }

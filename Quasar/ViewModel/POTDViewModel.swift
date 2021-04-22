@@ -12,7 +12,6 @@ class POTDViewModel: ObservableObject {
     private var dataSource: DataSource
     private var restClient: RESTClient
     
-    
     init() {
         restClient = SimpleRESTClient()
         dataSource = DataSource(withClient: restClient)

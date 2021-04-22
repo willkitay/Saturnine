@@ -28,8 +28,7 @@ struct HubbleNewsView: View {
                     }
                 }
             }
-        }
-        .navigationBarTitle("Hubble News", displayMode: .large)
+        }.navigationBarTitle("Hubble News", displayMode: .large)
     }
 }
 
@@ -62,12 +61,9 @@ struct ArticleRow: View {
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous).stroke(Color.black, lineWidth: 0))
-        }
-        .padding([.leading, .trailing])
+        }.padding([.leading, .trailing])
     }
 }
-
-
 
 private func formatDateFromStringToString(date: String) -> String {
     let dateFormatter = DateFormatter()
