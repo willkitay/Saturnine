@@ -16,6 +16,7 @@ enum Endpoint {
     case Spirit
     case HubbleNews
     case HubbleRecentImages
+    case SpaceX
 }
 
 enum DataSourceError {
@@ -89,6 +90,13 @@ class DataSource {
         }
     }
     
+    func getSpaceXLaunches(completion: @escaping([SpaceX]?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .SpaceX, withType: [SpaceX].self) { data, error in
+            let spaceXLaunches = data as? [SpaceX]
+            completion(spaceXLaunches, error)
+        }
+    }
+    
 }
 
 //MARK:- Private
@@ -129,9 +137,9 @@ extension DataSource {
         let nasaAPIKey = "Z1oGFAgJL0yHHorJqZRhpKwb37rnIeENpO1CfA1T"
         
         var urlString: URL?
+        var components = URLComponents()
         switch endpoint {
             case .PictureOfTheDay:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "api.nasa.gov"
                 components.path = "/planetary/apod"
@@ -142,7 +150,6 @@ extension DataSource {
                 ]
                 urlString = components.url
             case .Perseverance:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "api.nasa.gov"
                 components.path = "/mars-photos/api/v1/rovers/perseverance/photos"
@@ -152,7 +159,6 @@ extension DataSource {
                 ]
                 urlString = components.url
             case .Opportunity:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "api.nasa.gov"
                 components.path = "/mars-photos/api/v1/rovers/opportunity/photos"
@@ -162,7 +168,6 @@ extension DataSource {
                 ]
                 urlString = components.url
             case .Curiosity:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "api.nasa.gov"
                 components.path = "/mars-photos/api/v1/rovers/curiosity/photos"
@@ -172,7 +177,6 @@ extension DataSource {
                 ]
                 urlString = components.url
             case .Spirit:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "api.nasa.gov"
                 components.path = "/mars-photos/api/v1/rovers/spirit/photos"
@@ -182,16 +186,19 @@ extension DataSource {
                 ]
                 urlString = components.url
             case .HubbleNews:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "hubblesite.org"
                 components.path = "/api/v3/external_feed/esa_feed"
                 urlString = components.url
             case .HubbleRecentImages:
-                var components = URLComponents()
                 components.scheme = "https"
                 components.host = "hubblesite.org"
                 components.path = "/api/v3/external_feed/st_live"
+                urlString = components.url
+            case .SpaceX:
+                components.scheme = "https"
+                components.host = "api.spacexdata.com"
+                components.path = "/v4/launches"
                 urlString = components.url
             }
         return urlString

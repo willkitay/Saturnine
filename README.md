@@ -5,6 +5,7 @@ An iOS app that displays various space related feeds:
 - Mars Rovers - Perseverance, Opportunity, Curiosity, Spirit
 - Hubble Telescope News
 - Hubble Live Images - updating snapshots from Hubble observatory
+- SpaceX Launches
 
 > Built with SwiftUI and UIKit.
 
@@ -14,9 +15,12 @@ An iOS app that displays various space related feeds:
 
 ![Picture of the Day](GifDemo/gif1.gif)
 ![Mars Rovers](GifDemo/gif2.gif)
+![HubbleLiveImages](GifDemo/gif5.gif)
+![SpaceXLaunches](GifDemo/gif6.gif)
 ![Datepicker](GifDemo/gif3.gif)
-![Datepicker](GifDemo/gif4.gif)
+![HubbleNews](GifDemo/gif4.gif)
 ![Datepicker](GifDemo/gif5.gif)
+
 
 
 

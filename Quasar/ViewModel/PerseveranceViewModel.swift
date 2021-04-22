@@ -22,7 +22,7 @@ class PerseveranceViewModel: ObservableObject {
         dataSource = DataSource(withClient: restClient)
         perseverance = Perseverance()
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-        dateComponents.day! -= 1
+        dateComponents.day! -= 2
         date = Calendar.current.date(from: dateComponents)!
     }
     

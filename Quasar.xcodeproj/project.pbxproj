@@ -44,6 +44,9 @@
 		BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */; };
 		BE280BE1262FE890004DEF43 /* HubbleRecentImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */; };
 		BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE7D2263006AD00187BCE /* FullScreenView.swift */; };
+		BED42CB12630F5B6006D68E6 /* SpaceXLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */; };
+		BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB32630F73A006D68E6 /* SpaceXView.swift */; };
+		BED42CB62630FC19006D68E6 /* SpaceXDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB52630FC19006D68E6 /* SpaceXDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleRecentImagesViewModel.swift; sourceTree = "<group>"; };
 		BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleRecentImagesView.swift; sourceTree = "<group>"; };
 		BEACE7D2263006AD00187BCE /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
+		BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchViewModel.swift; sourceTree = "<group>"; };
+		BED42CB32630F73A006D68E6 /* SpaceXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXView.swift; sourceTree = "<group>"; };
+		BED42CB52630FC19006D68E6 /* SpaceXDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +223,7 @@
 		BE280B0F262E05E7004DEF43 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BED42CB22630F6E2006D68E6 /* SpaceX */,
 				BE280BC9262E92DF004DEF43 /* HubbleViews */,
 				BE280B2D262E0705004DEF43 /* Components */,
 				BE280B2C262E0700004DEF43 /* MarsRovers */,
@@ -228,13 +235,14 @@
 		BE280B10262E05EB004DEF43 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BE280B25262E066D004DEF43 /* POTDViewModel.swift */,
+				BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */,
 				BE280B11262E0627004DEF43 /* CuriosityViewModel.swift */,
 				BE280B16262E0632004DEF43 /* OpportunityViewModel.swift */,
-				BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */,
 				BE280B20262E0658004DEF43 /* SpiritViewModel.swift */,
-				BE280B25262E066D004DEF43 /* POTDViewModel.swift */,
 				BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */,
 				BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */,
+				BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -284,6 +292,15 @@
 				BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */,
 			);
 			path = HubbleViews;
+			sourceTree = "<group>";
+		};
+		BED42CB22630F6E2006D68E6 /* SpaceX */ = {
+			isa = PBXGroup;
+			children = (
+				BED42CB32630F73A006D68E6 /* SpaceXView.swift */,
+				BED42CB52630FC19006D68E6 /* SpaceXDetailView.swift */,
+			);
+			path = SpaceX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,11 +440,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE280B1C262E063C004DEF43 /* PerseveranceViewModel.swift in Sources */,
+				BED42CB12630F5B6006D68E6 /* SpaceXLaunchViewModel.swift in Sources */,
 				BE280B65262E07EE004DEF43 /* MarsMenu.swift in Sources */,
 				BE280B37262E0724004DEF43 /* Colors.swift in Sources */,
 				BE280B2F262E0715004DEF43 /* Align.swift in Sources */,
 				BE280B26262E066D004DEF43 /* POTDViewModel.swift in Sources */,
 				BE280B4E262E0754004DEF43 /* TitleOverlay.swift in Sources */,
+				BED42CB62630FC19006D68E6 /* SpaceXDetailView.swift in Sources */,
 				BE280B12262E0627004DEF43 /* CuriosityViewModel.swift in Sources */,
 				BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */,
 				BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */,
@@ -449,6 +468,7 @@
 				BE280ADF262E0511004DEF43 /* QuasarApp.swift in Sources */,
 				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
 				BE280BE1262FE890004DEF43 /* HubbleRecentImagesView.swift in Sources */,
+				BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */,
 				BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */,
 				BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */,
 				BE280B44262E0742004DEF43 /* FeedMenu.swift in Sources */,
