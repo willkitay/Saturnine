@@ -7,6 +7,25 @@
 import SwiftUI
 import Kingfisher
 
+struct DetailView2: View {
+    var url: String
+    var title: String
+    var explanation: String
+    var date: String
+
+    var body: some View {
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView {
+                NavigationLink(destination: FullScreenView(url: url, title: title)) {
+                    ImageView(title: "", url: url)
+                }
+                PhotoDetailsView(explanation: explanation, date: date, title: title)
+            }
+        }
+    }
+}
+
 struct DetailView: View {
     var url: String
     var title: String
@@ -21,7 +40,7 @@ struct DetailView: View {
                     ImageView(title: "", url: url)
                 }
                 PhotoDetailsView(explanation: explanation, date: date, title: title)
-            }.navigationBarTitle(title)
+            }
         }
     }
 }
@@ -77,11 +96,11 @@ struct PhotoCopyright: View {
 struct Explanation: View {
     var text: String
     var body: some View {
-        ScrollView {
+        VStack {
             Text(text)
                 .padding()
-                .lineLimit(nil)
-                .lineSpacing(6)
+                .multilineTextAlignment(.leading)
+                .lineSpacing(8)
                 .cornerRadius(5)
         }
     }
@@ -92,7 +111,7 @@ struct PhotoDate: View {
     var body: some View {
         Text(date)
             .foregroundColor(.white)
-            .padding(.bottom)
+//            .padding(.bottom)
     }
 }
 
