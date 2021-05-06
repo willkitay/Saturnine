@@ -61,14 +61,15 @@ struct MarsMenu: View {
                                 Text("Spirit").modifier(MenuChoice())
                             }
                         }
-                    }.padding([.leading, .trailing, .bottom])
+                    }
+                    .padding([.leading, .trailing, .bottom])
+                    .transition(.move(edge: .top))
                 }
             }
             .padding()
             .frame(width: 360, height: expandOptions ? 400 : 200)
             .background(Color.background3)
             .cornerRadius(15)
-            .animation(.spring())
         }
         .onTapGesture {
             expandOptions.toggle()

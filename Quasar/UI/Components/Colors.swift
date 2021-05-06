@@ -13,6 +13,11 @@ extension Color {
     static let background3 = Color("Background3")
     static let paleGreen = Color("PaleGreen")
     static let electricBlue = Color("ElectricBlue")
+    static let synthBlue = Color("SynthBlue")
+    static let synthPurple = Color("SynthPurple")
+    static let darkBlue1 = Color("DarkBlue1")
+    static let darkBlue2 = Color("DarkBlue2")
+    static let darkBlue3 = Color("DarkBlue3")
     static let darkGray = Color(red: 30/255, green: 33/255, blue: 38/255, opacity: 1)
 }
 

@@ -21,7 +21,7 @@ struct DetailView: View {
                     ImageView(title: "", url: url)
                 }
                 PhotoDetailsView(explanation: explanation, date: date, title: title)
-            }.navigationBarTitle(title)
+            }
         }
     }
 }
@@ -54,8 +54,8 @@ struct PhotoDetailsView: View {
     var body: some View {
         VStack {
             PhotoTitle(title: title)
-            Explanation(text: explanation)
             PhotoDate(date: date)
+            Explanation(text: explanation)
         }
         .background(Color.background2)
         .cornerRadius(5)
@@ -77,11 +77,11 @@ struct PhotoCopyright: View {
 struct Explanation: View {
     var text: String
     var body: some View {
-        ScrollView {
-            Text(text)
-                .padding()
-                .lineLimit(nil)
-                .lineSpacing(6)
+        VStack {
+            Text("\n\(text)")
+                .multilineTextAlignment(.leading)
+                .padding([.leading, .trailing, .bottom])
+                .lineSpacing(8)
                 .cornerRadius(5)
         }
     }
@@ -92,7 +92,7 @@ struct PhotoDate: View {
     var body: some View {
         Text(date)
             .foregroundColor(.white)
-            .padding(.bottom)
+//            .padding()
     }
 }
 
@@ -103,7 +103,7 @@ struct PhotoTitle: View {
             Text(title)
                 .font(.title)
                 .lineLimit(nil)
-                .padding([.top, .leading, .trailing])
+                .padding()
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
         }

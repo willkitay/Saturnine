@@ -27,7 +27,7 @@ struct HubbleRecentImagesView: View {
                         }
                     }
                 }
-            }.navigationBarTitle("Hubble Telescope Live", displayMode: .large)
+            }.navigationBarTitle("Hubble Telescope", displayMode: .large)
         }
     }
     

@@ -10,9 +10,6 @@ import Kingfisher
 struct RoverDetailView: View {
     var url: String
     var date: String
-    var sol: Int
-    var rover: String
-    var landingDate: String
     var camera: String
     var cameraDescription: String
     
@@ -24,7 +21,7 @@ struct RoverDetailView: View {
                     NavigationLink(destination: FullScreenView(url: url, title: cameraDescription)) {
                         ImageView(title: camera, url: url)
                     }
-                    RoverDescription(url: url, date: date, rover: rover, sol: sol, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)
+                    RoverDescription(url: url, date: date, camera: camera, cameraDescription: cameraDescription)
                 }
             }
         }
@@ -34,18 +31,12 @@ struct RoverDetailView: View {
 struct RoverDescription: View {
     var url: String
     var date: String
-    var rover: String
-    var sol: Int
-    var landingDate: String
     var camera: String
     var cameraDescription: String
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("●  " + rover + " Rover").padding()
             Text("●  Photographed on: \(date)").padding()
-            Text("●  Sol: \(sol)").padding()
-            Text("●  Landing Date: \(landingDate)").padding()
             Text("●  \(camera)").padding()
             Text("●  \(cameraDescription)").padding()
         }

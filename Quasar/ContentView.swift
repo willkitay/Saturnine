@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @State private var showingPictureOfTheDay = false
@@ -35,11 +36,11 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.background.edgesIgnoringSafeArea([.all])
+                Color.background.edgesIgnoringSafeArea(.all)
                 ScrollView(.vertical, showsIndicators: true) {
                     VStack(spacing: 10) {
                         // Picture of the Day
-                        NavigationLink(destination: POTDView(viewModel: potdViewModel), isActive: $showingPictureOfTheDay) {
+                        NavigationLink(destination: VerticalPOTDView(viewModel: potdViewModel), isActive: $showingPictureOfTheDay) {
                             Button(action: {
                                 showingPictureOfTheDay.toggle()
                             }) {
@@ -48,7 +49,7 @@ struct ContentView: View {
                         }
                         // Mars Rovers
                         MarsMenu(perseveranceViewModel: perseveranceViewModel, opportunityViewModel: opportunityViewModel, curiosityViewModel: curiosityViewModel, spiritViewModel: spiritViewModel)
-                        
+
                         NavigationLink(destination: HubbleNewsView(viewModel: hubbleNewsViewModel), isActive: $showingHubbleNews) {
                             Button(action: {
                                 showingHubbleNews.toggle()
@@ -56,15 +57,15 @@ struct ContentView: View {
                                 Text("Hubble News").modifier(CardChoiceView())
                             }
                         }
-                        
+
                         NavigationLink(destination: HubbleRecentImagesView(viewModel: hubbleRecentImagesViewModel), isActive: $showingHubbleRecentImages) {
                             Button(action: {
                                 showingHubbleRecentImages.toggle()
                             }) {
-                                Text("Hubble Telescope Live").modifier(CardChoiceView())
+                                Text("Hubble Telescope").modifier(CardChoiceView())
                             }
                         }
-                        
+
                         NavigationLink(destination: SpaceXView(viewModel: spaceXViewModel), isActive: $showingSpaceXLaunches) {
                             Button(action: {
                                 showingSpaceXLaunches.toggle()
@@ -76,6 +77,8 @@ struct ContentView: View {
                     }
                     .padding()
                 }
+                .transition(.move(edge: .bottom))
+                .animation(.linear)
             }
             .navigationBarHidden(true)
             .navigationBarColor(backgroundColor: UIColor.background, titleColor: .white)
