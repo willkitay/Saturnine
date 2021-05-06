@@ -13,12 +13,11 @@ An iOS app that displays various space related feeds:
 
 > Utilizes MVVM architecture.
 
-![Picture of the Day](GifDemo/gif1.gif)
-![Mars Rovers](GifDemo/gif2.gif)
-![HubbleLiveImages](GifDemo/gif5.gif)
-![SpaceXLaunches](GifDemo/gif6.gif)
-![Datepicker](GifDemo/gif3.gif)
-![HubbleNews](GifDemo/gif4.gif)
+![Homepage](GifDemo/homepage.gif)
+![PictureOfTheDay](GifDemo/potd.gif)
+![MarsRovers](GifDemo/rovers.gif)
+![HubbleNews](GifDemo/hubblenews.gif)
+
 
 
 
