@@ -46,12 +46,9 @@ struct CuriosityView: View {
                             ForEach(viewModel.curiosity.photos!, id: \.id) { photo in
                                 if let url = photo.url,
                                    let date = photo.earthDate,
-                                   let sol = photo.sol,
-                                   let rover = photo.rover?.name,
-                                   let landingDate = photo.rover?.landingDate,
                                    let camera = photo.camera?.name,
                                    let cameraDescription = photo.camera?.fullName {
-                                    NavigationLink(destination: RoverDetailView(url: url, date: date, sol: sol, rover: rover, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)) {
+                                    NavigationLink(destination: RoverDetailView(url: url, date: date, camera: camera, cameraDescription: cameraDescription)) {
                                         ImageView(title: camera, url: url)
                                     }
                                 }

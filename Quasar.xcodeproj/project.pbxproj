@@ -32,7 +32,7 @@
 		BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B73262E0809004DEF43 /* RoverDetailView.swift */; };
 		BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B78262E0817004DEF43 /* SpiritView.swift */; };
 		BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */; };
-		BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B8C262E0891004DEF43 /* POTDView.swift */; };
+		BE280B8D262E0891004DEF43 /* VerticalPOTDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B8C262E0891004DEF43 /* VerticalPOTDView.swift */; };
 		BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B91262E09D2004DEF43 /* RESTClient.swift */; };
 		BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */; };
 		BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B9B262E0A35004DEF43 /* Entities.swift */; };
@@ -96,7 +96,7 @@
 		BE280B73262E0809004DEF43 /* RoverDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverDetailView.swift; sourceTree = "<group>"; };
 		BE280B78262E0817004DEF43 /* SpiritView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritView.swift; sourceTree = "<group>"; };
 		BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsView.swift; sourceTree = "<group>"; };
-		BE280B8C262E0891004DEF43 /* POTDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDView.swift; sourceTree = "<group>"; };
+		BE280B8C262E0891004DEF43 /* VerticalPOTDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPOTDView.swift; sourceTree = "<group>"; };
 		BE280B91262E09D2004DEF43 /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicDataSource.swift; sourceTree = "<group>"; };
 		BE280B9B262E0A35004DEF43 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 		BE280B2A262E06F0004DEF43 /* PictureOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
-				BE280B8C262E0891004DEF43 /* POTDView.swift */,
+				BE280B8C262E0891004DEF43 /* VerticalPOTDView.swift */,
 			);
 			path = PictureOfTheDay;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 				BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */,
 				BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */,
 				BE280B21262E0658004DEF43 /* SpiritViewModel.swift in Sources */,
-				BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */,
+				BE280B8D262E0891004DEF43 /* VerticalPOTDView.swift in Sources */,
 				BE280B17262E0632004DEF43 /* OpportunityViewModel.swift in Sources */,
 				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,

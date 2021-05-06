@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PerseveranceView: View {
     @ObservedObject var viewModel: PerseveranceViewModel
@@ -22,7 +23,6 @@ struct PerseveranceView: View {
             Color.background.edgesIgnoringSafeArea([.all])
             VStack {
                 VStack {
-                    
                     if showDatePicker {
                         DatePicker(
                             "Perseverance",
@@ -48,12 +48,9 @@ struct PerseveranceView: View {
                             ForEach(viewModel.perseverance.photos!, id: \.id) { photo in
                                 if let url = photo.url,
                                    let date = photo.earthDate,
-                                   let sol = photo.sol,
-                                   let rover = photo.rover?.name,
-                                   let landingDate = photo.rover?.landingDate,
                                    let camera = photo.camera?.name,
                                    let cameraDescription = photo.camera?.fullName {
-                                    NavigationLink(destination: RoverDetailView(url: url, date: date, sol: sol, rover: rover, landingDate: landingDate, camera: camera, cameraDescription: cameraDescription)) {
+                                    NavigationLink(destination: RoverDetailView(url: url, date: date, camera: camera, cameraDescription: cameraDescription)) {
                                         ImageView(title: camera, url: url)
                                     }
                                 }
@@ -78,3 +75,56 @@ struct PerseveranceView: View {
         .navigationBarTitle("Perseverance Rover")
     }
 }
+
+//struct HorizontalPerseveranceFeed: View {
+//    @ObservedObject var viewModel: PerseveranceViewModel
+//    @State var currentTitle = ""
+//
+//    init(title: String, viewModel: PerseveranceViewModel) {
+//        _currentTitle = State(initialValue: title)
+//        self.viewModel = viewModel
+//    }
+//
+//    var body: some View {
+//        ZStack {
+//            Color.background.edgesIgnoringSafeArea([.all])
+//            ScrollView(.horizontal, showsIndicators: true) {
+//                LazyHStack {
+//                    PerseverancePageView(viewModel: viewModel, currentTitle: currentTitle)
+//                }
+//            }
+//        }
+//    }
+//}
+
+//struct PerseverancePageView: View {
+//    @ObservedObject var viewModel: PerseveranceViewModel
+//    @State var currentTitle: String
+//
+//    var body: some View {
+//        TabView(selection: $currentTitle) {
+////            if let images = viewModel.perseverance.photos {
+//                ForEach(viewModel.perseverance.photos!, id: \.url) { photo in
+//                    if let title = photo.title,
+//                       let explanation = photo.explanation,
+//                       let date = photo.date,
+//                       let url = photo.url {
+//                        ScrollView {
+//                            NavigationLink(destination: FullScreenView(url: url, title: title)) {
+//                                KFImage(URL(string: url))
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                            }
+//                                .onAppear() { elementOnAppear(photo) }
+//                                .padding(.top, 63)
+//                            PhotoDetailsView(explanation: explanation, date: date, title: title)
+//                                .padding(.bottom, 55)
+//                        }.tabItem {}.tag(title)
+//                    }
+//                }
+////            }
+//        }
+//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//        .tabViewStyle(PageTabViewStyle())
+//    }
+//}
