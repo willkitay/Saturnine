@@ -258,9 +258,9 @@
 			isa = PBXGroup;
 			children = (
 				BE280B73262E0809004DEF43 /* RoverDetailView.swift */,
+				BE280B6E262E07FD004DEF43 /* PerseveranceView.swift */,
 				BE280B5F262E07E2004DEF43 /* CuriosityView.swift */,
 				BE280B69262E07F6004DEF43 /* OpportunityView.swift */,
-				BE280B6E262E07FD004DEF43 /* PerseveranceView.swift */,
 				BE280B78262E0817004DEF43 /* SpiritView.swift */,
 			);
 			path = MarsRovers;
