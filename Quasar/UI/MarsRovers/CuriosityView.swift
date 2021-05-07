@@ -44,13 +44,8 @@ struct CuriosityView: View {
                     LazyVStack(alignment: .leading) {
                         if viewModel.curiosity.photos != nil {
                             ForEach(viewModel.curiosity.photos!, id: \.id) { photo in
-                                if let url = photo.url,
-                                   let date = photo.earthDate,
-                                   let camera = photo.camera?.name,
-                                   let cameraDescription = photo.camera?.fullName {
-                                    NavigationLink(destination: RoverDetailView(url: url, date: date, camera: camera, cameraDescription: cameraDescription)) {
-                                        ImageView(title: camera, url: url)
-                                    }
+                                NavigationLink(destination: RoverDetailView(url: photo.url, date: photo.earthDate, camera: photo.camera.name, cameraDescription: photo.camera.fullName)) {
+                                    ImageView(title: photo.camera.name, url: photo.url)
                                 }
                             }
                         }

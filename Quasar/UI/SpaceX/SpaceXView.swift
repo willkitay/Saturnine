@@ -17,13 +17,11 @@ struct SpaceXView: View {
             ScrollView(showsIndicators: true) {
                 LazyVStack {
                     ForEach(viewModel.launchFeed, id: \.date) { launch in
-                        if let url = launch.links?.flickr?.original?.first,
-                           let images = launch.links?.flickr?.original,
-                           let explanation = launch.details,
-                           let date = launch.date,
-                           let title = launch.name {
-                            NavigationLink(destination: SpaceXDetailView(images: images, url: url, title: title, explanation: explanation, date: formatDateFromStringToString(date: date))) {
-                                ImageView(title: title, url: url)
+                        if let url = launch.links.flickr.original?.first,
+                           let images = launch.links.flickr.original,
+                           let explanation = launch.details {
+                            NavigationLink(destination: SpaceXDetailView(images: images, url: url, title: launch.name, explanation: explanation, date: formatDateFromStringToString(date: launch.date))) {
+                                ImageView(title: launch.name, url: url)
                             }
                         }
                     }

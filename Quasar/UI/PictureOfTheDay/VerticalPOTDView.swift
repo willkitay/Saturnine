@@ -17,14 +17,11 @@ struct VerticalPOTDView: View {
             ScrollView(showsIndicators: true) {
                 LazyVStack (alignment: .leading, spacing: 5) {
                     ForEach(viewModel.imageFeed, id: \.title) { photo in
-                        if let url = photo.url,
-                           let title = photo.title {
-                            NavigationLink(destination: HorizontalPOTDFeed(title: title, viewModel: viewModel)) {
-                                ImageView(title: title, url: url).onAppear() { elementOnAppear(photo) }
-                            }
-                            .navigationBarColor(backgroundColor: UIColor.background, titleColor: .white)
-                            .navigationBarTitle("Picture of the Day", displayMode: .inline)
+                        NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
+                            ImageView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
                         }
+                        .navigationBarColor(backgroundColor: UIColor.background, titleColor: .white)
+                        .navigationBarTitle("Picture of the Day", displayMode: .inline)
                     }
                 }
             }
@@ -66,22 +63,17 @@ struct PageView: View {
     var body: some View {
         TabView(selection: $currentTitle) {
             ForEach(viewModel.imageFeed, id: \.title) { photo in
-                if let title = photo.title,
-                   let explanation = photo.explanation,
-                   let date = photo.date,
-                   let url = photo.url {
-                    ScrollView {
-                        NavigationLink(destination: FullScreenView(url: url, title: title)) {
-                            KFImage(URL(string: url))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }
-                            .onAppear() { elementOnAppear(photo) }
-                            .padding(.top, 63)
-                        PhotoDetailsView(explanation: explanation, date: date, title: title)
-                            .padding(.bottom, 55)
-                    }.tabItem {}.tag(title)
-                }
+                ScrollView {
+                    NavigationLink(destination: FullScreenView(url: photo.url, title: photo.title)) {
+                        KFImage(URL(string: photo.url))
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                        .onAppear() { elementOnAppear(photo) }
+                        .padding(.top, 63)
+                    PhotoDetailsView(explanation: photo.explanation, date: photo.date, title: photo.title)
+                        .padding(.bottom, 55)
+                }.tabItem {}.tag(photo.title)
             }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

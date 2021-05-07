@@ -8,12 +8,12 @@
 import Foundation
 
 struct PictureOfTheDay: Decodable, Identifiable {
-    var title: String?
-    var url: String?
+    var title: String
+    var url: String
     var media_type: String?
     var service_version: String?
-    var explanation: String?
-    var date: String?
+    var explanation: String
+    var date: String
     var copyright: String?
     var id: UUID?
 }
@@ -41,12 +41,12 @@ struct Spirit: Codable {
 }
 
 struct Photo: Codable {
-    let camera: Camera?
-    let earthDate: String?
-    let id: Int?
-    let url: String?
-    let rover: Rover?
-    let sol: Int?
+    let camera: Camera
+    let earthDate: String
+    let id: Int
+    let url: String
+    let rover: Rover
+    let sol: Int
     
     enum CodingKeys: String, CodingKey {
         case camera = "camera"
@@ -66,9 +66,9 @@ extension Photo {
 
 struct Camera: Codable {
     let fullName: String
-    let id: Int?
-    let name: String?
-    let roverId: Int?
+    let id: Int
+    let name: String
+    let roverId: Int
     
     enum CodingKeys: String, CodingKey {
         case fullName = "full_name"
@@ -79,11 +79,11 @@ struct Camera: Codable {
 }
 
 struct Rover: Codable {
-    let id: Int?
-    let landingDate: String?
-    let launchDate: String?
-    let name: String?
-    let status: String?
+    let id: Int
+    let landingDate: String
+    let launchDate: String
+    let name: String
+    let status: String
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -113,10 +113,10 @@ struct HubbleSite: Codable {
 }
 
 struct SpaceX: Codable {
-    let name: String?
-    let date: String?
+    let name: String
+    let date: String
     let details: String?
-    let links: Links?
+    let links: Links
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -128,7 +128,7 @@ struct SpaceX: Codable {
 
 struct Links: Codable {
     let wikipedia: String?
-    let flickr: Flickr?
+    let flickr: Flickr
     
     enum CodingKeys: String, CodingKey {
         case wikipedia = "wikipedia"
