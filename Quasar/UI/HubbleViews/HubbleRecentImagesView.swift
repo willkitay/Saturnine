@@ -15,19 +15,22 @@ struct HubbleRecentImagesView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(showsIndicators: true) {
+                VStack(alignment: .leading) {
+                    Image("HubbleTelescopeLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .padding([.top, .bottom])
+                        .padding([.leading, .trailing], 40)
+                    FeedHeader(title: "Hubble Space Telescope", text: "The Hubble Space Telescope takes sharp pictures of objects in the sky such as planets, stars and galaxies. Hubble has made more than one million observations. These include detailed pictures of the birth and death of stars, galaxies billions of light years away, and comet pieces crashing into Jupiter's atmosphere.")
+                }
                 ForEach(viewModel.imageFeed, id: \.title) { photo in
                     LazyVStack {
-                        if let title = photo.title,
-                           let explanation = photo.description,
-                           let date = photo.pubDate,
-                           let url = photo.image {
-                            NavigationLink(destination: DetailView(url: validateUrl(url: url), title: title, explanation: explanation, date: formatDateFromStringToString(date: date))) {
-                                ImageView(title: title, url: validateUrl(url: url))
-                            }
+                        NavigationLink(destination: DetailView(url: validateUrl(url: photo.image), title: photo.title, explanation: photo.description, date: formatDateFromStringToString(date: photo.pubDate))) {
+                            ImageView(title: photo.title, url: validateUrl(url: photo.image))
                         }
                     }
                 }
-            }.navigationBarTitle("Hubble Telescope", displayMode: .large)
+            }
         }
     }
     

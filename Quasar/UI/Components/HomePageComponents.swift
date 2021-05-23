@@ -8,17 +8,68 @@
 import SwiftUI
 
 struct Header: View {
+    @State private var showModal = false
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Quasar")
-                .font(.largeTitle).bold()
-                .foregroundColor(.white)
-                .padding(.leading)
-                .padding(.bottom, 2.5)
+            HStack {
+                Text("Quasar")
+                    .font(.largeTitle).bold()
+                    .foregroundColor(.white)
+                    .padding(.leading)
+                    .padding(.bottom, 2.5)
+                Spacer()
+                Button(action: {
+                    showModal.toggle()
+                }) {
+                    Image(systemName: "line.horizontal.3")
+                        .font(.system(size: 32))
+                        .foregroundColor(.white)
+                        .padding()
+                        .padding(.trailing, 10)
+                }.sheet(isPresented: $showModal) {
+                    ModalView()
+                }
+            }
             Text("Discover the cosmos")
                 .font(.subheadline)
                 .foregroundColor(.white)
                 .padding(.leading)
+        }
+    }
+}
+
+struct ModalView: View {
+    @State private var receivingPOTD = false
+    private let about = "From staring through the eyes of the Perseverance rover to gazing at interstellar galaxies, Quasar will take you on a journey through our universe. Built for students, scientists, and passionate people."
+    var body: some View {
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Quasar").align(.centerX).font(.largeTitle).padding(.top)
+                GrayDivider()
+                Text(about).padding().font(.title3).multilineTextAlignment(.center)
+                GrayDivider()
+                VStack {
+                    HStack {
+                        Image(systemName: "envelope").padding().padding(.leading).font(.title2)
+                        Text("Contact Us")
+                        Spacer()
+                    }
+                    HStack {
+                        Image(systemName: "info.circle").padding().padding(.leading).font(.title2)
+                        Text("FAQ")
+                        Spacer()
+                    }
+                    GrayDivider()
+                    Toggle(isOn: $receivingPOTD) {
+                        Text("Picture of the Day").padding()
+                    }.padding([.leading, .trailing])
+                    GrayDivider()
+                    Text("Privacy Policy • Terms of Service").font(.subheadline)
+                }
+                Spacer()
+            }
+            .foregroundColor(.white)
         }
     }
 }
@@ -93,10 +144,10 @@ struct RegularCardView: ViewModifier {
                                     .padding(.leading, 5)
                                 Spacer()
                             }
-                        }.frame(width: 125, height: 175)
-                        
-                    }.frame(width: 125, height: 175)
-                    
+                        }
+                        .frame(width: 125, height: 175)
+                    }
+                    .frame(width: 125, height: 175)
                     .padding(.bottom, 20)
                 )
                 .cornerRadius(15)
@@ -104,5 +155,11 @@ struct RegularCardView: ViewModifier {
                 .font(.title2.bold())
                 .padding(.leading)
         }
+    }
+}
+
+struct HomePageComponent_Previews: PreviewProvider {
+    static var previews: some View {
+        ModalView()
     }
 }

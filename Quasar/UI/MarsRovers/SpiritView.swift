@@ -43,6 +43,14 @@ struct SpiritView: View {
                 
                 ScrollView(showsIndicators: true) {
                     LazyVStack(alignment: .leading) {
+                        VStack(alignment: .leading) {
+                            Image("SpiritLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .padding(.top)
+                                .padding([.leading, .trailing], 40)
+                            FeedHeader(title: "Mars Spirit Rover", text: "Spirit, also known as MER-A or MER-2, is a robotic rover on Mars, active from 2004 to 2010. Spirit was operational on Mars for 2208 sols. It cost over 400 million USD and survived over twenty times longer than NASA planners expected.")
+                        }
                         if viewModel.spirit.photos != nil {
                             ForEach(viewModel.spirit.photos!, id: \.id) { photo in
                                 NavigationLink(destination: RoverDetailView(url: photo.url, date: photo.earthDate, camera: photo.camera.name, cameraDescription: photo.camera.fullName)) {
@@ -66,6 +74,5 @@ struct SpiritView: View {
                 }
             }
         }
-        .navigationBarTitle("Spirit Rover")
     }
 }

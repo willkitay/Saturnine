@@ -22,7 +22,7 @@ struct TelescopeOptions: View {
                         Image("HubbleTelescope")
                             .resizable()
                             .scaledToFill()
-                            .modifier(RegularCardView(text: "Hubble Observatory"))
+                            .modifier(RegularCardView(text: "Hubble"))
                     }
                 }
             }
@@ -54,17 +54,6 @@ struct RoverOptions: View {
                             .modifier(RegularCardView(text: "Perseverance"))
                     }
                 }
-                NavigationLink(destination: OpportunityView(viewModel: opportunityViewModel), isActive: $showingOpportunity) {
-                    Button(action: {
-                        showingOpportunity.toggle()
-                        opportunityViewModel.loadOpportunityPhotos()
-                    }) {
-                        Image("Opportunity")
-                            .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Opportunity"))
-                    }
-                }
                 NavigationLink(destination: CuriosityView(viewModel: curiosityViewModel), isActive: $showingCuriosity) {
                     Button(action: {
                         showingCuriosity.toggle()
@@ -74,6 +63,17 @@ struct RoverOptions: View {
                             .resizable()
                             .scaledToFill()
                             .modifier(RegularCardView(text: "Curiosity"))
+                    }
+                }
+                NavigationLink(destination: OpportunityView(viewModel: opportunityViewModel), isActive: $showingOpportunity) {
+                    Button(action: {
+                        showingOpportunity.toggle()
+                        opportunityViewModel.loadOpportunityPhotos()
+                    }) {
+                        Image("Opportunity")
+                            .resizable()
+                            .scaledToFill()
+                            .modifier(RegularCardView(text: "Opportunity"))
                     }
                 }
                 NavigationLink(destination: SpiritView(viewModel: spiritViewModel), isActive: $showingSpirit) {
@@ -98,7 +98,7 @@ struct MostPopularOptions: View {
     @State private var showingHubbleNews = false
     var potdViewModel: POTDViewModel
     var spaceXViewModel: SpaceXViewModel
-    var hubbleNewsViewModel: HubbleNewsViewModel
+    var esaViewModel: ESAViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -125,15 +125,15 @@ struct MostPopularOptions: View {
                             .modifier(MostPopularView(text: "SpaceX Rockets",  subText: "Sustainable exploration"))
                     }
                 }
-                NavigationLink(destination: HubbleNewsView(viewModel: hubbleNewsViewModel), isActive: $showingHubbleNews) {
+                NavigationLink(destination: ESANews(viewModel: esaViewModel), isActive: $showingHubbleNews) {
                     Button(action: {
                         showingHubbleNews.toggle()
-                        hubbleNewsViewModel.loadNewsFeed()
+                        esaViewModel.loadNewsFeed()
                     }) {
                         Image("HubbleNews")
                             .resizable()
                             .scaledToFill()
-                            .modifier(MostPopularView(text: "Hubble News", subText: "Courtesy of NASA"))
+                            .modifier(MostPopularView(text: "ESA", subText: "European Space Agency"))
                     }
                 }
             }

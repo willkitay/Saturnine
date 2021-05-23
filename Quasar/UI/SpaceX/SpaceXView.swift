@@ -10,11 +10,18 @@ import Kingfisher
 
 struct SpaceXView: View {
     @ObservedObject var viewModel: SpaceXViewModel
+    let description = "SpaceX is an American aerospace manufacturer that was founded with the goal of enabling the colonization of Mars. SpaceX manufactures the Falcon 9 and Falcon Heavy launch vehicles, rocket engines, and Starlink communications satellites."
 
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
+                Image("SpaceX")
+                    .resizable()
+                    .scaledToFit()
+                    .padding([.top, .bottom])
+                    .padding([.leading, .trailing], 40)
+                FeedHeader(title: "", text: description)
                 LazyVStack {
                     ForEach(viewModel.launchFeed, id: \.date) { launch in
                         if let url = launch.links.flickr.original?.first,
@@ -27,7 +34,7 @@ struct SpaceXView: View {
                     }
                 }
             }
-        }.navigationBarTitle("SpaceX Rocket Launches", displayMode: .automatic)
+        }
     }
 }
 

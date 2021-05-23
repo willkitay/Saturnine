@@ -13,7 +13,7 @@ struct ContentView: View {
     var opportunityViewModel = OpportunityViewModel()
     var curiosityViewModel = CuriosityViewModel()
     var spiritViewModel = SpiritViewModel()
-    var hubbleNewsViewModel = HubbleNewsViewModel()
+    var esaViewModel = ESAViewModel()
     var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
     var spaceXViewModel = SpaceXViewModel()
     
@@ -29,7 +29,7 @@ struct ContentView: View {
                         }
                         Group {
                             SectionTitle(title: "Most Popular")
-                            MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, hubbleNewsViewModel: hubbleNewsViewModel)
+                            MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, esaViewModel: esaViewModel)
                             GrayDivider()
                         }
                         Group {
@@ -38,7 +38,7 @@ struct ContentView: View {
                             GrayDivider()
                         }
                         Group {
-                            SectionTitle(title: "Telescopes & Observatories")
+                            SectionTitle(title: "Telescopes")
                             TelescopeOptions(hubbleImagesViewModel: hubbleRecentImagesViewModel)
                             GrayDivider()
                         }

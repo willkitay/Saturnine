@@ -41,6 +41,14 @@ struct CuriosityView: View {
                 }.animation(.easeInOut)
                 
                 ScrollView(showsIndicators: true) {
+                    VStack(alignment: .leading) {
+                        Image("CuriosityLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.top)
+                            .padding([.leading, .trailing], 60)
+                        FeedHeader(title: "Mars Curiosity Rover", text: "Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASA's Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011.")
+                    }
                     LazyVStack(alignment: .leading) {
                         if viewModel.curiosity.photos != nil {
                             ForEach(viewModel.curiosity.photos!, id: \.id) { photo in
@@ -64,6 +72,6 @@ struct CuriosityView: View {
                         .foregroundColor(.white)
                 }
             }
-        }.navigationBarTitle("Curiosity Rover")
+        }
     }
 }

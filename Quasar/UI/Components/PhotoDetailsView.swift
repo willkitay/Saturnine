@@ -42,7 +42,7 @@ struct ImageView: View {
                     .stroke(Color.gray, lineWidth: 0.1)
                     .padding([.leading, .trailing], 10)
             )
-            .overlay(TitleOverlay(text: title).padding(.trailing, 10), alignment: .bottomTrailing)
+            .overlay(TitleOverlay(text: title).padding([.leading, .trailing], 10), alignment: .bottomTrailing)
     }
 }
 
