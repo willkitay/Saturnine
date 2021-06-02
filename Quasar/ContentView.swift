@@ -13,7 +13,7 @@ struct ContentView: View {
     var opportunityViewModel = OpportunityViewModel()
     var curiosityViewModel = CuriosityViewModel()
     var spiritViewModel = SpiritViewModel()
-    var esaViewModel = ESAViewModel()
+    var esaViewModel = HubbleNewsViewModel()
     var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
     var spaceXViewModel = SpaceXViewModel()
     

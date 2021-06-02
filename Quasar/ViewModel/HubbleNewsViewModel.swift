@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ESAViewModel: ObservableObject {
+class HubbleNewsViewModel: ObservableObject {
     @Published var newsFeed: [HubbleSite] = []
     private var dataSource: DataSource
     private var restClient: RESTClient
@@ -18,16 +18,16 @@ class ESAViewModel: ObservableObject {
     }
     
     func loadNewsFeed() {
-        getMoreHubbleNews { success in
+        getMoreNews { success in
             if success {
-                print("Successfully fetched Hubble News")
+                print("Successfully fetched news")
             } else {
-                print("Error: unable to load Hubble News")
+                print("Error: unable to load news")
             }
         }
     }
     
-    private func getMoreHubbleNews(completion: @escaping(Bool) -> Void) {
+    private func getMoreNews(completion: @escaping(Bool) -> Void) {
         dataSource.getHubbleNews() { articles, _ in
             DispatchQueue.main.async {
                 if let newsArticles = articles {

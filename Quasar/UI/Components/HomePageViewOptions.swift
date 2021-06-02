@@ -98,7 +98,7 @@ struct MostPopularOptions: View {
     @State private var showingHubbleNews = false
     var potdViewModel: POTDViewModel
     var spaceXViewModel: SpaceXViewModel
-    var esaViewModel: ESAViewModel
+    var esaViewModel: HubbleNewsViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
