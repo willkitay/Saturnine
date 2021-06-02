@@ -81,7 +81,6 @@ struct EsaImage: View {
         .resizable()
         .scaledToFit()
         .padding(.bottom)
-//        .padding([.leading, .trailing], 10)
     }
 }
 
@@ -96,3 +95,5 @@ private func formatDateFromStringToString(date: String) -> String {
     let formattedDate = dateFormatter.string(from: date)
     return formattedDate
 }
+
+//FIXME add preview + fake data

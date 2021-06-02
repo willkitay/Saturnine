@@ -11,49 +11,24 @@ import Kingfisher
 struct PerseveranceView: View {
     @ObservedObject var viewModel: PerseveranceViewModel
     @State private var showDatePicker = false
+    private let perseveranceDescription = "Perseverance's primary job is to seek signs of ancient life and collect samples of rock and regolith (broken rock and soil) for possible return to Earth. On 19 April 2021, the Ingenuity helicopter successfully completed the first powered controlled flight by an aircraft on a planet besides Earth."
     private let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2021, month: 2, day: 18)
-        let today = Date()
-        return calendar.date(from: startComponents)! ... today
+        let landingDate = DateComponents(year: 2021, month: 2, day: 18)
+        return calendar.date(from: landingDate)! ... Date()
     }()
     
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             VStack {
-                VStack {
-                    if showDatePicker {
-                        DatePicker(
-                            "Perseverance",
-                            selection: $viewModel.date,
-                            in: dateRange,
-                            displayedComponents: .date
-                            )
-                            .onChange(of: viewModel.date, perform: { _ in
-                                withAnimation {
-                                    showDatePicker = false
-                                }
-                            })
-                            .datePickerStyle(WheelDatePickerStyle())
-                            .labelsHidden()
-                            .colorScheme(.dark)
-                            .accentColor(.paleGreen)
-                    }
-                }.animation(.easeInOut)
-                
+                datePicker
                 ScrollView(showsIndicators: true) {
-                    VStack(alignment: .leading) {
-                        Image("PerseveranceLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.top)
-                        FeedHeader(title: "Mars Perseverance Rover", text: "Perseverance's primary job is to seek signs of ancient life and collect samples of rock and regolith (broken rock and soil) for possible return to Earth. On 19 April 2021, the Ingenuity helicopter successfully completed the first powered controlled flight by an aircraft on a planet besides Earth.")
-                    }
+                    header
                     LazyVStack(alignment: .leading) {
-                        if viewModel.perseverance.photos != nil {
-                            ForEach(viewModel.perseverance.photos!, id: \.id) { photo in
-                                NavigationLink(destination: RoverDetailView(url: photo.url, date: photo.earthDate, camera: photo.camera.name, cameraDescription: photo.camera.fullName)) {
+                        if let photos = viewModel.perseverance.photos {
+                            ForEach(photos, id: \.id) { photo in
+                                NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
                                     ImageView(title: photo.camera.name, url: photo.url)
                                 }
                             }
@@ -61,71 +36,97 @@ struct PerseveranceView: View {
                     }
                 }
             }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        showDatePicker.toggle()
-                    }
-                }) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.white)
+    }
+    
+    var datePicker: some View {
+        VStack {
+            if showDatePicker {
+                DatePicker(
+                    "Perseverance",
+                    selection: $viewModel.date,
+                    in: dateRange,
+                    displayedComponents: .date
+                    )
+                    .onChange(of: viewModel.date, perform: { _ in
+                        withAnimation {
+                            showDatePicker = false
+                        }
+                    })
+                    .datePickerStyle(WheelDatePickerStyle())
+                    .labelsHidden()
+                    .colorScheme(.dark)
+                    .accentColor(.paleGreen)
+            }
+        }.animation(.easeInOut)
+    }
+    
+    var header: some View {
+        VStack(alignment: .leading) {
+            Image("PerseveranceLogo")
+                .resizable()
+                .scaledToFit()
+                .padding(.top)
+            FeedHeader(title: "Mars Perseverance Rover", text: perseveranceDescription)
+        }
+    }
+    
+    var toolbarButton: some View {
+        Button(action: {
+            withAnimation(.easeInOut) {
+                showDatePicker.toggle()
+            }
+        }) {
+            Image(systemName: "ellipsis")
+                .foregroundColor(.white)
+        }
+    }
+}
+
+struct HorizontalPerseveranceFeed: View {
+    @ObservedObject var viewModel: PerseveranceViewModel
+    @State var id = 0
+    
+    init(id: Int, viewModel: PerseveranceViewModel) {
+        _id = State(initialValue: id)
+        self.viewModel = viewModel
+    }
+
+    var body: some View {
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView(.horizontal, showsIndicators: true) {
+                LazyHStack {
+                    PerseverancePageView(viewModel: viewModel, id: id)
                 }
             }
         }
     }
 }
 
-//struct HorizontalPerseveranceFeed: View {
-//    @ObservedObject var viewModel: PerseveranceViewModel
-//    @State var currentTitle = ""
-//
-//    init(title: String, viewModel: PerseveranceViewModel) {
-//        _currentTitle = State(initialValue: title)
-//        self.viewModel = viewModel
-//    }
-//
-//    var body: some View {
-//        ZStack {
-//            Color.background.edgesIgnoringSafeArea([.all])
-//            ScrollView(.horizontal, showsIndicators: true) {
-//                LazyHStack {
-//                    PerseverancePageView(viewModel: viewModel, currentTitle: currentTitle)
-//                }
-//            }
-//        }
-//    }
-//}
-
-//struct PerseverancePageView: View {
-//    @ObservedObject var viewModel: PerseveranceViewModel
-//    @State var currentTitle: String
-//
-//    var body: some View {
-//        TabView(selection: $currentTitle) {
-////            if let images = viewModel.perseverance.photos {
-//                ForEach(viewModel.perseverance.photos!, id: \.url) { photo in
-//                    if let title = photo.title,
-//                       let explanation = photo.explanation,
-//                       let date = photo.date,
-//                       let url = photo.url {
-//                        ScrollView {
-//                            NavigationLink(destination: FullScreenView(url: url, title: title)) {
-//                                KFImage(URL(string: url))
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fit)
-//                            }
-//                                .onAppear() { elementOnAppear(photo) }
-//                                .padding(.top, 63)
-//                            PhotoDetailsView(explanation: explanation, date: date, title: title)
-//                                .padding(.bottom, 55)
-//                        }.tabItem {}.tag(title)
-//                    }
-//                }
-////            }
-//        }
-//        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//        .tabViewStyle(PageTabViewStyle())
-//    }
-//}
+struct PerseverancePageView: View {
+    @ObservedObject var viewModel: PerseveranceViewModel
+    @State var id: Int
+    
+    var body: some View {
+        TabView(selection: $id) {
+            ForEach(viewModel.perseverance.photos!, id: \.id) { photo in
+                let cameraAcronym = photo.camera.name
+                let cameraName = photo.camera.fullName
+                ScrollView {
+                    ScrollViewReader { value in
+                        NavigationLink(destination: FullScreenView(url: photo.url, title: "")) {
+                            KFImage(URL(string: photo.url)).resizable().scaledToFit()
+                        }
+                        .padding(.top, 62)
+                        RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
+                    }
+                }.tag(id)
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .tabViewStyle(PageTabViewStyle())
+    }
+}
