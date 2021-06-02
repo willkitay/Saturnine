@@ -36,8 +36,8 @@
 		BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B9B262E0A35004DEF43 /* Entities.swift */; };
 		BE280BA2262E0AA6004DEF43 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BE280BA1262E0AA6004DEF43 /* Kingfisher */; };
 		BE280BA7262E0B96004DEF43 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280BA6262E0B96004DEF43 /* Colors.xcassets */; };
-		BE280BC5262E916F004DEF43 /* ESAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BC4262E916F004DEF43 /* ESAViewModel.swift */; };
-		BE280BCB262E92F5004DEF43 /* ESANews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BCA262E92F5004DEF43 /* ESANews.swift */; };
+		BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */; };
+		BE280BCB262E92F5004DEF43 /* ESANewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BCA262E92F5004DEF43 /* ESANewsView.swift */; };
 		BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */; };
 		BE280BE1262FE890004DEF43 /* HubbleRecentImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */; };
 		BE4961B8265F554800938873 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4961B7265F554800938873 /* MailView.swift */; };
@@ -102,8 +102,8 @@
 		BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicDataSource.swift; sourceTree = "<group>"; };
 		BE280B9B262E0A35004DEF43 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		BE280BA6262E0B96004DEF43 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		BE280BC4262E916F004DEF43 /* ESAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESAViewModel.swift; sourceTree = "<group>"; };
-		BE280BCA262E92F5004DEF43 /* ESANews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESANews.swift; sourceTree = "<group>"; };
+		BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleNewsViewModel.swift; sourceTree = "<group>"; };
+		BE280BCA262E92F5004DEF43 /* ESANewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESANewsView.swift; sourceTree = "<group>"; };
 		BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleRecentImagesViewModel.swift; sourceTree = "<group>"; };
 		BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubbleRecentImagesView.swift; sourceTree = "<group>"; };
 		BE4961B7265F554800938873 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				BE280B2A262E06F0004DEF43 /* PictureOfTheDay */,
 				BE280B2C262E0700004DEF43 /* MarsRovers */,
 				BED42CB22630F6E2006D68E6 /* SpaceX */,
-				BE280BC9262E92DF004DEF43 /* HubbleViews */,
+				BE280BC9262E92DF004DEF43 /* HubbleTelescope */,
 				BE280B2D262E0705004DEF43 /* Components */,
 			);
 			path = UI;
@@ -243,7 +243,7 @@
 				BE280B11262E0627004DEF43 /* CuriosityViewModel.swift */,
 				BE280B16262E0632004DEF43 /* OpportunityViewModel.swift */,
 				BE280B20262E0658004DEF43 /* SpiritViewModel.swift */,
-				BE280BC4262E916F004DEF43 /* ESAViewModel.swift */,
+				BE280BC4262E916F004DEF43 /* HubbleNewsViewModel.swift */,
 				BE280BD8262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift */,
 				BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */,
 			);
@@ -289,13 +289,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		BE280BC9262E92DF004DEF43 /* HubbleViews */ = {
+		BE280BC9262E92DF004DEF43 /* HubbleTelescope */ = {
 			isa = PBXGroup;
 			children = (
-				BE280BCA262E92F5004DEF43 /* ESANews.swift */,
+				BE280BCA262E92F5004DEF43 /* ESANewsView.swift */,
 				BE280BE0262FE890004DEF43 /* HubbleRecentImagesView.swift */,
 			);
-			path = HubbleViews;
+			path = HubbleTelescope;
 			sourceTree = "<group>";
 		};
 		BED42CB22630F6E2006D68E6 /* SpaceX */ = {
@@ -464,7 +464,7 @@
 				BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
 				BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */,
-				BE280BCB262E92F5004DEF43 /* ESANews.swift in Sources */,
+				BE280BCB262E92F5004DEF43 /* ESANewsView.swift in Sources */,
 				BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */,
 				BE4961B8265F554800938873 /* MailView.swift in Sources */,
 				BE7842882644A050007451C9 /* HomePageComponents.swift in Sources */,
@@ -476,7 +476,7 @@
 				BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */,
 				BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */,
 				BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */,
-				BE280BC5262E916F004DEF43 /* ESAViewModel.swift in Sources */,
+				BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

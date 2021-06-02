@@ -1,5 +1,5 @@
 //
-//  HubbleNewsView.swift
+//  ESANewsView.swift
 //  Quasar
 //
 //  Created by Will on 4/19/21.
@@ -9,33 +9,35 @@ import SwiftUI
 import Kingfisher
 
 struct ESANews: View {
-    @ObservedObject var viewModel: ESAViewModel
+    @ObservedObject var viewModel: HubbleNewsViewModel
     
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView() {
-                VStack(alignment: .leading) {
-                    Image("ESA")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.bottom, 25)
-                        .padding([.leading, .trailing], 10)
-                    FeedHeader(title: "European Space Agency", text: "The ESA is an intergovernmental organization of 22 member states dedicated to the exploration of space.")
-                }
+                EsaImage()
+                FeedHeader(title: "European Space Agency",
+                           text: "The ESA is an intergovernmental organization of 22 member states dedicated to the exploration of space.")
                 VStack {
                     ForEach(viewModel.newsFeed, id: \.title) { article in
-                        if let title = article.title,
-                           let date = article.pubDate,
-                           let thumbnail = article.thumbnail,
-                           let link = article.link {
-                            Link(destination: URL(string: link)!) {
-                                ArticleRow(title: title, date: date, thumbnail: thumbnail)
-                            }
-                        }
+                        ArticleLink(article: article)
                     }
                 }
             }
+        }
+    }
+}
+
+struct ArticleLink: View {
+    let article: HubbleSite
+    
+    var body: some View {
+        let title = article.title
+        let date = article.pubDate
+        let thumbnail = article.thumbnail
+        let link = article.link
+        Link(destination: URL(string: link)!) {
+            ArticleRow(title: title, date: date, thumbnail: thumbnail)
         }
     }
 }
@@ -70,6 +72,16 @@ struct ArticleRow: View {
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous).stroke(Color.black, lineWidth: 0))
         }.padding([.leading, .trailing])
+    }
+}
+
+struct EsaImage: View {
+    var body: some View {
+        Image("ESA")
+        .resizable()
+        .scaledToFit()
+        .padding(.bottom)
+//        .padding([.leading, .trailing], 10)
     }
 }
 
