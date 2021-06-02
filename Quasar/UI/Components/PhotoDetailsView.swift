@@ -92,7 +92,6 @@ struct PhotoDate: View {
     var body: some View {
         Text(date)
             .foregroundColor(.white)
-//            .padding()
     }
 }
 
