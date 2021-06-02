@@ -42,6 +42,14 @@ struct OpportunityView: View {
                 }.animation(.easeInOut)
                 
                 ScrollView(showsIndicators: true) {
+                    VStack(alignment: .leading) {
+                        Image("OpportunityLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.top)
+                            .padding([.leading, .trailing], 60)
+                        FeedHeader(title: "Mars Opportunity Rover", text: "Opportunity, also known as MER-B or MER-1, and nicknamed \"Oppy\", is a robotic rover that was active on Mars from 2004 until mid-2018. Opportunity was operational on Mars for 5110 sols.")
+                    }
                     LazyVStack(alignment: .leading) {
                         if viewModel.opportunity.photos != nil {
                             ForEach(viewModel.opportunity.photos!, id: \.id) { photo in
@@ -66,6 +74,5 @@ struct OpportunityView: View {
                 }
             }
         }
-        .navigationBarTitle("Opportunity Rover")
     }
 }

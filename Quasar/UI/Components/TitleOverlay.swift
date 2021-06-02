@@ -14,10 +14,12 @@ struct TitleOverlay: View {
         ZStack {
             HStack {
                 if !text.isEmpty {
-                    Text(text)
-                        .font(.footnote)
-                        .padding(6)
-                        .foregroundColor(.white)
+                    VStack(alignment: .leading) {
+                        Text(text)
+                            .font(.footnote)
+                            .padding(6)
+                            .foregroundColor(.white)
+                    }
                 }
             }
             .padding(.leading, 3)

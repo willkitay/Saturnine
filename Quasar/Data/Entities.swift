@@ -95,12 +95,12 @@ struct Rover: Codable {
 }
 
 struct HubbleSite: Codable {
-    let title: String?
-    let pubDate: String?
-    let description: String?
-    let link: String?
-    let image: String?
-    let thumbnail: String?
+    let title: String
+    let pubDate: String
+    let description: String
+    let link: String
+    let image: String
+    let thumbnail: String
     
     enum CodingKeys: String, CodingKey {
         case title = "title"

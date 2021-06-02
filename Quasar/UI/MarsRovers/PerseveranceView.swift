@@ -43,6 +43,13 @@ struct PerseveranceView: View {
                 }.animation(.easeInOut)
                 
                 ScrollView(showsIndicators: true) {
+                    VStack(alignment: .leading) {
+                        Image("PerseveranceLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.top)
+                        FeedHeader(title: "Mars Perseverance Rover", text: "Perseverance's primary job is to seek signs of ancient life and collect samples of rock and regolith (broken rock and soil) for possible return to Earth. On 19 April 2021, the Ingenuity helicopter successfully completed the first powered controlled flight by an aircraft on a planet besides Earth.")
+                    }
                     LazyVStack(alignment: .leading) {
                         if viewModel.perseverance.photos != nil {
                             ForEach(viewModel.perseverance.photos!, id: \.id) { photo in
@@ -67,7 +74,6 @@ struct PerseveranceView: View {
                 }
             }
         }
-        .navigationBarTitle("Perseverance Rover")
     }
 }
 
