@@ -6,53 +6,28 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CuriosityView: View {
     @ObservedObject var viewModel: CuriosityViewModel
     @State private var showDatePicker = false
     private let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2012, month: 8, day: 6)
-        let today = Date()
-        return calendar.date(from: startComponents)! ... today
+        let landingDate = DateComponents(year: 2012, month: 8, day: 6)
+        return calendar.date(from: landingDate)! ... Date()
     }()
     
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             VStack {
-                VStack {
-                    if showDatePicker {
-                        DatePicker(
-                            "Curiosity",
-                            selection: $viewModel.date,
-                            in: dateRange,
-                            displayedComponents: .date)
-                            .onChange(of: viewModel.date, perform: { _ in
-                                withAnimation {
-                                    showDatePicker = false
-                                }
-                            })
-                            .datePickerStyle(WheelDatePickerStyle())
-                            .labelsHidden()
-                            .colorScheme(.dark)
-                            .accentColor(.paleGreen)
-                    }
-                }.animation(.easeInOut)
-                
+                datePicker
                 ScrollView(showsIndicators: true) {
-                    VStack(alignment: .leading) {
-                        Image("CuriosityLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.top)
-                            .padding([.leading, .trailing], 60)
-                        FeedHeader(title: "Mars Curiosity Rover", text: "Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASA's Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011.")
-                    }
+                    header
                     LazyVStack(alignment: .leading) {
-                        if viewModel.curiosity.photos != nil {
-                            ForEach(viewModel.curiosity.photos!, id: \.id) { photo in
-                                NavigationLink(destination: RoverDetailView(url: photo.url, date: photo.earthDate, camera: photo.camera.name, cameraDescription: photo.camera.fullName)) {
+                        if let photos = viewModel.curiosity.photos {
+                            ForEach(photos, id: \.id) { photo in
+                                NavigationLink(destination: HorizontalCuriosityFeed(id: photo.id, viewModel: viewModel)) {
                                     ImageView(title: photo.camera.name, url: photo.url)
                                 }
                             }
@@ -63,15 +38,97 @@ struct CuriosityView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        showDatePicker.toggle()
-                    }
-                }) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.white)
+                toolbarButton
+            }
+        }
+    }
+    
+    var datePicker: some View {
+        VStack {
+            if showDatePicker {
+                DatePicker(
+                    "Curiosity",
+                    selection: $viewModel.date,
+                    in: dateRange,
+                    displayedComponents: .date)
+                    .onChange(of: viewModel.date, perform: { _ in
+                        withAnimation {
+                            showDatePicker = false
+                        }
+                    })
+                    .datePickerStyle(WheelDatePickerStyle())
+                    .labelsHidden()
+                    .colorScheme(.dark)
+                    .accentColor(.paleGreen)
+            }
+        }.animation(.easeInOut)
+    }
+    
+    var toolbarButton: some View {
+        Button(action: {
+            withAnimation(.easeInOut) {
+                showDatePicker.toggle()
+            }
+        }) {
+            Image(systemName: "ellipsis")
+                .foregroundColor(.white)
+        }
+    }
+    
+    var header: some View {
+        VStack(alignment: .leading) {
+            Image("CuriosityLogo")
+                .resizable()
+                .scaledToFit()
+                .padding(.top)
+                .padding([.leading, .trailing], 60)
+            FeedHeader(title: "Mars Curiosity Rover", text: "Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASA's Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011.")
+        }
+    }
+}
+
+struct HorizontalCuriosityFeed: View {
+    @ObservedObject var viewModel: CuriosityViewModel
+    @State var id = 0
+    
+    init(id: Int, viewModel: CuriosityViewModel) {
+        _id = State(initialValue: id)
+        self.viewModel = viewModel
+    }
+
+    var body: some View {
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView(.horizontal, showsIndicators: true) {
+                LazyHStack {
+                    CuriosityPageView(viewModel: viewModel, id: id)
                 }
             }
         }
+    }
+}
+
+struct CuriosityPageView: View {
+    @ObservedObject var viewModel: CuriosityViewModel
+    @State var id: Int
+    
+    var body: some View {
+        TabView(selection: $id) {
+            if let photos = viewModel.curiosity.photos {
+                ForEach(photos, id: \.id) { photo in
+                    let cameraAcronym = photo.camera.name
+                    let cameraName = photo.camera.fullName
+                    ScrollView {
+                        NavigationLink(destination: FullScreenView(url: photo.url, title: "")) {
+                            KFImage(URL(string: photo.url)).resizable().scaledToFit()
+                        }
+                        .padding(.top, 62)
+                        RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
+                    }.tag(id)
+                }
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .tabViewStyle(PageTabViewStyle())
     }
 }

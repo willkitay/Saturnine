@@ -116,13 +116,11 @@ struct PerseverancePageView: View {
                 let cameraAcronym = photo.camera.name
                 let cameraName = photo.camera.fullName
                 ScrollView {
-                    ScrollViewReader { value in
-                        NavigationLink(destination: FullScreenView(url: photo.url, title: "")) {
-                            KFImage(URL(string: photo.url)).resizable().scaledToFit()
-                        }
-                        .padding(.top, 62)
-                        RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
+                    NavigationLink(destination: FullScreenView(url: photo.url, title: "")) {
+                        KFImage(URL(string: photo.url)).resizable().scaledToFit()
                     }
+                    .padding(.top, 62)
+                    RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
                 }.tag(id)
             }
         }
