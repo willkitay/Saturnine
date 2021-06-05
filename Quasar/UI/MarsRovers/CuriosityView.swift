@@ -37,9 +37,7 @@ struct CuriosityView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                toolbarButton
-            }
+            ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
         }
     }
     

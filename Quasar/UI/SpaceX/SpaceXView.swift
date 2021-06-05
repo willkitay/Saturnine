@@ -24,10 +24,8 @@ struct SpaceXView: View {
                 FeedHeader(title: "", text: description)
                 LazyVStack {
                     ForEach(viewModel.launchFeed, id: \.date) { launch in
-                        if let url = launch.links.flickr.original?.first,
-                           let images = launch.links.flickr.original,
-                           let explanation = launch.details {
-                            NavigationLink(destination: SpaceXDetailView(images: images, explanation: explanation, date: formatDate(launch.date), title: launch.name)) {
+                        if let url = launch.links.flickr.original?.first {
+                            NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
                                 ImageView(title: launch.name, url: url)
                             }
                         }
@@ -38,39 +36,89 @@ struct SpaceXView: View {
     }
 }
 
-struct SpaceXDetailView: View {
-    var images: [String]
+struct HorizontalSpaceXFeed: View {
+    @ObservedObject var viewModel: SpaceXViewModel
+    @State var currentTitle = ""
+    var launch: SpaceX
+    
+    init(title: String, viewModel: SpaceXViewModel, launch: SpaceX) {
+        _currentTitle = State(initialValue: title)
+        self.viewModel = viewModel
+        self.launch = launch
+    }
+
+    var body: some View {
+        let date = launch.date
+        let title = launch.name
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView(.horizontal, showsIndicators: true) {
+                LazyHStack {
+                    if let explanation = launch.details {
+                        SpaceXPageView(viewModel: viewModel,
+                                       selection: title,
+                                       explanation: explanation,
+                                       date: date,
+                                       title: title)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct SpaceXPageView: View {
+    @ObservedObject var viewModel: SpaceXViewModel
+    @State var selection: String
     var explanation: String
     var date: String
     var title: String
     
     var body: some View {
-        ZStack {
-            Color.background.edgesIgnoringSafeArea(.all)
-            ScrollView {
-                VStack {
-                    TabView {
-                        ForEach(images, id: \.self) { image in
-                            KFImage(URL(string: image))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+        VStack {
+            TabView(selection: $selection) {
+                ForEach(viewModel.launchFeed, id: \.name) { launch in
+                    if let first = launch.links.flickr.original?.first {
+                        if let images = launch.links.flickr.original,
+                           let expl = launch.details {
+                            ScrollView {
+                                SpaceXTabView(images: images).padding(.top, 63)
+                                VStack {
+                                    PhotoTitle(title: launch.name)
+                                    PhotoDate(date: formatDate(launch.date))
+                                    Explanation(text: expl)
+                                }
+                                    .background(Color.background2)
+                                    .cornerRadius(5)
+                                    .padding(10)
+                                    .foregroundColor(.white)
+                                    .transition(.opacity)
+                            }.tag(first)
                         }
                     }
-                        .tabViewStyle(PageTabViewStyle())
-                        .frame(height: 400)
                 }
-                VStack {
-                    PhotoTitle(title: title)
-                    PhotoDate(date: date)
-                    Explanation(text: explanation)
-                }
-                    .background(Color.background2)
-                    .cornerRadius(5)
-                    .padding([.leading, .trailing, .bottom], 10)
-                    .foregroundColor(.white)
-                    .transition(.opacity)
-                Spacer()
             }
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .tabViewStyle(PageTabViewStyle())
+        }
+    }
+}
+
+
+
+struct SpaceXTabView: View {
+    var images: [String]
+    var body: some View {
+        VStack {
+            TabView {
+                ForEach(images, id: \.self) { image in
+                    KFImage(URL(string: image))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
+                .tabViewStyle(PageTabViewStyle())
+                .frame(height: 400)
         }
     }
 }
@@ -87,13 +135,13 @@ private func formatDate(_ date: String) -> String {
     return formattedDate
 }
 
-struct SpaceXPreviews: PreviewProvider {
-    static var images = [""]
-    static var title = "A Partial Solar Eclipse over Texas"
-    static var date = "April 28, 2021"
-    static var explanation = "It was a typical Texas sunset except that most of the Sun was missing.  The location of the missing piece of the Sun was not a mystery -- it was behind the Moon.  Featured here is one of the more interesting images taken of a partial solar eclipse that occurred in 2012, capturing a temporarily crescent Sun setting in a reddened sky behind brush and a windmill. The image was taken about 20 miles west of Sundown, Texas, USA, just after the ring of fire effect was broken by the Moon moving away from the center of the Sun.  Today a new partial solar eclipse of the Sun will be visible from Earth.  Unfortunately for people who live in Texas, today's eclipse can only be seen from southern Africa and Antarctica."
-    
-    static var previews: some View {
-        SpaceXDetailView(images: images, explanation: explanation, date: date, title: title)
-    }
-}
+//struct SpaceXPreviews: PreviewProvider {
+//    static var images = [""]
+//    static var title = "A Partial Solar Eclipse over Texas"
+//    static var date = "April 28, 2021"
+//    static var explanation = "It was a typical Texas sunset except that most of the Sun was missing.  The location of the missing piece of the Sun was not a mystery -- it was behind the Moon.  Featured here is one of the more interesting images taken of a partial solar eclipse that occurred in 2012, capturing a temporarily crescent Sun setting in a reddened sky behind brush and a windmill. The image was taken about 20 miles west of Sundown, Texas, USA, just after the ring of fire effect was broken by the Moon moving away from the center of the Sun.  Today a new partial solar eclipse of the Sun will be visible from Earth.  Unfortunately for people who live in Texas, today's eclipse can only be seen from southern Africa and Antarctica."
+//
+//    static var previews: some View {
+//        SpaceXPageView(
+//    }
+//}
