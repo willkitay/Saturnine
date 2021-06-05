@@ -104,8 +104,6 @@ struct SpaceXPageView: View {
     }
 }
 
-
-
 struct SpaceXTabView: View {
     var images: [String]
     var body: some View {

@@ -58,12 +58,6 @@ struct Photo: Codable {
     }
 }
 
-extension Photo {
-    static func == (lhs: Photo, rhs: Photo) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
 struct Camera: Codable {
     let fullName: String
     let id: Int
@@ -94,7 +88,7 @@ struct Rover: Codable {
     }
 }
 
-struct HubbleSite: Codable {
+struct HubbleSite: Codable, Hashable {
     let title: String
     let pubDate: String
     let description: String
@@ -109,6 +103,12 @@ struct HubbleSite: Codable {
         case link = "link"
         case image = "image"
         case thumbnail = "thumbnail"
+    }
+}
+
+extension HubbleSite {
+    static func == (lhs: HubbleSite, rhs: HubbleSite) -> Bool {
+        lhs.title == rhs.title
     }
 }
 
