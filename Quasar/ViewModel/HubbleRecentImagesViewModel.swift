@@ -27,11 +27,12 @@ class HubbleRecentImagesViewModel: ObservableObject {
         }
     }
     
+    // TODO: remove duplicates from array
     private func getMoreHubbleImages(completion: @escaping(Bool) -> Void) {
         dataSource.getHubbleRecentImages() { images, _ in
             DispatchQueue.main.async {
-                if let hubbleImages = images {
-                    self.imageFeed.append(contentsOf: hubbleImages)
+                if let photos = images {
+                    self.imageFeed.append(contentsOf: photos)
                     completion(true)
                 } else {
                     completion(false)
@@ -40,3 +41,4 @@ class HubbleRecentImagesViewModel: ObservableObject {
         }
     }
 }
+

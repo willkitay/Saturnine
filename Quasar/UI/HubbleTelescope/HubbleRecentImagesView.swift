@@ -25,22 +25,65 @@ struct HubbleRecentImagesView: View {
                 }
                 ForEach(viewModel.imageFeed, id: \.title) { photo in
                     LazyVStack {
-                        NavigationLink(destination: DetailView(url: validateUrl(url: photo.image), title: photo.title, explanation: photo.description, date: formatDateFromStringToString(date: photo.pubDate))) {
-                            ImageView(title: photo.title, url: validateUrl(url: photo.image))
+                        NavigationLink(destination: HorizontalHubbleFeed(title: photo.title, viewModel: viewModel)) {
+                            ImageView(title: photo.title, url: validateUrl(photo.image))
                         }
                     }
                 }
             }
         }
     }
+}
+
+struct HorizontalHubbleFeed: View {
+    @ObservedObject var viewModel: HubbleRecentImagesViewModel
+    @State var currentTitle = ""
     
-    func validateUrl(url: String) -> String {
-        let urlString = "https:\(url)"
-        return urlString
+    init(title: String, viewModel: HubbleRecentImagesViewModel) {
+        _currentTitle = State(initialValue: title)
+        self.viewModel = viewModel
+    }
+
+    var body: some View {
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView(.horizontal, showsIndicators: true) {
+                LazyHStack {
+                    HubblePageView(viewModel: viewModel, currentTitle: currentTitle)
+                }
+            }
+        }
     }
 }
 
-private func formatDateFromStringToString(date: String) -> String {
+struct HubblePageView: View {
+    @ObservedObject var viewModel: HubbleRecentImagesViewModel
+    @State var currentTitle: String
+    
+    var body: some View {
+        TabView(selection: $currentTitle) {
+            if let photos = viewModel.imageFeed {
+                ForEach(photos, id: \.title) { photo in
+                    let explanation = photo.description
+                    let date = photo.pubDate
+                    let title = photo.title
+                    ScrollView {
+                        NavigationLink(destination: FullScreenView(url: validateUrl(photo.image), title: title)) {
+                            KFImage(URL(string: validateUrl(photo.image))).resizable().scaledToFit()
+                        }
+                        .padding(.top, 62)
+                        PhotoDetailsView(explanation: explanation, date: formatDate(date), title: title)
+                            .padding(.bottom, 55)
+                    }.tag(title)
+                }
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .tabViewStyle(PageTabViewStyle())
+    }
+}
+
+private func formatDate(_ date: String) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -50,4 +93,9 @@ private func formatDateFromStringToString(date: String) -> String {
     dateFormatter.dateStyle = .medium
     let formattedDate = dateFormatter.string(from: date)
     return formattedDate
+}
+
+func validateUrl(_ url: String) -> String {
+    let urlString = "https:\(url)"
+    return urlString
 }
