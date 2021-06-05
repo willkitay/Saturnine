@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct OpportunityView: View {
     @ObservedObject var viewModel: OpportunityViewModel
@@ -21,39 +22,13 @@ struct OpportunityView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             VStack {
-                VStack {
-                    if showDatePicker {
-                        DatePicker(
-                            "Opportunity",
-                            selection: $viewModel.date,
-                            in: dateRange,
-                            displayedComponents: .date
-                        )
-                        .onChange(of: viewModel.date, perform: { _ in
-                            withAnimation {
-                                showDatePicker = false
-                            }
-                        })
-                        .datePickerStyle(WheelDatePickerStyle())
-                        .labelsHidden()
-                        .colorScheme(.dark)
-                        .accentColor(.paleGreen)
-                    }
-                }.animation(.easeInOut)
-                
+                datePicker
                 ScrollView(showsIndicators: true) {
-                    VStack(alignment: .leading) {
-                        Image("OpportunityLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.top)
-                            .padding([.leading, .trailing], 60)
-                        FeedHeader(title: "Mars Opportunity Rover", text: "Opportunity, also known as MER-B or MER-1, and nicknamed \"Oppy\", is a robotic rover that was active on Mars from 2004 until mid-2018. Opportunity was operational on Mars for 5110 sols.")
-                    }
+                    header
                     LazyVStack(alignment: .leading) {
-                        if viewModel.opportunity.photos != nil {
-                            ForEach(viewModel.opportunity.photos!, id: \.id) { photo in
-                                NavigationLink(destination: RoverDetailView(url: photo.url, date: photo.earthDate, camera: photo.camera.name, cameraDescription: photo.camera.fullName)) {
+                        if let photos = viewModel.opportunity.photos {
+                            ForEach(photos, id: \.id) { photo in
+                                NavigationLink(destination: HorizontalOpportunityFeed(id: photo.id, viewModel: viewModel)) {
                                     ImageView(title: photo.camera.name, url: photo.url)
                                 }
                             }
@@ -63,16 +38,98 @@ struct OpportunityView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        showDatePicker.toggle()
+            ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
+        }
+    }
+    
+    var toolbarButton: some View {
+        Button(action: {
+            withAnimation(.easeInOut) {
+                showDatePicker.toggle()
+            }
+        }) {
+            Image(systemName: "ellipsis")
+                .foregroundColor(.white)
+        }
+    }
+    
+    var header: some View {
+        VStack(alignment: .leading) {
+            Image("OpportunityLogo")
+                .resizable()
+                .scaledToFit()
+                .padding(.top)
+                .padding([.leading, .trailing], 60)
+            FeedHeader(title: "Mars Opportunity Rover", text: "Opportunity, also known as MER-B or MER-1, and nicknamed \"Oppy\", is a robotic rover that was active on Mars from 2004 until mid-2018. Opportunity was operational on Mars for 5110 sols.")
+        }
+    }
+    
+    var datePicker: some View {
+        VStack {
+            if showDatePicker {
+                DatePicker(
+                    "Opportunity",
+                    selection: $viewModel.date,
+                    in: dateRange,
+                    displayedComponents: .date
+                )
+                .onChange(of: viewModel.date, perform: { _ in
+                    withAnimation {
+                        showDatePicker = false
                     }
-                }) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.white)
+                })
+                .datePickerStyle(WheelDatePickerStyle())
+                .labelsHidden()
+                .colorScheme(.dark)
+                .accentColor(.paleGreen)
+            }
+        }.animation(.easeInOut)
+    }
+}
+
+struct HorizontalOpportunityFeed: View {
+    @ObservedObject var viewModel: OpportunityViewModel
+    @State var id = 0
+    
+    init(id: Int, viewModel: OpportunityViewModel) {
+        _id = State(initialValue: id)
+        self.viewModel = viewModel
+    }
+
+    var body: some View {
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView(.horizontal, showsIndicators: true) {
+                LazyHStack {
+                    OpportunityPageView(viewModel: viewModel, id: id)
                 }
             }
         }
     }
 }
+
+struct OpportunityPageView: View {
+    @ObservedObject var viewModel: OpportunityViewModel
+    @State var id: Int
+    
+    var body: some View {
+        TabView(selection: $id) {
+            if let photos = viewModel.opportunity.photos {
+                ForEach(photos, id: \.id) { photo in
+                    let cameraAcronym = photo.camera.name
+                    let cameraName = photo.camera.fullName
+                    ScrollView {
+                        NavigationLink(destination: FullScreenView(url: photo.url, title: "")) {
+                            KFImage(URL(string: photo.url)).resizable().scaledToFit()
+                        }
+                        .padding(.top, 62)
+                        RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
+                    }.tag(id)
+                }
+            }
+        }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .tabViewStyle(PageTabViewStyle())
+    }
+}
+
