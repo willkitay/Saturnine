@@ -34,8 +34,4 @@ An iOS app that displays various space related content feeds.
 - [ ] Implement grid vs column page view button
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
-
-
-
-
-
+- [ ] Implement "likes" for images which save image in local storage
