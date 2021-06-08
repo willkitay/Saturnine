@@ -1,11 +1,11 @@
 
 # Quasar
-An iOS app that displays various space related feeds:
+An iOS app that displays various space related content feeds.
 - NASA's Astronomy Picture of the Day
 - Mars Rovers - Perseverance, Opportunity, Curiosity, Spirit
-- Hubble Telescope News
-- Hubble Live Images - updating snapshots from Hubble observatory
-- SpaceX Launches
+- Space related news
+- SpaceX rocket aunches
+- More to come!
 
 > Built with SwiftUI and UIKit.
 
@@ -18,7 +18,19 @@ An iOS app that displays various space related feeds:
 ![MarsRovers](GifDemo/rovers.gif)
 ![HubbleNews](GifDemo/hubblenews.gif)
 
-
+## TODO
+- [X] Redesign homepage UI
+- [X] info modal with privacy/terms/app info
+- [ ] Refactor horizontal tab paging
+- [ ] Pull to refresh all features
+- [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
+- [ ] Implement notifications for Picture of the Day, news articles
+- [ ] Implement TheSpaceDevs API features
+- [ ] Save images to photo album
+- [ ] Share images (email, text, etc)\
+- [ ] Fix SpaceX sub-tabview remote image bug (images get stuck paging while loading remotely)
+- [ ] Fix preset email color change bug
+- [ ] Implement skeleton loader to present before get request completes
 
 
 
