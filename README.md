@@ -20,7 +20,7 @@ An iOS app that displays various space related content feeds.
 
 ## TODO
 - [X] Redesign homepage UI
-- [X] info modal with privacy/terms/app info
+- [X] Info modal with privacy/terms/app info
 - [ ] Refactor horizontal tab paging
 - [ ] Pull to refresh all features
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
