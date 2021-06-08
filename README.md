@@ -31,6 +31,9 @@ An iOS app that displays various space related content feeds.
 - [ ] Fix SpaceX sub-tabview remote image bug (images get stuck paging while loading remotely)
 - [ ] Fix preset email color change bug
 - [ ] Implement skeleton loader to present before get request completes
+- [ ] Implement grid vs column page view button
+- [ ] Implement Updating homepage image buttons
+- [ ] Gray-out unavilable rover dates in picker
 
 
 
