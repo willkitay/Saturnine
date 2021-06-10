@@ -15,7 +15,7 @@ enum Endpoint {
     case Curiosity
     case Spirit
     case HubbleNews
-    case HubbleRecentImages
+//    case HubbleRecentImages
     case SpaceX
 }
 
@@ -83,12 +83,12 @@ class DataSource {
         }
     }
     
-    func getHubbleRecentImages(completion: @escaping([HubbleSite]?, DataSourceError?) -> Void) {
-        getData(atEndpoint: .HubbleRecentImages, withType: [HubbleSite].self) { data, error in
-            let hubbleImages = data as? [HubbleSite]
-            completion(hubbleImages, error)
-        }
-    }
+//    func getHubbleRecentImages(completion: @escaping([HubbleImage]?, DataSourceError?) -> Void) {
+//        getData(atEndpoint: .HubbleRecentImages, withType: [HubbleImage].self) { data, error in
+//            let hubbleImages = data as? [HubbleImage]
+//            completion(hubbleImages, error)
+//        }
+//    }
     
     func getSpaceXLaunches(completion: @escaping([SpaceX]?, DataSourceError?) -> Void) {
         getData(atEndpoint: .SpaceX, withType: [SpaceX].self) { data, error in
@@ -190,11 +190,11 @@ extension DataSource {
                 components.host = "hubblesite.org"
                 components.path = "/api/v3/external_feed/esa_feed"
                 urlString = components.url
-            case .HubbleRecentImages:
-                components.scheme = "https"
-                components.host = "hubblesite.org"
-                components.path = "/api/v3/external_feed/st_live"
-                urlString = components.url
+//            case .HubbleRecentImages:
+//                components.scheme = "https"
+//                components.host = "hubblesite.org"
+//                components.path = "/api/v3/images"
+//                urlString = components.url
             case .SpaceX:
                 components.scheme = "https"
                 components.host = "api.spacexdata.com"

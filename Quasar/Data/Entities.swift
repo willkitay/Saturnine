@@ -112,6 +112,20 @@ extension HubbleSite {
     }
 }
 
+//struct HubbleImage: Codable {
+//    let id: String
+//    let title: String
+//    let date: String
+//    let collection: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case id = "id"
+//        case title = "name"
+//        case date = "news_name"
+//        case collection = "collection"
+//    }
+//}
+
 struct SpaceX: Codable {
     let name: String
     let date: String

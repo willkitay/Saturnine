@@ -99,18 +99,13 @@ struct HorizontalCuriosityFeed: View {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(.horizontal, showsIndicators: true) {
                 LazyHStack {
-                    CuriosityPageView(viewModel: viewModel, id: id)
+                    curiosityTabViewCell
                 }
             }
         }
     }
-}
-
-struct CuriosityPageView: View {
-    @ObservedObject var viewModel: CuriosityViewModel
-    @State var id: Int
     
-    var body: some View {
+    var curiosityTabViewCell: some View {
         TabView(selection: $id) {
             if let photos = viewModel.curiosity.photos {
                 ForEach(photos, id: \.id) { photo in

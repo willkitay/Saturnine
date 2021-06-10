@@ -37,9 +37,7 @@ struct SpiritView: View {
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {  toolbarButton }
-        }
+        .toolbar { ToolbarItem(placement: .navigationBarTrailing) {  toolbarButton }}
     }
     
     var toolbarButton: some View {
@@ -101,18 +99,13 @@ struct HorizontalSpiritFeed: View {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(.horizontal, showsIndicators: true) {
                 LazyHStack {
-                    SpiritPageView(viewModel: viewModel, id: id)
+                    spiritTabViewCell
                 }
             }
         }
     }
-}
-
-struct SpiritPageView: View {
-    @ObservedObject var viewModel: SpiritViewModel
-    @State var id: Int
     
-    var body: some View {
+    var spiritTabViewCell: some View {
         TabView(selection: $id) {
             if let photos = viewModel.spirit.photos {
                 ForEach(photos, id: \.id) { photo in

@@ -7,28 +7,28 @@
 
 import SwiftUI
 
-struct TelescopeOptions: View {
-    @State private var showingHubbleRecentImages = false
-    var hubbleImagesViewModel: HubbleRecentImagesViewModel
-
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 0) {
-                NavigationLink(destination: HubbleRecentImagesView(viewModel: hubbleImagesViewModel), isActive: $showingHubbleRecentImages) {
-                    Button(action: {
-                        showingHubbleRecentImages.toggle()
-                        hubbleImagesViewModel.loadRecentImages()
-                    }) {
-                        Image("HubbleTelescope")
-                            .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Hubble"))
-                    }
-                }
-            }
-        }
-    }
-}
+//struct TelescopeOptions: View {
+//    @State private var showingHubbleRecentImages = false
+//    var hubbleImagesViewModel: HubbleRecentImagesViewModel
+//
+//    var body: some View {
+//        ScrollView(.horizontal, showsIndicators: false) {
+//            HStack(spacing: 0) {
+//                NavigationLink(destination: HubbleRecentImagesView(viewModel: hubbleImagesViewModel), isActive: $showingHubbleRecentImages) {
+//                    Button(action: {
+//                        showingHubbleRecentImages.toggle()
+//                        hubbleImagesViewModel.loadRecentImages()
+//                    }) {
+//                        Image("HubbleTelescope")
+//                            .resizable()
+//                            .scaledToFill()
+//                            .modifier(RegularCardView(text: "Hubble"))
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 
 struct RoverOptions: View {
     @State private var showingPerseverance = false
