@@ -99,19 +99,14 @@ struct HorizontalPerseveranceFeed: View {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(.horizontal, showsIndicators: true) {
                 LazyHStack {
-                    PerseverancePageView(viewModel: viewModel, id: id)
+                    perseveranceTabViewCell
                 }
             }
         }
     }
-}
-
-struct PerseverancePageView: View {
-    @ObservedObject var viewModel: PerseveranceViewModel
-    @State var id: Int
     
-    var body: some View {
-        TabView(selection: $id) {
+    var perseveranceTabViewCell: some View {
+        TabVigit ew(selection: $id) {
             ForEach(viewModel.perseverance.photos!, id: \.id) { photo in
                 let cameraAcronym = photo.camera.name
                 let cameraName = photo.camera.fullName

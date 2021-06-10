@@ -14,7 +14,7 @@ struct ContentView: View {
     var curiosityViewModel = CuriosityViewModel()
     var spiritViewModel = SpiritViewModel()
     var esaViewModel = HubbleNewsViewModel()
-    var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
+//    var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
     var spaceXViewModel = SpaceXViewModel()
     
     var body: some View {
@@ -39,7 +39,7 @@ struct ContentView: View {
                         }
                         Group {
                             SectionTitle(title: "Telescopes")
-                            TelescopeOptions(hubbleImagesViewModel: hubbleRecentImagesViewModel)
+//                            TelescopeOptions(hubbleImagesViewModel: hubbleRecentImagesViewModel)
                             GrayDivider()
                         }
                     }

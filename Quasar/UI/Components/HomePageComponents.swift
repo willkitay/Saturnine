@@ -13,29 +13,41 @@ struct Header: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Quasar")
-                    .font(.largeTitle).bold()
-                    .foregroundColor(.white)
-                    .padding(.leading)
-                    .padding(.bottom, 2.5)
+                title
                 Spacer()
                 NavigationLink(destination: ModalView(), isActive: $showModal) {
-                    Button(action: {
-                        showModal.toggle()
-                    }) {
-                        Image(systemName: "line.horizontal.3")
-                            .font(.system(size: 32))
-                            .foregroundColor(.white)
-                            .padding()
-                            .padding(.trailing, 10)
-                    }
+                    modalButton
                 }
             }
-            Text("Discover the cosmos")
-                .font(.subheadline)
-                .foregroundColor(.white)
-                .padding(.leading)
+            headerSubtext
         }
+    }
+    
+    var title: some View {
+        Text("Quasar")
+            .font(.largeTitle).bold()
+            .foregroundColor(.white)
+            .padding(.leading)
+            .padding(.bottom, 2.5)
+    }
+    
+    var modalButton: some View {
+        Button(action: {
+            showModal.toggle()
+        }) {
+            Image(systemName: "line.horizontal.3")
+                .font(.system(size: 32))
+                .foregroundColor(.white)
+                .padding()
+                .padding(.trailing, 10)
+        }
+    }
+    
+    var headerSubtext: some View {
+        Text("Discover the cosmos")
+            .font(.subheadline)
+            .foregroundColor(.white)
+            .padding(.leading)
     }
 }
 
@@ -53,70 +65,96 @@ struct ModalView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Quasar").align(.centerX).font(.largeTitle)
+                modalTitle
                 GrayDivider()
-                Text(about).padding().font(.title3).multilineTextAlignment(.center)
+                appDescription
                 GrayDivider()
                 VStack {
                     HStack {
-                        Button(action: {
-                            isShowingContactUs.toggle()
-                        }) {
-                            Image(systemName: "envelope").padding().padding(.leading).font(.title2)
-                            Text("Contact Us")
-                        }
-                        .disabled(!MFMailComposeViewController.canSendMail())
-                        .sheet(isPresented: $isShowingContactUs) {
-                            MailView(result: $contactUsRequest, recipients: ["QuasarUserInteraction@gmail.com"]).edgesIgnoringSafeArea(.bottom)
-                        }
+                        contactUsButton
                         Spacer()
                     }
                     HStack {
-                        Button(action: {
-                            isShowingBugReport.toggle()
-                        }) {
-                            Image(systemName: "exclamationmark.triangle").padding().padding(.leading).font(.title2)
-                            Text("Report a bug")
-                        }
-                        .disabled(!MFMailComposeViewController.canSendMail())
-                        .sheet(isPresented: $isShowingBugReport) {
-                            MailView(result: $bugReportRequest, recipients: ["QuasarBugReport@gmail.com"]).edgesIgnoringSafeArea(.bottom)
-                        }
+                        bugReportButton
                         Spacer()
                     }
-//                    HStack {
-//                        Image(systemName: "info.circle").padding().padding(.leading).font(.title2)
-//                        Text("FAQ")
-//                        Spacer()
-//                    }
                     GrayDivider()
-                    Toggle(isOn: $receivingPOTD) {
-                        Text("Picture of the Day").padding()
-                    }.padding([.leading, .trailing])
+                    pictureOfTheDayNotification
                     GrayDivider()
                     HStack {
-                        NavigationLink(destination: PrivacyPolicy(), isActive: $showingPrivacyPolicy) {
-                            Button(action: {
-                                showingPrivacyPolicy.toggle()
-                            }) {
-                                Text("Privacy Policy").font(.subheadline)
-                            }
-                        }
+                        privacyPolicy
                         Text("•")
-                        NavigationLink(destination: TermsAndConditions(), isActive: $showingTerms) {
-                            Button(action: {
-                                showingTerms.toggle()
-                            }) {
-                                Text("Terms & Conditions").font(.subheadline)
-                            }
-                        }
+                        termsAndConditions
                     }
                 }
                 Spacer()
-            }
-            .foregroundColor(.white)
+            }.foregroundColor(.white)
         }
     }
+    
+    var modalTitle: some View {
+        Text("Quasar").align(.centerX).font(.largeTitle)
+    }
+    
+    var appDescription: some View {
+        Text(about).padding().font(.title3).multilineTextAlignment(.center)
+    }
+    
+    var contactUsButton: some View {
+        Button(action: {
+            isShowingContactUs.toggle()
+        }) {
+            Image(systemName: "envelope").padding().padding(.leading).font(.title2)
+            Text("Contact Us")
+        }
+        .disabled(!MFMailComposeViewController.canSendMail())
+        .sheet(isPresented: $isShowingContactUs) {
+            MailView(result: $contactUsRequest, recipients: ["QuasarUserInteraction@gmail.com"]).edgesIgnoringSafeArea(.bottom)
+               
+        }
+    }
+    
+    var bugReportButton: some View {
+        Button(action: {
+            isShowingBugReport.toggle()
+        }) {
+            Image(systemName: "exclamationmark.triangle").padding().padding(.leading).font(.title2)
+            Text("Report a bug")
+        }
+        .disabled(!MFMailComposeViewController.canSendMail())
+        .sheet(isPresented: $isShowingBugReport) {
+            MailView(result: $bugReportRequest, recipients: ["QuasarBugReport@gmail.com"]).edgesIgnoringSafeArea(.bottom)
+        }
+    }
+    
+    var pictureOfTheDayNotification: some View {
+        Toggle(isOn: $receivingPOTD) {
+            Text("Picture of the Day").padding()
+            // TODO: add notification functionality
+            
+        }.padding([.leading, .trailing])
+    }
+    
+    var privacyPolicy: some View {
+        NavigationLink(destination: PrivacyPolicy(), isActive: $showingPrivacyPolicy) {
+            Button(action: {
+                showingPrivacyPolicy.toggle()
+            }) {
+                Text("Privacy Policy").font(.subheadline)
+            }
+        }
+    }
+    
+    var termsAndConditions: some View {
+        NavigationLink(destination: TermsAndConditions(), isActive: $showingTerms) {
+            Button(action: {
+                showingTerms.toggle()
+            }) {
+                Text("Terms & Conditions").font(.subheadline)
+            }
+        }
+    }
+    
 }
 
 struct SectionTitle: View {

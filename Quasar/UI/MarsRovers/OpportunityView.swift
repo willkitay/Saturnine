@@ -101,18 +101,13 @@ struct HorizontalOpportunityFeed: View {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(.horizontal, showsIndicators: true) {
                 LazyHStack {
-                    OpportunityPageView(viewModel: viewModel, id: id)
+                   opportunityTabViewCell
                 }
             }
         }
     }
-}
-
-struct OpportunityPageView: View {
-    @ObservedObject var viewModel: OpportunityViewModel
-    @State var id: Int
     
-    var body: some View {
+    var opportunityTabViewCell: some View {
         TabView(selection: $id) {
             if let photos = viewModel.opportunity.photos {
                 ForEach(photos, id: \.id) { photo in
@@ -132,4 +127,3 @@ struct OpportunityPageView: View {
         .tabViewStyle(PageTabViewStyle())
     }
 }
-

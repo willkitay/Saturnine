@@ -16,11 +16,7 @@ struct VerticalPOTDView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
-                Image("NASA")
-                    .resizable()
-                    .scaledToFit()
-                    .padding([.leading, .trailing], 40)
-                FeedHeader(title: "Picture of the Day", text: description)
+                header
                 LazyVStack (alignment: .leading, spacing: 5) {
                     ForEach(viewModel.imageFeed, id: \.title) { photo in
                         NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
@@ -29,6 +25,16 @@ struct VerticalPOTDView: View {
                     }
                 }
             }
+        }
+    }
+    
+    var header: some View {
+        Group {
+            Image("NASA")
+                .resizable()
+                .scaledToFit()
+                .padding([.leading, .trailing], 40)
+            FeedHeader(title: "Picture of the Day", text: description)
         }
     }
     
@@ -49,19 +55,17 @@ struct HorizontalPOTDFeed: View {
     }
 
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: true) {
-            LazyHStack {
-                PageView(viewModel: viewModel, currentTitle: currentTitle)
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            ScrollView(.horizontal, showsIndicators: true) {
+                LazyHStack {
+                    potdTabViewCell
+                }
             }
         }
     }
-}
-
-struct PageView: View {
-    @ObservedObject var viewModel: POTDViewModel
-    @State var currentTitle: String
     
-    var body: some View {
+    var potdTabViewCell: some View {
         TabView(selection: $currentTitle) {
             ForEach(viewModel.imageFeed, id: \.title) { photo in
                 let url = photo.url
@@ -95,9 +99,7 @@ struct PageView: View {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-
-        guard let date = dateFormatter.date(from: date) else { return "error: date is nil" }
-        
+        guard let date = dateFormatter.date(from: date) else { return "error: POTD date is nil" }
         dateFormatter.dateStyle = .medium
         let formattedDate = dateFormatter.string(from: date)
         return formattedDate

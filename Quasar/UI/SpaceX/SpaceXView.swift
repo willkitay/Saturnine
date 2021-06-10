@@ -16,12 +16,7 @@ struct SpaceXView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
-                Image("SpaceX")
-                    .resizable()
-                    .scaledToFit()
-                    .padding([.top, .bottom])
-                    .padding([.leading, .trailing], 40)
-                FeedHeader(title: "", text: description)
+                header
                 LazyVStack {
                     ForEach(viewModel.launchFeed, id: \.date) { launch in
                         if let url = launch.links.flickr.original?.first {
@@ -32,6 +27,17 @@ struct SpaceXView: View {
                     }
                 }
             }
+        }
+    }
+    
+    var header: some View {
+        Group {
+            Image("SpaceX")
+                .resizable()
+                .scaledToFit()
+                .padding([.top, .bottom])
+                .padding([.leading, .trailing], 40)
+            FeedHeader(title: "", text: description)
         }
     }
 }
@@ -48,58 +54,43 @@ struct HorizontalSpaceXFeed: View {
     }
 
     var body: some View {
-        let date = launch.date
-        let title = launch.name
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView(.horizontal, showsIndicators: true) {
                 LazyHStack {
-                    if let explanation = launch.details {
-                        SpaceXPageView(viewModel: viewModel,
-                                       selection: title,
-                                       explanation: explanation,
-                                       date: date,
-                                       title: title)
-                    }
+                    spaceXTabViewCell
                 }
             }
         }
     }
-}
-
-struct SpaceXPageView: View {
-    @ObservedObject var viewModel: SpaceXViewModel
-    @State var selection: String
-    var explanation: String
-    var date: String
-    var title: String
     
-    var body: some View {
-        VStack {
-            TabView(selection: $selection) {
+    
+    var spaceXTabViewCell: some View {
+        ScrollView {
+            TabView(selection: $currentTitle) {
                 ForEach(viewModel.launchFeed, id: \.name) { launch in
                     if let first = launch.links.flickr.original?.first {
                         if let images = launch.links.flickr.original,
                            let expl = launch.details {
-                            ScrollView {
-                                SpaceXTabView(images: images).padding(.top, 63)
+                            VStack {
+                                SpaceXTabView(images: images).padding(.bottom)
                                 VStack {
                                     PhotoTitle(title: launch.name)
                                     PhotoDate(date: formatDate(launch.date))
                                     Explanation(text: expl)
                                 }
-                                    .background(Color.background2)
-                                    .cornerRadius(5)
-                                    .padding(10)
-                                    .foregroundColor(.white)
-                                    .transition(.opacity)
-                            }.tag(first)
+                                .background(Color.background2)
+                                .cornerRadius(5)
+                            }
+                            .padding([.leading, .trailing])
+                            .foregroundColor(.white)
+                            .tag(first)
                         }
                     }
                 }
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
     }
 }
@@ -107,7 +98,7 @@ struct SpaceXPageView: View {
 struct SpaceXTabView: View {
     var images: [String]
     var body: some View {
-        VStack {
+        LazyVStack {
             TabView {
                 ForEach(images, id: \.self) { image in
                     KFImage(URL(string: image))
@@ -115,9 +106,9 @@ struct SpaceXTabView: View {
                         .aspectRatio(contentMode: .fit)
                 }
             }
-                .tabViewStyle(PageTabViewStyle())
-                .frame(height: 400)
-        }
+            .tabViewStyle(PageTabViewStyle())
+            .frame(height: 400)
+        }.background(Color.background)
     }
 }
 
