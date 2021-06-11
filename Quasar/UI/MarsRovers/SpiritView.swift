@@ -17,6 +17,7 @@ struct SpiritView: View {
         let endComponents = DateComponents(year: 2010, month: 3, day: 21)
         return calendar.date(from: startComponents)! ... calendar.date(from: endComponents)!
     }()
+    @State private var isGrid = true
     
     var body: some View {
         ZStack {
@@ -27,9 +28,19 @@ struct SpiritView: View {
                     header
                     LazyVStack(alignment: .leading) {
                         if let photos = viewModel.spirit.photos {
-                            ForEach(photos, id: \.id) { photo in
-                                NavigationLink(destination: HorizontalSpiritFeed(id: photo.id, viewModel: viewModel)) {
-                                    ImageView(title: photo.camera.name, url: photo.url)
+                            if isGrid {
+                                LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                                    ForEach(photos, id: \.id) { photo in
+                                        NavigationLink(destination: HorizontalSpiritFeed(id: photo.id, viewModel: viewModel)) {
+                                            GridView(title: photo.camera.name, url: photo.url)
+                                        }
+                                    }
+                                }.padding([.leading, .trailing], 5)
+                            } else {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalSpiritFeed(id: photo.id, viewModel: viewModel)) {
+                                        ImageView(title: photo.camera.name, url: photo.url)
+                                    }
                                 }
                             }
                         }
@@ -37,7 +48,10 @@ struct SpiritView: View {
                 }
             }
         }
-        .toolbar { ToolbarItem(placement: .navigationBarTrailing) {  toolbarButton }}
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {  columnToGridButton }
+            ToolbarItem(placement: .navigationBarTrailing) {  toolbarButton }
+        }
     }
     
     var toolbarButton: some View {
@@ -82,6 +96,20 @@ struct SpiritView: View {
                     .accentColor(.paleGreen)
             }
         }.animation(.easeInOut)
+    }
+    
+    var columnToGridButton: some View {
+        Button(action: {
+            withAnimation(.default) {
+                isGrid.toggle()
+            }
+        }) {
+            if isGrid {
+                Image(systemName: "rectangle.grid.1x2")
+            } else {
+                Image(systemName: "square.grid.3x3")
+            }
+        }
     }
 }
 

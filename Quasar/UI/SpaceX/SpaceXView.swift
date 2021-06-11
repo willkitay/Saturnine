@@ -11,22 +11,37 @@ import Kingfisher
 struct SpaceXView: View {
     @ObservedObject var viewModel: SpaceXViewModel
     let description = "SpaceX is an American aerospace manufacturer that was founded with the goal of enabling the colonization of Mars. SpaceX manufactures the Falcon 9 and Falcon Heavy launch vehicles, rocket engines, and Starlink communications satellites."
+    @State private var isGrid = true
 
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
                 header
-                LazyVStack {
-                    ForEach(viewModel.launchFeed, id: \.date) { launch in
-                        if let url = launch.links.flickr.original?.first {
-                            NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
-                                ImageView(title: launch.name, url: url)
+                if isGrid {
+                    LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                        ForEach(viewModel.launchFeed, id: \.date) { launch in
+                            if let url = launch.links.flickr.original?.first {
+                                NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
+                                    GridView(title: launch.name, url: url)
+                                }
+                            }
+                        }
+                    }.padding([.leading, .trailing], 5)
+                } else {
+                    LazyVStack {
+                        ForEach(viewModel.launchFeed, id: \.date) { launch in
+                            if let url = launch.links.flickr.original?.first {
+                                NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
+                                    ImageView(title: launch.name, url: url)
+                                }
                             }
                         }
                     }
                 }
             }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
         }
     }
     
@@ -38,6 +53,20 @@ struct SpaceXView: View {
                 .padding([.top, .bottom])
                 .padding([.leading, .trailing], 40)
             FeedHeader(title: "", text: description)
+        }
+    }
+    
+    var columnToGridButton: some View {
+        Button(action: {
+            withAnimation(.default) {
+                isGrid.toggle()
+            }
+        }) {
+            if isGrid {
+                Image(systemName: "rectangle.grid.1x2")
+            } else {
+                Image(systemName: "square.grid.3x3")
+            }
         }
     }
 }

@@ -11,20 +11,33 @@ import Kingfisher
 struct VerticalPOTDView: View {
     @ObservedObject var viewModel: POTDViewModel
     private let description = "Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer."
+    @State private var isGrid = true
     
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
                 header
-                LazyVStack (alignment: .leading, spacing: 5) {
-                    ForEach(viewModel.imageFeed, id: \.title) { photo in
-                        NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
-                            ImageView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
+                if isGrid {
+                    LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                        ForEach(viewModel.imageFeed, id: \.title) { photo in
+                            NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
+                                GridView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
+                            }
+                        }
+                    }.padding([.leading, .trailing], 5)
+                } else {
+                    LazyVStack(alignment: .leading, spacing: 5) {
+                        ForEach(viewModel.imageFeed, id: \.title) { photo in
+                            NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
+                                ImageView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
+                            }
                         }
                     }
                 }
             }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
         }
     }
     
@@ -35,6 +48,20 @@ struct VerticalPOTDView: View {
                 .scaledToFit()
                 .padding([.leading, .trailing], 40)
             FeedHeader(title: "Picture of the Day", text: description)
+        }
+    }
+        
+    var columnToGridButton: some View {
+        Button(action: {
+            withAnimation(.default) {
+                isGrid.toggle()
+            }
+        }) {
+            if isGrid {
+                Image(systemName: "rectangle.grid.1x2")
+            } else {
+                Image(systemName: "square.grid.3x3")
+            }
         }
     }
     

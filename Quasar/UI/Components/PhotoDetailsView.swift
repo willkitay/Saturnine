@@ -31,10 +31,9 @@ struct ImageView: View {
     var url: String
     
     var body: some View {
-
         KFImage(URL(string: url))
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .scaledToFit()
             .cornerRadius(10)
             .padding([.leading, .trailing], 10)
             .overlay(
@@ -43,6 +42,18 @@ struct ImageView: View {
                     .padding([.leading, .trailing], 10)
             )
             .overlay(TitleOverlay(text: title).padding([.leading, .trailing], 10), alignment: .bottomTrailing)
+    }
+}
+
+struct GridView: View {
+    var title: String
+    var url: String
+    
+    var body: some View {
+        KFImage(URL(string: url))
+            .resizable()
+            .frame(minWidth: 100, maxWidth: 150, minHeight: 100, maxHeight: 150)
+            .scaledToFill()
     }
 }
 
