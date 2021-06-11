@@ -19,19 +19,23 @@ An iOS app that displays various space related content feeds.
 ![HubbleNews](GifDemo/hubblenews.gif)
 
 ## TODO
-- [X] Redesign homepage UI
-- [X] Info modal with privacy/terms/app info
-- [X] Refactor horizontal tab paging
-- [ ] Pull to refresh all features
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
 - [ ] Implement TheSpaceDevs API features
 - [ ] Save images to photo album
 - [ ] Share images (email, text, etc)\
-- [X] Fix SpaceX sub-tabview remote image bug (images get stuck paging while loading remotely)
-- [ ] Fix preset email color change bug
-- [ ] Implement skeleton loader to present before get request completes
-- [X] Implement grid vs column page view button
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
 - [ ] Implement "likes" for images which save image in local storage
+
+## Waiting for iOS15
+- [ ] Implement skeleton loader to present before get request completes
+- [ ] Pull to refresh all features
+- [ ] Fix preset email color change bug
+
+## Completed
+- [X] Redesign homepage UI
+- [X] Info modal with privacy/terms/app info
+- [X] Refactor horizontal tab paging
+- [X] Fix SpaceX sub-tabview remote image bug (images get stuck paging while loading remotely)
+- [X] Implement grid vs column page view button
