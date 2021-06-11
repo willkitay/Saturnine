@@ -17,6 +17,7 @@ struct PerseveranceView: View {
         let landingDate = DateComponents(year: 2021, month: 2, day: 18)
         return calendar.date(from: landingDate)! ... Date()
     }()
+    @State private var isGrid = true
     
     var body: some View {
         ZStack {
@@ -25,11 +26,21 @@ struct PerseveranceView: View {
                 datePicker
                 ScrollView(showsIndicators: true) {
                     header
-                    LazyVStack(alignment: .leading) {
-                        if let photos = viewModel.perseverance.photos {
-                            ForEach(photos, id: \.id) { photo in
-                                NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
-                                    ImageView(title: photo.camera.name, url: photo.url)
+                    if let photos = viewModel.perseverance.photos {
+                        if isGrid {
+                            LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
+                                        GridView(title: photo.camera.name, url: photo.url)
+                                    }
+                                }
+                            }.padding([.leading, .trailing], 5)
+                        } else {
+                            LazyVStack {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
+                                        ImageView(title: photo.camera.name, url: photo.url)
+                                    }
                                 }
                             }
                         }
@@ -37,6 +48,7 @@ struct PerseveranceView: View {
                 }
             }
         }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
             ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
         }
     }
@@ -81,6 +93,20 @@ struct PerseveranceView: View {
         }) {
             Image(systemName: "ellipsis")
                 .foregroundColor(.white)
+        }
+    }
+    
+    var columnToGridButton: some View {
+        Button(action: {
+            withAnimation(.default) {
+                isGrid.toggle()
+            }
+        }) {
+            if isGrid {
+                Image(systemName: "rectangle.grid.1x2")
+            } else {
+                Image(systemName: "square.grid.3x3")
+            }
         }
     }
 }

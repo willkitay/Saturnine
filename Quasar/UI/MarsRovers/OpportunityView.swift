@@ -17,6 +17,7 @@ struct OpportunityView: View {
         let endComponents = DateComponents(year: 2018, month: 6, day: 11)
         return calendar.date(from: startComponents)! ... calendar.date(from: endComponents)!
     }()
+    @State private var isGrid = true
     
     var body: some View {
         ZStack {
@@ -25,11 +26,21 @@ struct OpportunityView: View {
                 datePicker
                 ScrollView(showsIndicators: true) {
                     header
-                    LazyVStack(alignment: .leading) {
-                        if let photos = viewModel.opportunity.photos {
-                            ForEach(photos, id: \.id) { photo in
-                                NavigationLink(destination: HorizontalOpportunityFeed(id: photo.id, viewModel: viewModel)) {
-                                    ImageView(title: photo.camera.name, url: photo.url)
+                    if let photos = viewModel.opportunity.photos {
+                        if isGrid {
+                            LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalOpportunityFeed(id: photo.id, viewModel: viewModel)) {
+                                        GridView(title: photo.camera.name, url: photo.url)
+                                    }
+                                }
+                            }.padding([.leading, .trailing], 5)
+                        } else {
+                            LazyVStack {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalOpportunityFeed(id: photo.id, viewModel: viewModel)) {
+                                        ImageView(title: photo.camera.name, url: photo.url)
+                                    }
                                 }
                             }
                         }
@@ -38,6 +49,7 @@ struct OpportunityView: View {
             }
         }
         .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
             ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
         }
     }
@@ -84,6 +96,20 @@ struct OpportunityView: View {
                 .accentColor(.paleGreen)
             }
         }.animation(.easeInOut)
+    }
+    
+    var columnToGridButton: some View {
+        Button(action: {
+            withAnimation(.default) {
+                isGrid.toggle()
+            }
+        }) {
+            if isGrid {
+                Image(systemName: "rectangle.grid.1x2")
+            } else {
+                Image(systemName: "square.grid.3x3")
+            }
+        }
     }
 }
 

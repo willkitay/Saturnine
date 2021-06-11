@@ -26,7 +26,7 @@ struct DetailView: View {
     }
 }
 
-struct git: View {
+struct ImageView: View {
     var title: String
     var url: String
     

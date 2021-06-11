@@ -19,7 +19,7 @@ struct VerticalPOTDView: View {
             ScrollView(showsIndicators: true) {
                 header
                 if isGrid {
-                    LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 2), count: 3), spacing: 2) {
+                    LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
                         ForEach(viewModel.imageFeed, id: \.title) { photo in
                             NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
                                 GridView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }

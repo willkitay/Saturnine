@@ -16,6 +16,7 @@ struct CuriosityView: View {
         let landingDate = DateComponents(year: 2012, month: 8, day: 6)
         return calendar.date(from: landingDate)! ... Date()
     }()
+    @State private var isGrid = true
     
     var body: some View {
         ZStack {
@@ -24,11 +25,21 @@ struct CuriosityView: View {
                 datePicker
                 ScrollView(showsIndicators: true) {
                     header
-                    LazyVStack(alignment: .leading) {
-                        if let photos = viewModel.curiosity.photos {
-                            ForEach(photos, id: \.id) { photo in
-                                NavigationLink(destination: HorizontalCuriosityFeed(id: photo.id, viewModel: viewModel)) {
-                                    ImageView(title: photo.camera.name, url: photo.url)
+                    if let photos = viewModel.curiosity.photos {
+                        if isGrid {
+                            LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalCuriosityFeed(id: photo.id, viewModel: viewModel)) {
+                                        GridView(title: photo.camera.name, url: photo.url)
+                                    }
+                                }
+                            }.padding([.leading, .trailing], 5)
+                        } else {
+                            LazyVStack {
+                                ForEach(photos, id: \.id) { photo in
+                                    NavigationLink(destination: HorizontalCuriosityFeed(id: photo.id, viewModel: viewModel)) {
+                                        ImageView(title: photo.camera.name, url: photo.url)
+                                    }
                                 }
                             }
                         }
@@ -37,6 +48,7 @@ struct CuriosityView: View {
             }
         }
         .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
             ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
         }
     }
@@ -81,6 +93,20 @@ struct CuriosityView: View {
                 .padding(.top)
                 .padding([.leading, .trailing], 60)
             FeedHeader(title: "Mars Curiosity Rover", text: "Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASA's Mars Science Laboratory mission. Curiosity was launched from Cape Canaveral on 26 November 2011.")
+        }
+    }
+    
+    var columnToGridButton: some View {
+        Button(action: {
+            withAnimation(.default) {
+                isGrid.toggle()
+            }
+        }) {
+            if isGrid {
+                Image(systemName: "rectangle.grid.1x2")
+            } else {
+                Image(systemName: "square.grid.3x3")
+            }
         }
     }
 }

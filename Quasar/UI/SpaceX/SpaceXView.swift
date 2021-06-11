@@ -27,7 +27,7 @@ struct SpaceXView: View {
                                 }
                             }
                         }
-                    }
+                    }.padding([.leading, .trailing], 5)
                 } else {
                     LazyVStack {
                         ForEach(viewModel.launchFeed, id: \.date) { launch in
