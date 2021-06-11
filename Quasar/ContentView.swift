@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    var potdViewModel = POTDViewModel()
-    var perseveranceViewModel = PerseveranceViewModel()
-    var opportunityViewModel = OpportunityViewModel()
-    var curiosityViewModel = CuriosityViewModel()
-    var spiritViewModel = SpiritViewModel()
-    var esaViewModel = HubbleNewsViewModel()
+    @StateObject var potdViewModel = POTDViewModel()
+    @StateObject var perseveranceViewModel = PerseveranceViewModel()
+    @StateObject var opportunityViewModel = OpportunityViewModel()
+    @StateObject var curiosityViewModel = CuriosityViewModel()
+    @StateObject var spiritViewModel = SpiritViewModel()
+    @StateObject var esaViewModel = HubbleNewsViewModel()
 //    var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
     var spaceXViewModel = SpaceXViewModel()
     

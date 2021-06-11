@@ -106,7 +106,7 @@ struct HorizontalPerseveranceFeed: View {
     }
     
     var perseveranceTabViewCell: some View {
-        TabVigit ew(selection: $id) {
+        TabView(selection: $id) {
             ForEach(viewModel.perseverance.photos!, id: \.id) { photo in
                 let cameraAcronym = photo.camera.name
                 let cameraName = photo.camera.fullName
