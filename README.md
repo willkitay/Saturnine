@@ -23,7 +23,7 @@ An iOS app that displays various space related content feeds.
 - [ ] Implement notifications for Picture of the Day, news articles
 - [ ] Implement TheSpaceDevs API features
 - [ ] Save images to photo album
-- [ ] Share images (email, text, etc)\
+- [ ] Share images (email, text, etc)
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
 - [ ] Implement "likes" for images which save image in local storage
