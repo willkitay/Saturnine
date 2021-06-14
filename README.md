@@ -18,7 +18,15 @@ An iOS app that displays various space related content feeds.
 ![MarsRovers](GifDemo/rovers.gif)
 ![HubbleNews](GifDemo/hubblenews.gif)
 
-## TODO
+## Priority 
+- [ ] Ability to 'favorite' images and view favorited images
+- [ ] Trivia game
+- [ ] NASA live streams
+- [ ] Media feeds (e.g. Twitter, Instagram)
+- [ ] Expand news feed feature
+- [ ] Milky Way planet info+animation interactive feature
+
+## In the future
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
 - [ ] Implement TheSpaceDevs API features
@@ -26,11 +34,10 @@ An iOS app that displays various space related content feeds.
 - [ ] Share images (email, text, etc)
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
-- [ ] Implement "likes" for images which save image in local storage
 
 ## Waiting for iOS15
 - [ ] Implement skeleton loader to present before get request completes
-- [ ] Pull to refresh all features
+- [ ] Pull to refresh all image feeds
 - [ ] Fix preset email color change bug
 
 ## Completed
