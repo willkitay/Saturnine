@@ -48,6 +48,7 @@
 		BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE7D2263006AD00187BCE /* FullScreenView.swift */; };
 		BED42CB12630F5B6006D68E6 /* SpaceXLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */; };
 		BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB32630F73A006D68E6 /* SpaceXView.swift */; };
+		EC145AA12679C49E00122647 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC145AA02679C49E00122647 /* Favorites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		BEACE7D2263006AD00187BCE /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchViewModel.swift; sourceTree = "<group>"; };
 		BED42CB32630F73A006D68E6 /* SpaceXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXView.swift; sourceTree = "<group>"; };
+		EC145AA02679C49E00122647 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				BE78428B2644DD77007451C9 /* FeedHeader.swift */,
 				BE7842872644A050007451C9 /* HomePageComponents.swift */,
 				BE7842892644A463007451C9 /* HomePageViewOptions.swift */,
+				EC145AA02679C49E00122647 /* Favorites.swift */,
 				BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */,
 				BEACE7D2263006AD00187BCE /* FullScreenView.swift */,
 				BE280B2E262E0715004DEF43 /* Align.swift */,
@@ -461,6 +464,7 @@
 				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
 				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
+				EC145AA12679C49E00122647 /* Favorites.swift in Sources */,
 				BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
 				BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */,

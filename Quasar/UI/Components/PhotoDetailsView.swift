@@ -42,6 +42,7 @@ struct ImageView: View {
                     .padding([.leading, .trailing], 10)
             )
             .overlay(TitleOverlay(text: title).padding([.leading, .trailing], 10), alignment: .bottomTrailing)
+        
     }
 }
 

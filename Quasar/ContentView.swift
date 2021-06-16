@@ -15,7 +15,8 @@ struct ContentView: View {
     @StateObject var spiritViewModel = SpiritViewModel()
     @StateObject var esaViewModel = HubbleNewsViewModel()
 //    var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
-    var spaceXViewModel = SpaceXViewModel()
+    @StateObject var spaceXViewModel = SpaceXViewModel()
+    @State private var showingFavorites = false
     
     var body: some View {
         NavigationView {
@@ -25,22 +26,21 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Group {
                             Header()
-                            GrayDivider()
+                            favoritesButton
                         }
-                        Group {
-                            SectionTitle(title: "Most Popular")
-                            MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, esaViewModel: esaViewModel)
-                            GrayDivider()
-                        }
-                        Group {
-                            SectionTitle(title: "Mars Rovers")
-                            RoverOptions(perseveranceViewModel: perseveranceViewModel, curiosityViewModel: curiosityViewModel, opportunityViewModel: opportunityViewModel, spiritViewModel: spiritViewModel)
-                            GrayDivider()
-                        }
-                        Group {
-                            SectionTitle(title: "Telescopes")
-//                            TelescopeOptions(hubbleImagesViewModel: hubbleRecentImagesViewModel)
-                            GrayDivider()
+                        if !showingFavorites {
+                            Group {
+                                SectionTitle(title: "Most Popular")
+                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, esaViewModel: esaViewModel)
+                                GrayDivider()
+                            }
+                            Group {
+                                SectionTitle(title: "Mars Rovers")
+                                RoverOptions(perseveranceViewModel: perseveranceViewModel, curiosityViewModel: curiosityViewModel, opportunityViewModel: opportunityViewModel, spiritViewModel: spiritViewModel)
+                                GrayDivider()
+                            }
+                        } else {
+                            favorites
                         }
                     }
                     Spacer()
@@ -51,11 +51,42 @@ struct ContentView: View {
             .navigationBarTitle("", displayMode: .inline)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    var favoritesButton: some View {
+        Group {
+            HStack(spacing: 0) {
+                VStack {
+                    Button(action: {
+                        showingFavorites = false
+                    }) {
+                        Text("Home").foregroundColor(showingFavorites ? Color.gray : Color.white)
+                    }
+                    Divider().background(showingFavorites ? Color.darkGray : Color.white)
+                }
+                VStack {
+                    Button(action: {
+                        showingFavorites = true
+                    }) {
+                        Text("Favorites").foregroundColor(showingFavorites ? Color.white : Color.gray)
+                    }
+                    Divider().background(showingFavorites ? Color.white : Color.darkGray)
+                }
+            }
+        }
+        .font(.caption)
+        .padding(.bottom)
+    }
+    
+    var favorites: some View {
+        Text("Test")
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
 

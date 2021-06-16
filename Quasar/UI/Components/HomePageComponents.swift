@@ -28,7 +28,7 @@ struct Header: View {
             .font(.largeTitle).bold()
             .foregroundColor(.white)
             .padding(.leading)
-            .padding(.bottom, 2.5)
+//            .padding(.bottom, 1)
     }
     
     var modalButton: some View {
@@ -36,7 +36,7 @@ struct Header: View {
             showModal.toggle()
         }) {
             Image(systemName: "line.horizontal.3")
-                .font(.system(size: 32))
+                .font(.system(size: 24))
                 .foregroundColor(.white)
                 .padding()
                 .padding(.trailing, 10)
@@ -48,6 +48,7 @@ struct Header: View {
             .font(.subheadline)
             .foregroundColor(.white)
             .padding(.leading)
+            .padding(.bottom, 5)
     }
 }
 
@@ -288,7 +289,7 @@ struct RegularCardView: ViewModifier {
 
 struct HomePageComponent_Previews: PreviewProvider {
     static var previews: some View {
-        PrivacyPolicy()
+        ContentView()
     }
 }
 

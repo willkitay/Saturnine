@@ -19,26 +19,12 @@ struct VerticalPOTDView: View {
             ScrollView(showsIndicators: true) {
                 header
                 if isGrid {
-                    LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
-                        ForEach(viewModel.imageFeed, id: \.title) { photo in
-                            NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
-                                GridView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
-                            }
-                        }
-                    }.padding([.leading, .trailing], 5)
+                    gridView
                 } else {
-                    LazyVStack(alignment: .leading, spacing: 5) {
-                        ForEach(viewModel.imageFeed, id: \.title) { photo in
-                            NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
-                                ImageView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
-                            }
-                        }
-                    }
+                    stackView
                 }
             }
-        }.toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
-        }
+        }.toolbar { ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton } }
     }
     
     var header: some View {
@@ -61,6 +47,26 @@ struct VerticalPOTDView: View {
                 Image(systemName: "rectangle.grid.1x2")
             } else {
                 Image(systemName: "square.grid.3x3")
+            }
+        }
+    }
+    
+    var gridView: some View {
+        LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+            ForEach(viewModel.imageFeed, id: \.title) { photo in
+                NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
+                    GridView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
+                }
+            }
+        }.padding([.leading, .trailing], 5)
+    }
+    
+    var stackView: some View {
+        LazyVStack(alignment: .leading, spacing: 5) {
+            ForEach(viewModel.imageFeed, id: \.title) { photo in
+                NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
+                    ImageView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
+                }
             }
         }
     }
