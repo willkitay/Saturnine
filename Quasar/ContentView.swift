@@ -18,6 +18,8 @@ struct ContentView: View {
     @StateObject var spaceXViewModel = SpaceXViewModel()
     @State private var showingFavorites = false
     
+    
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -40,7 +42,7 @@ struct ContentView: View {
                                 GrayDivider()
                             }
                         } else {
-                            favorites
+                            FavoriteView()
                         }
                     }
                     Spacer()
@@ -49,36 +51,37 @@ struct ContentView: View {
             .navigationBarHidden(true)
             .navigationBarColor(backgroundColor: UIColor.background, titleColor: .white)
             .navigationBarTitle("", displayMode: .inline)
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     var favoritesButton: some View {
         Group {
             HStack(spacing: 0) {
-                VStack {
-                    Button(action: {
-                        showingFavorites = false
-                    }) {
-                        Text("Home").foregroundColor(showingFavorites ? Color.gray : Color.white)
+                Button(action: {
+                    showingFavorites = false
+                }) {
+                    VStack {
+                        Text("Home")
+                            .foregroundColor(showingFavorites ? Color.gray : Color.white)
+                            .contentShape(Rectangle())
+                        Divider().background(showingFavorites ? Color.darkGray : Color.white)
                     }
-                    Divider().background(showingFavorites ? Color.darkGray : Color.white)
-                }
-                VStack {
-                    Button(action: {
-                        showingFavorites = true
-                    }) {
-                        Text("Favorites").foregroundColor(showingFavorites ? Color.white : Color.gray)
+                }.disabled(showingFavorites == false)
+                Button(action: {
+                    showingFavorites = true
+                }) {
+                    VStack {
+                        Text("Favorites")
+                            .foregroundColor(showingFavorites ? Color.white : Color.gray)
+                            .contentShape(Rectangle())
+                        Divider().background(showingFavorites ? Color.white : Color.darkGray)
                     }
-                    Divider().background(showingFavorites ? Color.white : Color.darkGray)
-                }
+                }.disabled(showingFavorites == true)
             }
         }
         .font(.caption)
         .padding(.bottom)
-    }
-    
-    var favorites: some View {
-        Text("Test")
     }
 }
 

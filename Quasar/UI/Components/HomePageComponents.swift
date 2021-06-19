@@ -25,10 +25,9 @@ struct Header: View {
     
     var title: some View {
         Text("Quasar")
-            .font(.largeTitle).bold()
+            .font(.custom("Default font design", size: 40)).bold()
             .foregroundColor(.white)
             .padding(.leading)
-//            .padding(.bottom, 1)
     }
     
     var modalButton: some View {
@@ -48,7 +47,7 @@ struct Header: View {
             .font(.subheadline)
             .foregroundColor(.white)
             .padding(.leading)
-            .padding(.bottom, 5)
+            .padding(.bottom)
     }
 }
 
