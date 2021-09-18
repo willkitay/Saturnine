@@ -7,25 +7,6 @@
 import SwiftUI
 import Kingfisher
 
-struct DetailView: View {
-    var url: String
-    var title: String
-    var explanation: String
-    var date: String
-
-    var body: some View {
-        ZStack {
-            Color.background.edgesIgnoringSafeArea(.all)
-            ScrollView {
-                NavigationLink(destination: FullScreenView(url: url, title: title)) {
-                    ImageView(title: "", url: url)
-                }
-                PhotoDetailsView(explanation: explanation, date: date, title: title)
-            }
-        }
-    }
-}
-
 struct ImageView: View {
     var title: String
     var url: String
@@ -65,12 +46,8 @@ struct PhotoDetailsView: View {
     var body: some View {
         VStack {
             PhotoTitle(title: title)
-            PhotoDate(date: date)
             Explanation(text: explanation)
         }
-        .background(Color.background2)
-        .cornerRadius(5)
-        .padding(10)
         .foregroundColor(.white)
     }
 }
@@ -113,9 +90,9 @@ struct PhotoTitle: View {
             Text(title)
                 .font(.title)
                 .lineLimit(nil)
-                .padding()
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
+                .padding(.top)
         }
     }
 }
@@ -125,10 +102,12 @@ struct ImageView_Previews: PreviewProvider {
     static var title = "A Partial Solar Eclipse over Texas"
     static var previews: some View {
         ScrollView {
-            ImageView(title: title, url: url)
-            ImageView(title: title, url: url)
-            ImageView(title: title, url: url)
-            ImageView(title: title, url: url)
+            VStack(spacing: 5) {
+                ImageView(title: title, url: url)
+                ImageView(title: title, url: url)
+                ImageView(title: title, url: url)
+                ImageView(title: title, url: url)
+            }
         }
     }
 }

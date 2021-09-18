@@ -18,9 +18,7 @@
 		BE280B1C262E063C004DEF43 /* PerseveranceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */; };
 		BE280B21262E0658004DEF43 /* SpiritViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B20262E0658004DEF43 /* SpiritViewModel.swift */; };
 		BE280B26262E066D004DEF43 /* POTDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B25262E066D004DEF43 /* POTDViewModel.swift */; };
-		BE280B2F262E0715004DEF43 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B2E262E0715004DEF43 /* Align.swift */; };
 		BE280B37262E0724004DEF43 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B36262E0724004DEF43 /* Colors.swift */; };
-		BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B3E262E0738004DEF43 /* DatePicker.swift */; };
 		BE280B4E262E0754004DEF43 /* TitleOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B4D262E0754004DEF43 /* TitleOverlay.swift */; };
 		BE280B53262E075C004DEF43 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B52262E075C004DEF43 /* Navigation.swift */; };
 		BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */; };
@@ -48,6 +46,14 @@
 		BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEACE7D2263006AD00187BCE /* FullScreenView.swift */; };
 		BED42CB12630F5B6006D68E6 /* SpaceXLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */; };
 		BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB32630F73A006D68E6 /* SpaceXView.swift */; };
+		EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC145AA02679C49E00122647 /* ImageInteractionTab.swift */; };
+		EC9800AD26F16E9C0058803B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9800AC26F16E9C0058803B /* Functions.swift */; };
+		EC9800B026F1AADB0058803B /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800AF26F1AADB0058803B /* ImageViewerRemote */; };
+		EC9800B226F1AADB0058803B /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800B126F1AADB0058803B /* ImageViewer */; };
+		ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4F00A26F2AC050062F02B /* Extensions.swift */; };
+		ECDD5E76267C4AE000B94A61 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECDD5E74267C4AE000B94A61 /* Main.xcdatamodeld */; };
+		ECDD5E79267C4D1A00B94A61 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD5E78267C4D1A00B94A61 /* PersistenceController.swift */; };
+		ECDD5E7B267C5EEB00B94A61 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD5E7A267C5EEB00B94A61 /* FavoriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +91,7 @@
 		BE280B1B262E063C004DEF43 /* PerseveranceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerseveranceViewModel.swift; sourceTree = "<group>"; };
 		BE280B20262E0658004DEF43 /* SpiritViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritViewModel.swift; sourceTree = "<group>"; };
 		BE280B25262E066D004DEF43 /* POTDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTDViewModel.swift; sourceTree = "<group>"; };
-		BE280B2E262E0715004DEF43 /* Align.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Align.swift; sourceTree = "<group>"; };
 		BE280B36262E0724004DEF43 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		BE280B3E262E0738004DEF43 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		BE280B4D262E0754004DEF43 /* TitleOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleOverlay.swift; sourceTree = "<group>"; };
 		BE280B52262E075C004DEF43 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,12 @@
 		BEACE7D2263006AD00187BCE /* FullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView.swift; sourceTree = "<group>"; };
 		BED42CB02630F5B6006D68E6 /* SpaceXLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchViewModel.swift; sourceTree = "<group>"; };
 		BED42CB32630F73A006D68E6 /* SpaceXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXView.swift; sourceTree = "<group>"; };
+		EC145AA02679C49E00122647 /* ImageInteractionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractionTab.swift; sourceTree = "<group>"; };
+		EC9800AC26F16E9C0058803B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		ECC4F00A26F2AC050062F02B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ECDD5E75267C4AE000B94A61 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		ECDD5E78267C4D1A00B94A61 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		ECDD5E7A267C5EEB00B94A61 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9800B026F1AADB0058803B /* ImageViewerRemote in Frameworks */,
+				EC9800B226F1AADB0058803B /* ImageViewer in Frameworks */,
 				BE280BA2262E0AA6004DEF43 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +183,7 @@
 				BE280B10262E05EB004DEF43 /* ViewModel */,
 				BE280B0C262E05D9004DEF43 /* Data */,
 				BE280B0E262E05E3004DEF43 /* Network */,
+				ECDD5E77267C4C0400B94A61 /* Controllers */,
 				BE280AE7262E0515004DEF43 /* Info.plist */,
 				BE280AE2262E0515004DEF43 /* Assets.xcassets */,
 				BE7842852643929C007451C9 /* Images.xcassets */,
@@ -211,6 +224,7 @@
 			children = (
 				BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */,
 				BE280B9B262E0A35004DEF43 /* Entities.swift */,
+				ECDD5E74267C4AE000B94A61 /* Main.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -273,18 +287,19 @@
 		BE280B2D262E0705004DEF43 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BE4961B7265F554800938873 /* MailView.swift */,
 				BE78428B2644DD77007451C9 /* FeedHeader.swift */,
 				BE7842872644A050007451C9 /* HomePageComponents.swift */,
 				BE7842892644A463007451C9 /* HomePageViewOptions.swift */,
+				EC145AA02679C49E00122647 /* ImageInteractionTab.swift */,
 				BE280B82262E087F004DEF43 /* PhotoDetailsView.swift */,
 				BEACE7D2263006AD00187BCE /* FullScreenView.swift */,
-				BE280B2E262E0715004DEF43 /* Align.swift */,
-				BE280B3E262E0738004DEF43 /* DatePicker.swift */,
 				BE280B4D262E0754004DEF43 /* TitleOverlay.swift */,
 				BE280B52262E075C004DEF43 /* Navigation.swift */,
 				BE280B57262E0765004DEF43 /* ZoomableScrollView.swift */,
 				BE280B36262E0724004DEF43 /* Colors.swift */,
+				ECDD5E7A267C5EEB00B94A61 /* FavoriteView.swift */,
+				EC9800AC26F16E9C0058803B /* Functions.swift */,
+				ECC4F00A26F2AC050062F02B /* Extensions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -306,6 +321,15 @@
 			path = SpaceX;
 			sourceTree = "<group>";
 		};
+		ECDD5E77267C4C0400B94A61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE4961B7265F554800938873 /* MailView.swift */,
+				ECDD5E78267C4D1A00B94A61 /* PersistenceController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,6 +348,8 @@
 			name = Quasar;
 			packageProductDependencies = (
 				BE280BA1262E0AA6004DEF43 /* Kingfisher */,
+				EC9800AF26F1AADB0058803B /* ImageViewerRemote */,
+				EC9800B126F1AADB0058803B /* ImageViewer */,
 			);
 			productName = Quasar;
 			productReference = BE280ADB262E0511004DEF43 /* Quasar.app */;
@@ -398,6 +424,7 @@
 			mainGroup = BE280AD2262E0511004DEF43;
 			packageReferences = (
 				BE280BA0262E0AA6004DEF43 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EC9800AE26F1AADB0058803B /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
 			);
 			productRefGroup = BE280ADC262E0511004DEF43 /* Products */;
 			projectDirPath = "";
@@ -446,12 +473,12 @@
 				BE280B1C262E063C004DEF43 /* PerseveranceViewModel.swift in Sources */,
 				BED42CB12630F5B6006D68E6 /* SpaceXLaunchViewModel.swift in Sources */,
 				BE280B37262E0724004DEF43 /* Colors.swift in Sources */,
-				BE280B2F262E0715004DEF43 /* Align.swift in Sources */,
 				BE78428C2644DD77007451C9 /* FeedHeader.swift in Sources */,
 				BE280B26262E066D004DEF43 /* POTDViewModel.swift in Sources */,
 				BE280B4E262E0754004DEF43 /* TitleOverlay.swift in Sources */,
 				BE78428A2644A463007451C9 /* HomePageViewOptions.swift in Sources */,
 				BE280B12262E0627004DEF43 /* CuriosityViewModel.swift in Sources */,
+				EC9800AD26F16E9C0058803B /* Functions.swift in Sources */,
 				BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */,
 				BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */,
 				BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */,
@@ -460,22 +487,26 @@
 				BE280B17262E0632004DEF43 /* OpportunityViewModel.swift in Sources */,
 				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
+				ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */,
 				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
+				EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */,
 				BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
 				BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */,
 				BE280BCB262E92F5004DEF43 /* ESANewsView.swift in Sources */,
 				BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */,
 				BE4961B8265F554800938873 /* MailView.swift in Sources */,
+				ECDD5E7B267C5EEB00B94A61 /* FavoriteView.swift in Sources */,
 				BE7842882644A050007451C9 /* HomePageComponents.swift in Sources */,
 				BE280B6F262E07FD004DEF43 /* PerseveranceView.swift in Sources */,
+				ECDD5E79267C4D1A00B94A61 /* PersistenceController.swift in Sources */,
 				BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */,
 				BE280ADF262E0511004DEF43 /* QuasarApp.swift in Sources */,
 				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
 				BE280BE1262FE890004DEF43 /* HubbleRecentImagesView.swift in Sources */,
 				BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */,
-				BE280B3F262E0738004DEF43 /* DatePicker.swift in Sources */,
 				BE280BD9262FE7E7004DEF43 /* HubbleRecentImagesViewModel.swift in Sources */,
+				ECDD5E76267C4AE000B94A61 /* Main.xcdatamodeld in Sources */,
 				BE280BC5262E916F004DEF43 /* HubbleNewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +837,14 @@
 				minimumVersion = 6.2.1;
 			};
 		};
+		EC9800AE26F1AADB0058803B /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -814,7 +853,30 @@
 			package = BE280BA0262E0AA6004DEF43 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
+		EC9800AF26F1AADB0058803B /* ImageViewerRemote */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9800AE26F1AADB0058803B /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewerRemote;
+		};
+		EC9800B126F1AADB0058803B /* ImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9800AE26F1AADB0058803B /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewer;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		ECDD5E74267C4AE000B94A61 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECDD5E75267C4AE000B94A61 /* Main.xcdatamodel */,
+			);
+			currentVersion = ECDD5E75267C4AE000B94A61 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE280AD3262E0511004DEF43 /* Project object */;
 }

@@ -198,7 +198,10 @@ extension DataSource {
             case .SpaceX:
                 components.scheme = "https"
                 components.host = "api.spacexdata.com"
-                components.path = "/v4/launches"
+                components.path = "/v4/launches/"
+//                components.queryItems = [
+//                    URLQueryItem(name: "limit", value: String(1))
+//                ]
                 urlString = components.url
             }
         return urlString

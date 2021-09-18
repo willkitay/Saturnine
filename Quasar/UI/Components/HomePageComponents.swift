@@ -25,7 +25,7 @@ struct Header: View {
     
     var title: some View {
         Text("Quasar")
-            .font(.largeTitle).bold()
+            .font(.custom("Default font design", size: 40)).bold()
             .foregroundColor(.white)
             .padding(.leading)
             .padding(.bottom, 2.5)
@@ -36,7 +36,7 @@ struct Header: View {
             showModal.toggle()
         }) {
             Image(systemName: "line.horizontal.3")
-                .font(.system(size: 32))
+                .font(.system(size: 24))
                 .foregroundColor(.white)
                 .padding()
                 .padding(.trailing, 10)
@@ -48,6 +48,7 @@ struct Header: View {
             .font(.subheadline)
             .foregroundColor(.white)
             .padding(.leading)
+            .padding(.bottom, 25)
     }
 }
 
@@ -93,7 +94,7 @@ struct ModalView: View {
     }
     
     var modalTitle: some View {
-        Text("Quasar").align(.centerX).font(.largeTitle)
+        Text("Quasar").font(.largeTitle)
     }
     
     var appDescription: some View {
@@ -165,9 +166,6 @@ struct SectionTitle: View {
                 .foregroundColor(.white)
                 .padding(.leading)
                 .font(.callout.bold())
-            Image(systemName: "arrow.right")
-                .foregroundColor(.white)
-                .font(.callout)
         }
     }
 }
@@ -288,7 +286,7 @@ struct RegularCardView: ViewModifier {
 
 struct HomePageComponent_Previews: PreviewProvider {
     static var previews: some View {
-        PrivacyPolicy()
+        ContentView()
     }
 }
 

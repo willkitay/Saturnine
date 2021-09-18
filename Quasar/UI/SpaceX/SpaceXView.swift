@@ -11,7 +11,7 @@ import Kingfisher
 struct SpaceXView: View {
     @ObservedObject var viewModel: SpaceXViewModel
     let description = "SpaceX is an American aerospace manufacturer that was founded with the goal of enabling the colonization of Mars. SpaceX manufactures the Falcon 9 and Falcon Heavy launch vehicles, rocket engines, and Starlink communications satellites."
-    @State private var isGrid = true
+    @State private var isGrid = false
 
     var body: some View {
         ZStack {
@@ -74,6 +74,7 @@ struct SpaceXView: View {
 struct HorizontalSpaceXFeed: View {
     @ObservedObject var viewModel: SpaceXViewModel
     @State var currentTitle = ""
+    @State var lastScaleValue: CGFloat = 1.0
     var launch: SpaceX
     
     init(title: String, viewModel: SpaceXViewModel, launch: SpaceX) {
@@ -93,7 +94,6 @@ struct HorizontalSpaceXFeed: View {
         }
     }
     
-    
     var spaceXTabViewCell: some View {
         ScrollView {
             TabView(selection: $currentTitle) {
@@ -102,14 +102,47 @@ struct HorizontalSpaceXFeed: View {
                         if let images = launch.links.flickr.original,
                            let expl = launch.details {
                             VStack {
-                                SpaceXTabView(images: images).padding(.bottom)
+                                TabView {
+                                    ForEach(images.indices, id: \.self) { index in
+                                        ZStack {
+                                            ZoomableScrollView {
+                                                ZStack {
+                                                    Color.background.edgesIgnoringSafeArea(.all)
+                                                    KFImage(URL(string: images[index]))
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                }
+                                                
+                                                    
+                                            }
+                                            VStack {
+                                                HStack {
+                                                    Spacer()
+                                                    Text("\(index+1)/\(images.count)")
+                                                        .padding([.leading, .trailing], 8)
+                                                        .padding([.top, .bottom], 5)
+                                                        .foregroundColor(.white)
+                                                        .background(Color.black)
+                                                        .opacity(0.7)
+                                                        .cornerRadius(15)
+                                                        .font(.caption)
+                                                }
+                                                Spacer()
+                                                SpaceXInteractionTab(url: images[index], title: "", text: expl, date: "")
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                                .frame(height: 400)
                                 VStack {
                                     PhotoTitle(title: launch.name)
-                                    PhotoDate(date: formatDate(launch.date))
+                                    PhotoDate(date: formatDateYearToSecond(launch.date))
                                     Explanation(text: expl)
                                 }
                                 .background(Color.background2)
                                 .cornerRadius(5)
+                                Spacer()
                             }
                             .padding([.leading, .trailing])
                             .foregroundColor(.white)
@@ -120,12 +153,16 @@ struct HorizontalSpaceXFeed: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .accentColor(.background)
         }
     }
 }
 
 struct SpaceXTabView: View {
     var images: [String]
+    var title: String
+    var text: String
+    var date: String
     var body: some View {
         LazyVStack {
             TabView {
@@ -139,18 +176,6 @@ struct SpaceXTabView: View {
             .frame(height: 400)
         }.background(Color.background)
     }
-}
-
-private func formatDate(_ date: String) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-
-    guard let date = dateFormatter.date(from: date) else { return "error: date is nil" }
-    
-    dateFormatter.dateStyle = .medium
-    let formattedDate = dateFormatter.string(from: date)
-    return formattedDate
 }
 
 //struct SpaceXPreviews: PreviewProvider {
