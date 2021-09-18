@@ -19,7 +19,6 @@ struct ContentView: View {
     @State private var showingFavorites = false
     
     
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -47,6 +46,9 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+            }
+            .onAppear() {
+                spaceXViewModel.emptyData()
             }
             .navigationBarHidden(true)
             .navigationBarColor(backgroundColor: UIColor.background, titleColor: .white)

@@ -39,4 +39,8 @@ class SpaceXViewModel: ObservableObject {
             }
         }
     }
+    
+    func emptyData() {
+        launchFeed.removeAll()
+    }
 }

@@ -17,7 +17,7 @@ struct PerseveranceView: View {
         let landingDate = DateComponents(year: 2021, month: 2, day: 18)
         return calendar.date(from: landingDate)! ... Date()
     }()
-    @State private var isGrid = true
+    @State private var isGrid = false
     
     var body: some View {
         ZStack {
@@ -141,6 +141,7 @@ struct HorizontalPerseveranceFeed: View {
                         KFImage(URL(string: photo.url)).resizable().scaledToFit()
                     }
                     .padding(.top, 62)
+                    ImageInteractionTab(url: photo.url, title: "Mars Perseverance Rover", text: cameraName, date: formatDate(photo.earthDate))
                     RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
                 }.tag(id)
             }
@@ -149,3 +150,4 @@ struct HorizontalPerseveranceFeed: View {
         .tabViewStyle(PageTabViewStyle())
     }
 }
+

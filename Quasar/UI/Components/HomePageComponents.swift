@@ -28,6 +28,7 @@ struct Header: View {
             .font(.custom("Default font design", size: 40)).bold()
             .foregroundColor(.white)
             .padding(.leading)
+            .padding(.bottom, 2.5)
     }
     
     var modalButton: some View {
@@ -47,7 +48,7 @@ struct Header: View {
             .font(.subheadline)
             .foregroundColor(.white)
             .padding(.leading)
-            .padding(.bottom)
+            .padding(.bottom, 25)
     }
 }
 
@@ -93,7 +94,7 @@ struct ModalView: View {
     }
     
     var modalTitle: some View {
-        Text("Quasar").align(.centerX).font(.largeTitle)
+        Text("Quasar").font(.largeTitle)
     }
     
     var appDescription: some View {
@@ -165,9 +166,6 @@ struct SectionTitle: View {
                 .foregroundColor(.white)
                 .padding(.leading)
                 .font(.callout.bold())
-            Image(systemName: "arrow.right")
-                .foregroundColor(.white)
-                .font(.callout)
         }
     }
 }

@@ -17,7 +17,7 @@ struct OpportunityView: View {
         let endComponents = DateComponents(year: 2018, month: 6, day: 11)
         return calendar.date(from: startComponents)! ... calendar.date(from: endComponents)!
     }()
-    @State private var isGrid = true
+    @State private var isGrid = false
     
     var body: some View {
         ZStack {
@@ -36,11 +36,9 @@ struct OpportunityView: View {
                                 }
                             }.padding([.leading, .trailing], 5)
                         } else {
-                            LazyVStack {
-                                ForEach(photos, id: \.id) { photo in
-                                    NavigationLink(destination: HorizontalOpportunityFeed(id: photo.id, viewModel: viewModel)) {
-                                        ImageView(title: photo.camera.name, url: photo.url)
-                                    }
+                            ForEach(photos, id: \.url) { photo in
+                                NavigationLink(destination: HorizontalOpportunityFeed(id: photo.id, viewModel: viewModel)) {
+                                    ImageView(title: photo.camera.name, url: photo.url)
                                 }
                             }
                         }
@@ -144,6 +142,7 @@ struct HorizontalOpportunityFeed: View {
                             KFImage(URL(string: photo.url)).resizable().scaledToFit()
                         }
                         .padding(.top, 62)
+                        ImageInteractionTab(url: photo.url, title: "Mars Opportunity Rover", text: cameraName, date: formatDate(photo.earthDate))
                         RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
                     }.tag(id)
                 }

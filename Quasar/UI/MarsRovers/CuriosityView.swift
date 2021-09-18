@@ -16,7 +16,7 @@ struct CuriosityView: View {
         let landingDate = DateComponents(year: 2012, month: 8, day: 6)
         return calendar.date(from: landingDate)! ... Date()
     }()
-    @State private var isGrid = true
+    @State private var isGrid = false
     
     var body: some View {
         ZStack {
@@ -142,6 +142,7 @@ struct HorizontalCuriosityFeed: View {
                             KFImage(URL(string: photo.url)).resizable().scaledToFit()
                         }
                         .padding(.top, 62)
+                        ImageInteractionTab(url: photo.url, title: "Mars Curiosity Rover", text: cameraName, date: formatDate(photo.earthDate))
                         RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
                     }.tag(id)
                 }

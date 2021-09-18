@@ -17,7 +17,7 @@ struct SpiritView: View {
         let endComponents = DateComponents(year: 2010, month: 3, day: 21)
         return calendar.date(from: startComponents)! ... calendar.date(from: endComponents)!
     }()
-    @State private var isGrid = true
+    @State private var isGrid = false
     
     var body: some View {
         ZStack {
@@ -144,6 +144,7 @@ struct HorizontalSpiritFeed: View {
                             KFImage(URL(string: photo.url)).resizable().scaledToFit()
                         }
                         .padding(.top, 62)
+                        ImageInteractionTab(url: photo.url, title: "Mars Spirit Rover", text: cameraName, date: formatDate(photo.earthDate))
                         RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
                     }.tag(id)
                 }
