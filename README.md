@@ -4,7 +4,7 @@ An iOS app that displays various space related content feeds.
 - NASA's Astronomy Picture of the Day
 - Mars Rovers - Perseverance, Opportunity, Curiosity, Spirit
 - Space related news
-- SpaceX rocket aunches
+- SpaceX rocket launches
 - More to come!
 
 > Built with SwiftUI and UIKit.
@@ -19,7 +19,6 @@ An iOS app that displays various space related content feeds.
 ![HubbleNews](GifDemo/hubblenews.gif)
 
 ## Priority 
-- [ ] Ability to 'favorite' images and view favorited images
 - [ ] Trivia game
 - [ ] NASA live streams
 - [ ] Media feeds (e.g. Twitter, Instagram)
@@ -30,8 +29,6 @@ An iOS app that displays various space related content feeds.
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
 - [ ] Implement TheSpaceDevs API features
-- [ ] Save images to photo album
-- [ ] Share images (email, text, etc)
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
 
@@ -46,3 +43,6 @@ An iOS app that displays various space related content feeds.
 - [X] Refactor horizontal tab paging
 - [X] Fix SpaceX sub-tabview remote image bug (images get stuck paging while loading remotely)
 - [X] Implement grid vs column page view button
+- [X] Save images to photo album
+- [X] Share images (email, text, etc)
+- [X] Ability to 'favorite' images and view favorited images
