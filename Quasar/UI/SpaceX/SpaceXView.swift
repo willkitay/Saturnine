@@ -86,10 +86,8 @@ struct HorizontalSpaceXFeed: View {
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
-            ScrollView(.horizontal, showsIndicators: true) {
-                LazyHStack {
-                    spaceXTabViewCell
-                }
+            LazyHStack {
+                spaceXTabViewCell
             }
         }
     }
@@ -112,8 +110,6 @@ struct HorizontalSpaceXFeed: View {
                                                         .resizable()
                                                         .aspectRatio(contentMode: .fit)
                                                 }
-                                                
-                                                    
                                             }
                                             VStack {
                                                 HStack {
@@ -129,29 +125,25 @@ struct HorizontalSpaceXFeed: View {
                                                 }
                                                 Spacer()
                                                 SpaceXInteractionTab(url: images[index], title: "", text: expl, date: "")
-                                                
                                             }
                                         }
                                     }
                                 }
-                                .frame(height: 400)
-                                VStack {
-                                    PhotoTitle(title: launch.name)
-                                    PhotoDate(date: formatDateYearToSecond(launch.date))
-                                    Explanation(text: expl)
-                                }
-                                .background(Color.background2)
-                                .cornerRadius(5)
+                                .frame(height: 450)
+                                PhotoTitle(title: launch.name)
+                                PhotoDate(date: formatDateYearToSecond(launch.date))
+                                Explanation(text: expl)
                                 Spacer()
                             }
                             .padding([.leading, .trailing])
                             .foregroundColor(.white)
                             .tag(first)
+                            
                         }
                     }
                 }
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+200)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .accentColor(.background)
         }

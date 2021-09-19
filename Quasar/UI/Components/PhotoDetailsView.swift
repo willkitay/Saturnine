@@ -67,10 +67,12 @@ struct Explanation: View {
     var body: some View {
         VStack {
             Text("\n\(text)")
+                .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.leading)
                 .padding([.leading, .trailing, .bottom])
                 .lineSpacing(8)
                 .cornerRadius(5)
+                .lineLimit(nil)
         }
     }
 }
@@ -88,11 +90,14 @@ struct PhotoTitle: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.title)
-                .lineLimit(nil)
+//                .scaledToFit()
+                .font(.largeTitle)
+                .minimumScaleFactor(0.01)
+                .lineLimit(1)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding(.top)
+                .padding(.bottom, 10)
         }
     }
 }

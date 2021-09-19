@@ -157,7 +157,7 @@ struct SpaceXInteractionTab: View {
             
         }) {
             Image(systemName: isFavorited ? "bookmark.fill" : "bookmark")
-                .font(.system(size: 20.0))
+                .font(.system(size: 16.0))
                 .padding([.trailing, .bottom], 15)
         }
     }
@@ -167,7 +167,7 @@ struct SpaceXInteractionTab: View {
             shareSheet(url: url)
         }) {
             Image(systemName: "square.and.arrow.up")
-                .font(.system(size: 20.0))
+                .font(.system(size: 16.0))
                 .padding([.leading, .bottom], 15)
         }
     }
