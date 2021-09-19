@@ -28,7 +28,8 @@ An iOS app that displays various space related content feeds.
 ## In the future
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
-- [ ] Implement TheSpaceDevs API features
+- [ ] Implement TheSpaceDevs API features - spacecraft, astronauts, space stations, events
+- [ ] Implement TheSpaceDevs news api feature
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
 
@@ -46,3 +47,4 @@ An iOS app that displays various space related content feeds.
 - [X] Save images to photo album
 - [X] Share images (email, text, etc)
 - [X] Ability to 'favorite' images and view favorited images
+- [X] Spacecraft feature
