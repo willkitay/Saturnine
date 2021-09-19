@@ -9,7 +9,6 @@ import Foundation
 
 class POTDViewModel: ObservableObject {
     @Published var imageFeed: [PictureOfTheDay] = []
-    
     private var dataSource: DataSource
     private var restClient: RESTClient
     

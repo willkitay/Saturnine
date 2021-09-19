@@ -7,29 +7,6 @@
 
 import SwiftUI
 
-//struct TelescopeOptions: View {
-//    @State private var showingHubbleRecentImages = false
-//    var hubbleImagesViewModel: HubbleRecentImagesViewModel
-//
-//    var body: some View {
-//        ScrollView(.horizontal, showsIndicators: false) {
-//            HStack(spacing: 0) {
-//                NavigationLink(destination: HubbleRecentImagesView(viewModel: hubbleImagesViewModel), isActive: $showingHubbleRecentImages) {
-//                    Button(action: {
-//                        showingHubbleRecentImages.toggle()
-//                        hubbleImagesViewModel.loadRecentImages()
-//                    }) {
-//                        Image("HubbleTelescope")
-//                            .resizable()
-//                            .scaledToFill()
-//                            .modifier(RegularCardView(text: "Hubble"))
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-
 struct RoverOptions: View {
     @State private var showingPerseverance = false
     @State private var showingOpportunity = false
@@ -95,10 +72,10 @@ struct RoverOptions: View {
 struct MostPopularOptions: View {
     @State private var showingPictureOfTheDay = false
     @State private var showingSpaceXLaunches = false
-    @State private var showingHubbleNews = false
+    @State private var showingSpacecraft = false
     var potdViewModel: POTDViewModel
     var spaceXViewModel: SpaceXViewModel
-    var esaViewModel: HubbleNewsViewModel
+    var spacecraftVM: SpacecraftVM
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -125,15 +102,15 @@ struct MostPopularOptions: View {
                             .modifier(MostPopularView(text: "SpaceX Rockets",  subText: "Sustainable exploration"))
                     }
                 }
-                NavigationLink(destination: ESANews(viewModel: esaViewModel), isActive: $showingHubbleNews) {
+                NavigationLink(destination: SpacecraftView(viewModel: spacecraftVM), isActive: $showingSpacecraft) {
                     Button(action: {
-                        showingHubbleNews.toggle()
-                        esaViewModel.loadNewsFeed()
+                        showingSpacecraft.toggle()
+                        spacecraftVM.loadSpacecraftList()
                     }) {
-                        Image("HubbleNews")
+                        Image("Spaceship")
                             .resizable()
                             .scaledToFill()
-                            .modifier(MostPopularView(text: "ESA", subText: "European Space Agency"))
+                            .modifier(MostPopularView(text: "Spacecraft",  subText: "Our link to the final frontier"))
                     }
                 }
             }

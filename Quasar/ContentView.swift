@@ -13,9 +13,8 @@ struct ContentView: View {
     @StateObject var opportunityViewModel = OpportunityViewModel()
     @StateObject var curiosityViewModel = CuriosityViewModel()
     @StateObject var spiritViewModel = SpiritViewModel()
-    @StateObject var esaViewModel = HubbleNewsViewModel()
-//    var hubbleRecentImagesViewModel = HubbleRecentImagesViewModel()
     @StateObject var spaceXViewModel = SpaceXViewModel()
+    @StateObject var spacecraftVM = SpacecraftVM()
     @State private var showingFavorites = false
     
     
@@ -32,7 +31,7 @@ struct ContentView: View {
                         if !showingFavorites {
                             Group {
                                 SectionTitle(title: "Most Popular")
-                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, esaViewModel: esaViewModel)
+                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, spacecraftVM: spacecraftVM)
                                 GrayDivider()
                             }
                             Group {

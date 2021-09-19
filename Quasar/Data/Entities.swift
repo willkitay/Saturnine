@@ -88,44 +88,6 @@ struct Rover: Codable {
     }
 }
 
-struct HubbleSite: Codable, Hashable {
-    let title: String
-    let pubDate: String
-    let description: String
-    let link: String
-    let image: String
-    let thumbnail: String
-    
-    enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case pubDate = "pub_date"
-        case description = "description"
-        case link = "link"
-        case image = "image"
-        case thumbnail = "thumbnail"
-    }
-}
-
-extension HubbleSite {
-    static func == (lhs: HubbleSite, rhs: HubbleSite) -> Bool {
-        lhs.title == rhs.title
-    }
-}
-
-//struct HubbleImage: Codable {
-//    let id: String
-//    let title: String
-//    let date: String
-//    let collection: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id = "id"
-//        case title = "name"
-//        case date = "news_name"
-//        case collection = "collection"
-//    }
-//}
-
 struct SpaceX: Codable {
     let name: String
     let date: String
@@ -137,6 +99,46 @@ struct SpaceX: Codable {
         case date = "date_utc"
         case details = "details"
         case links = "links"
+    }
+}
+
+struct SpacecraftList: Codable {
+    let count: Int
+    let next: String
+    let results: [Spacecraft]?
+    
+    enum CodingKeys: String, CodingKey {
+        case count = "count"
+        case next = "next"
+        case results = "results"
+    }
+}
+
+struct Spacecraft: Codable {
+    let id: Int
+    let name: String
+    let inUse: Bool
+    let capability: String
+    let maidenLaunch: String
+    let imageUrl: String
+    let wikiLink: String
+    let agency: Agency
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, capability, agency
+        case maidenLaunch = "maiden_flight"
+        case inUse = "in_use"
+        case imageUrl = "image_url"
+        case wikiLink = "wiki_link"
+    }
+}
+
+struct Agency: Codable {
+    let name: String
+    let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name, description
     }
 }
 

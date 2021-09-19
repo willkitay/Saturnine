@@ -54,7 +54,7 @@ struct VerticalPOTDView: View {
     var gridView: some View {
         LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 1), count: 3), spacing: 1) {
             ForEach(viewModel.imageFeed, id: \.title) { photo in
-                NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel, filter: photo.url)) {
+                NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
                     GridView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
                 }
             }
@@ -64,7 +64,7 @@ struct VerticalPOTDView: View {
     var stackView: some View {
         LazyVStack(alignment: .leading, spacing: 5) {
             ForEach(viewModel.imageFeed, id: \.title) { photo in
-                NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel, filter: photo.url)) {
+                NavigationLink(destination: HorizontalPOTDFeed(title: photo.title, viewModel: viewModel)) {
                     ImageView(title: photo.title, url: photo.url).onAppear() { elementOnAppear(photo) }
                 }
             }
@@ -82,7 +82,7 @@ struct HorizontalPOTDFeed: View {
     @ObservedObject var viewModel: POTDViewModel
     @State var currentTitle = ""
     
-    init(title: String, viewModel: POTDViewModel, filter: String) {
+    init(title: String, viewModel: POTDViewModel) {
         _currentTitle = State(initialValue: title)
         self.viewModel = viewModel
     }

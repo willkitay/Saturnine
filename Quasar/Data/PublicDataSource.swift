@@ -14,9 +14,8 @@ enum Endpoint {
     case Opportunity
     case Curiosity
     case Spirit
-    case HubbleNews
-//    case HubbleRecentImages
     case SpaceX
+    case Spacecraft
 }
 
 enum DataSourceError {
@@ -76,24 +75,17 @@ class DataSource {
         }
     }
     
-    func getHubbleNews(completion: @escaping([HubbleSite]?, DataSourceError?) -> Void) {
-        getData(atEndpoint: .HubbleNews, withType: [HubbleSite].self) { data, error in
-            let hubbleNews = data as? [HubbleSite]
-            completion(hubbleNews, error)
-        }
-    }
-    
-//    func getHubbleRecentImages(completion: @escaping([HubbleImage]?, DataSourceError?) -> Void) {
-//        getData(atEndpoint: .HubbleRecentImages, withType: [HubbleImage].self) { data, error in
-//            let hubbleImages = data as? [HubbleImage]
-//            completion(hubbleImages, error)
-//        }
-//    }
-    
     func getSpaceXLaunches(completion: @escaping([SpaceX]?, DataSourceError?) -> Void) {
         getData(atEndpoint: .SpaceX, withType: [SpaceX].self) { data, error in
             let spaceXLaunches = data as? [SpaceX]
             completion(spaceXLaunches, error)
+        }
+    }
+    
+    func getSpacecraft(completion: @escaping(SpacecraftList?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .Spacecraft, withType: SpacecraftList.self) { data, error in
+            let spacecraftList = data as? SpacecraftList
+            completion(spacecraftList, error)
         }
     }
     
@@ -142,7 +134,7 @@ extension DataSource {
             case .PictureOfTheDay:
                 components.scheme = "https"
                 components.host = "api.nasa.gov"
-                components.path = "/planetary/apod"
+                components.path = "/planetary/apod/"
                 components.queryItems = [
                     URLQueryItem(name: "api_key", value: nasaAPIKey),
                     URLQueryItem(name: "start_date", value: decrementStartDate()),
@@ -185,23 +177,15 @@ extension DataSource {
                     URLQueryItem(name: "earth_date", value: dateToString(date: date))
                 ]
                 urlString = components.url
-            case .HubbleNews:
-                components.scheme = "https"
-                components.host = "hubblesite.org"
-                components.path = "/api/v3/external_feed/esa_feed"
-                urlString = components.url
-//            case .HubbleRecentImages:
-//                components.scheme = "https"
-//                components.host = "hubblesite.org"
-//                components.path = "/api/v3/images"
-//                urlString = components.url
             case .SpaceX:
                 components.scheme = "https"
                 components.host = "api.spacexdata.com"
                 components.path = "/v4/launches/"
-//                components.queryItems = [
-//                    URLQueryItem(name: "limit", value: String(1))
-//                ]
+                urlString = components.url
+            case .Spacecraft:
+                components.scheme = "https"
+                components.host = "ll.thespacedevs.com"
+                components.path = "/2.2.0/config/spacecraft/"
                 urlString = components.url
             }
         return urlString
