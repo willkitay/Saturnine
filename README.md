@@ -15,8 +15,8 @@ An iOS app that displays various space related content feeds.
 
 
 Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------
-![gif1](GifDemo/gif2.gif)  |![gif2](GifDemo/gif1.gif)  |![gif3](GifDemo/gif3.gif)  |![gif4](GifDemo/gif4.gif)
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![gif1](GifDemo/gif1.gif)  |![gif2](GifDemo/gif2.gif)  |![gif3](GifDemo/gif3.gif)  |![gif4](GifDemo/gif4.gif)
 
 ## Priority 
 - [ ] Trivia game
