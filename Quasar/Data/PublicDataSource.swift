@@ -16,6 +16,7 @@ enum Endpoint {
     case Spirit
     case SpaceX
     case Spacecraft
+    case Astronaut
 }
 
 enum DataSourceError {
@@ -89,6 +90,13 @@ class DataSource {
         }
     }
     
+    func getAstronauts(completion: @escaping(AstronautList?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .Astronaut, withType: AstronautList.self) { data, error in
+            let astronautList = data as? AstronautList
+            completion(astronautList, error)
+        }
+    }
+    
 }
 
 //MARK:- Private
@@ -120,7 +128,7 @@ extension DataSource {
             decodedData = try decoder.decode(type, from: data)
         }
         catch {
-            print("decodeData: cannot decode object error \(error)")
+            print("decodeData: cannot decode object error: \(error)")
         }
         return decodedData
     }
@@ -147,7 +155,7 @@ extension DataSource {
                 components.path = "/mars-photos/api/v1/rovers/perseverance/photos"
                 components.queryItems = [
                     URLQueryItem(name: "api_key", value: nasaAPIKey),
-                    URLQueryItem(name: "earth_date", value: dateToString(date: date)) //FIXME error here?
+                    URLQueryItem(name: "earth_date", value: dateToString(date: date))
                 ]
                 urlString = components.url
             case .Opportunity:
@@ -186,6 +194,15 @@ extension DataSource {
                 components.scheme = "https"
                 components.host = "ll.thespacedevs.com"
                 components.path = "/2.2.0/config/spacecraft/"
+                urlString = components.url
+            case .Astronaut:
+                components.scheme = "https"
+                components.host = "ll.thespacedevs.com"
+                components.path = "/2.2.0/astronaut/"
+                components.queryItems = [
+                    URLQueryItem(name: "ordering", value: "-date_of_birth"),
+                    URLQueryItem(name: "limit", value: "100"),
+                ]
                 urlString = components.url
             }
         return urlString

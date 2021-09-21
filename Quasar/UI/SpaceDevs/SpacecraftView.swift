@@ -72,8 +72,9 @@ struct HorizontalSpacecraftFeed: View {
                             .scaledToFit()
                     }
                         .padding(.top, 62)
-                    ImageInteractionTab(url: craft.imageUrl, title: craft.name, text: "", date: craft.maidenLaunch)
-                    PhotoDetailsView(explanation: craft.agency.description, date: craft.maidenLaunch, title: craft.name)
+                    ImageInteractionTab(url: craft.imageUrl, title: craft.name, text: craft.agency.description, date: formatDate(craft.maidenLaunch))
+                    PhotoDetailsView(explanation: craft.capability, date: craft.maidenLaunch, title: craft.name)
+                    Explanation(text: craft.agency.description)
                         .padding(.bottom, 55)
                 }.tag(craft.name)
             }
@@ -82,6 +83,4 @@ struct HorizontalSpacecraftFeed: View {
         .tabViewStyle(PageTabViewStyle())
     }
 }
-
-
 
