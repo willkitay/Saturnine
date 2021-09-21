@@ -17,14 +17,6 @@ An iOS app that displays various space related content feeds.
 Test1                      |  Test2                    | Test3                     | Test4
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------
 ![gif1](GifDemo/gif1.gif)  |  ![gif2](GifDemo/gif2.gif)| ![gif3](GifDemo/gif3.gif) | ![gif4](GifDemo/gif4.gif)
-<!-- <img src="/GifDemo/gif1.gif"/>
-<img src="/GifDemo/gif2.gif"/>
-<img src="/GifDemo/gif3.gif"/>
-<img src="/GifDemo/gif4.gif"/> -->
-![gif1](GifDemo/gif1.gif)
-![gif2](GifDemo/gif2.gif)
-![gif3](GifDemo/gif3.gif)
-![gif4](GifDemo/gif4.gif)
 
 ## Priority 
 - [ ] Trivia game
