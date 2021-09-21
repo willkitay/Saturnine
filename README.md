@@ -13,9 +13,7 @@ An iOS app that displays various space related content feeds.
 
 > Utilizes MVVM architecture.
 
-<img src="(GifDemo/gif1.gif)" width="40" height="40" />
 ![gif1](GifDemo/gif1.gif)
-![gif2](GifDemo/gif2.gif)
 ![gif3](GifDemo/gif3.gif)
 ![gif4](GifDemo/gif4.gif)
 
