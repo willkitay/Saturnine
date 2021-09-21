@@ -15,6 +15,7 @@ struct ContentView: View {
     @StateObject var spiritViewModel = SpiritViewModel()
     @StateObject var spaceXViewModel = SpaceXViewModel()
     @StateObject var spacecraftVM = SpacecraftVM()
+    @StateObject var astronautVM = AstronautVM()
     @State private var showingFavorites = false
     
     
@@ -31,7 +32,7 @@ struct ContentView: View {
                         if !showingFavorites {
                             Group {
                                 SectionTitle(title: "Most Popular")
-                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, spacecraftVM: spacecraftVM)
+                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, spacecraftVM: spacecraftVM, astronautVM: astronautVM)
                                 GrayDivider()
                             }
                             Group {

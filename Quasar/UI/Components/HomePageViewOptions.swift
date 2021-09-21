@@ -73,9 +73,11 @@ struct MostPopularOptions: View {
     @State private var showingPictureOfTheDay = false
     @State private var showingSpaceXLaunches = false
     @State private var showingSpacecraft = false
+    @State private var showingAstronauts = false
     var potdViewModel: POTDViewModel
     var spaceXViewModel: SpaceXViewModel
     var spacecraftVM: SpacecraftVM
+    var astronautVM: AstronautVM
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -111,6 +113,17 @@ struct MostPopularOptions: View {
                             .resizable()
                             .scaledToFill()
                             .modifier(MostPopularView(text: "Spacecraft",  subText: "Our link to the final frontier"))
+                    }
+                }
+                NavigationLink(destination: AstronautsView(viewModel: astronautVM), isActive: $showingAstronauts) {
+                    Button(action: {
+                        showingAstronauts.toggle()
+                        astronautVM.loadAstronautList()
+                    }) {
+                        Image("Astronaut")
+                            .resizable()
+                            .scaledToFill()
+                            .modifier(MostPopularView(text: "Astronauts",  subText: "Taking the small steps for mankind"))
                     }
                 }
             }

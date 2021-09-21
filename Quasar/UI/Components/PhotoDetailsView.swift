@@ -73,6 +73,7 @@ struct Explanation: View {
                 .lineSpacing(8)
                 .cornerRadius(5)
                 .lineLimit(nil)
+                .foregroundColor(.white)
         }
     }
 }
@@ -90,7 +91,6 @@ struct PhotoTitle: View {
     var body: some View {
         HStack {
             Text(title)
-//                .scaledToFit()
                 .font(.largeTitle)
                 .minimumScaleFactor(0.01)
                 .lineLimit(1)

@@ -133,6 +133,41 @@ struct Spacecraft: Codable {
     }
 }
 
+struct AstronautList: Codable {
+    let count: Int
+    let next: String
+    let results: [Astronaut]?
+    
+    enum CodingKeys: String, CodingKey {
+        case count, next, results
+    }
+}
+
+struct Astronaut: Codable {
+    let id: Int
+    let name: String
+    let nationality: String
+    let dob: String
+    let bio: String
+    let wiki: String?
+    let profileImage: String?
+    let profileThumbnail: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, nationality, bio, wiki
+        case dob = "date_of_birth"
+        case profileImage = "profile_image"
+        case profileThumbnail = "profile_image_thumbnail"
+    }
+}
+
+extension Astronaut {
+    static func == (lhs: Astronaut, rhs: Astronaut) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+
 struct Agency: Codable {
     let name: String
     let description: String

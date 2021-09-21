@@ -15,7 +15,7 @@ class SpacecraftVM: ObservableObject {
     init() {
         restClient = SimpleRESTClient()
         datasource = DataSource(withClient: restClient)
-        spacecraftList = SpacecraftList(count: 0, next: "0", results: nil)
+        spacecraftList = SpacecraftList(count: 0, next: "", results: nil)
     }
     
     func loadSpacecraftList() {

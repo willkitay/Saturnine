@@ -66,7 +66,7 @@ struct HorizontalFavoriteFeed: View {
     
     var favoriteTabViewCell: some View {
         TabView(selection: $currentTitle) {
-            ForEach(favorites, id: \.url) { favorite in
+            ForEach(favorites.reversed(), id: \.url) { favorite in
                 let url = favorite.url ?? "url error"
                 let title = favorite.title ?? "title error"
                 let text = favorite.text ?? "text error"
