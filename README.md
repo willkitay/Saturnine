@@ -14,7 +14,7 @@ An iOS app that displays various space related content feeds.
 > Utilizes MVVM architecture.
 
 
-Test1                      |  Test2                    | Test3                     | Test4
+Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------
 ![gif1](GifDemo/gif1.gif)  |  ![gif2](GifDemo/gif2.gif)| ![gif3](GifDemo/gif3.gif) | ![gif4](GifDemo/gif4.gif)
 
