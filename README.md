@@ -13,10 +13,10 @@ An iOS app that displays various space related content feeds.
 
 > Utilizes MVVM architecture.
 
-![Homepage](GifDemo/homepage.gif)
-![PictureOfTheDay](GifDemo/potd.gif)
-![MarsRovers](GifDemo/rovers.gif)
-![HubbleNews](GifDemo/hubblenews.gif)
+![Gif1](GifDemo/gif1.gif)
+![gif2](GifDemo/gif2.gif)
+![gif3](GifDemo/gif3.gif)
+![gif4](GifDemo/gif4.gif)
 
 ## Priority 
 - [ ] Trivia game
@@ -28,7 +28,7 @@ An iOS app that displays various space related content feeds.
 ## In the future
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
-- [ ] Implement TheSpaceDevs API features - spacecraft, astronauts, space stations, events
+- [ ] Implement TheSpaceDevs API features - ~~spacecraft~~, ~~astronauts~~, space stations, events
 - [ ] Implement TheSpaceDevs news api feature
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
@@ -48,3 +48,4 @@ An iOS app that displays various space related content feeds.
 - [X] Share images (email, text, etc)
 - [X] Ability to 'favorite' images and view favorited images
 - [X] Spacecraft feature
+- [X] Astronaut feature
