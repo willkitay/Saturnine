@@ -25,3 +25,15 @@ class SimpleRESTClient: RESTClient {
         task.resume()
     }
 }
+
+class SimpleRESTClientSpacedevs: RESTClient {
+    func getData(atURL url: URL, completion: @escaping (Data?) -> Void) {
+        var request = URLRequest(url: url)
+        request.setValue("7264bbbf3ff5985904d465119527c1051c06b621", forHTTPHeaderField: "Authorization")
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+            completion(data)
+        }
+        task.resume()
+    }
+}
