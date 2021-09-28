@@ -18,9 +18,9 @@ Home Page                  |  Perseverance Rover       | Spacecraft             
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/GifDemo/gif1.gif" width="207" height="448">|<img src="/GifDemo/gif2.gif" width="207" height="448">|<img src="/GifDemo/gif3.gif" width="207" height="448">|<img src="/GifDemo/gif4.gif" width="207" height="448">
 
-Home                  | Picture of the Day        |  test               | SpaceX
+Favorites                  | Picture of the Day        |  Home                     | SpaceX
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448">
+<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448">
 
 ## Priority 
 - [ ] Trivia game
