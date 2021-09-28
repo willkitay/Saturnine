@@ -14,7 +14,7 @@ class AstronautVM: ObservableObject {
     private var useNext: Bool
     
     init() {
-        restClient = SimpleRESTClient()
+        restClient = SimpleRESTClientSpacedevs()
         datasource = DataSource(withClient: restClient)
         astronautList = AstronautList(count: 0, next: "", results: nil)
         useNext = false

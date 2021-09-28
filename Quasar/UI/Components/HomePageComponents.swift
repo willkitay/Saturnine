@@ -35,8 +35,8 @@ struct Header: View {
         Button(action: {
             showModal.toggle()
         }) {
-            Image(systemName: "line.horizontal.3")
-                .font(.system(size: 24))
+            Image(systemName: "info.circle")
+                .font(.system(size: 20))
                 .foregroundColor(.white)
                 .padding()
                 .padding(.trailing, 10)
