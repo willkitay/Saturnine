@@ -18,7 +18,7 @@ Home Page                  |  Perseverance Rover       | Spacecraft             
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/GifDemo/gif1.gif" width="207" height="448">|<img src="/GifDemo/gif2.gif" width="207" height="448">|<img src="/GifDemo/gif3.gif" width="207" height="448">|<img src="/GifDemo/gif4.gif" width="207" height="448">
 
-:-------------------------:|:-------------------------:
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](img1.png)  |  ![](img2.png) | ![](img3.png)  |  ![](img4.png)
 
 ## Priority 
