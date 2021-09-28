@@ -20,7 +20,7 @@ Home Page                  |  Perseverance Rover       | Spacecraft             
 
 Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448">|<img src="/GifDemo/img4.PNG" width="207" height="448">
+<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448">
 
 ## Priority 
 - [ ] Trivia game
