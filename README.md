@@ -17,7 +17,7 @@ An iOS app that displays various space related content feeds.
 Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/GifDemo/gif1.gif" width="207" height="448">|<img src="/GifDemo/gif2.gif" width="207" height="448">|<img src="/GifDemo/gif3.gif" width="207" height="448">|<img src="/GifDemo/gif4.gif" width="207" height="448">
-||||
+test | test | test | test 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](img1.png)  |  ![](img2.png) | ![](img3.png)  |  ![](img4.png)
 
