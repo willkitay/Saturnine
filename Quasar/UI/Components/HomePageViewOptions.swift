@@ -123,7 +123,7 @@ struct MostPopularOptions: View {
                         Image("Astronaut")
                             .resizable()
                             .scaledToFill()
-                            .modifier(MostPopularView(text: "Astronauts",  subText: "Taking the small steps for mankind"))
+                            .modifier(MostPopularView(text: "Astronauts",  subText: "The trailblazers"))
                     }
                 }
             }

@@ -13,7 +13,7 @@ class SpacecraftVM: ObservableObject {
     private var restClient: RESTClient
     
     init() {
-        restClient = SimpleRESTClient()
+        restClient = SimpleRESTClientSpacedevs()
         datasource = DataSource(withClient: restClient)
         spacecraftList = SpacecraftList(count: 0, next: "", results: nil)
     }

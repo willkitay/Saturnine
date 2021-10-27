@@ -31,15 +31,17 @@ struct SpiritView: View {
                             if isGrid {
                                 LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
                                     ForEach(photos, id: \.id) { photo in
+                                        let url = photo.url.replacingOccurrences(of: "http", with: "https")
                                         NavigationLink(destination: HorizontalSpiritFeed(id: photo.id, viewModel: viewModel)) {
-                                            GridView(title: photo.camera.name, url: photo.url)
+                                            GridView(title: photo.camera.name, url: url)
                                         }
                                     }
                                 }.padding([.leading, .trailing], 5)
                             } else {
                                 ForEach(photos, id: \.id) { photo in
+                                    let url = photo.url.replacingOccurrences(of: "http", with: "https")
                                     NavigationLink(destination: HorizontalSpiritFeed(id: photo.id, viewModel: viewModel)) {
-                                        ImageView(title: photo.camera.name, url: photo.url)
+                                        ImageView(title: photo.camera.name, url: url)
                                     }
                                 }
                             }
@@ -139,12 +141,13 @@ struct HorizontalSpiritFeed: View {
                 ForEach(photos, id: \.id) { photo in
                     let cameraAcronym = photo.camera.name
                     let cameraName = photo.camera.fullName
+                    let url = photo.url.replacingOccurrences(of: "http", with: "https")
                     ScrollView {
                         NavigationLink(destination: FullScreenView(url: photo.url, title: "")) {
-                            KFImage(URL(string: photo.url)).resizable().scaledToFit()
+                            KFImage(URL(string: url)).resizable().scaledToFit()
                         }
                         .padding(.top, 62)
-                        ImageInteractionTab(url: photo.url, title: "Mars Spirit Rover", text: cameraName, date: formatDate(photo.earthDate))
+                        ImageInteractionTab(url: url, title: "Mars Spirit Rover", text: cameraName, date: formatDate(photo.earthDate))
                         RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
                     }.tag(id)
                 }

@@ -198,9 +198,7 @@ extension DataSource {
             case .Astronaut:
                 components.scheme = "https"
                 components.host = "ll.thespacedevs.com"
-                components.path = "/2.2.0/astronaut"
-//                components.user = "Authorization"
-//                components.password = "Token 7264bbbf3ff5985904d465119527c1051c06b621"
+                components.path = "/2.2.0/astronaut/"
                 components.queryItems = [
                     URLQueryItem(name: "ordering", value: "-date_of_birth"),
                     URLQueryItem(name: "limit", value: "100"),
