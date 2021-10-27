@@ -4,7 +4,7 @@
 //
 //  Created by Will on 4/12/21.
 //
-
+import SwiftUI
 import Foundation
 
 class SpiritViewModel: ObservableObject {
@@ -41,6 +41,10 @@ class SpiritViewModel: ObservableObject {
         dataSource.getSpiritPhotos() { latestPhotos, _ in
             DispatchQueue.main.async {
                 if let photos = latestPhotos {
+//                    ForEach(photos, id: \.id) { photo in
+//                        photo.url = photo.url.replacingOccurrences(of: "http", with: "https")
+//                    }
+                    
                     self.spirit = photos
                     completion(true)
                 } else {

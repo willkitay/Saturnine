@@ -21,7 +21,6 @@ struct AstronautsView: View {
                         ForEach(astronautList, id: \.id) { astronaut in
                             NavigationLink(destination: HorizontalAstronautFeed(title: astronaut.name, viewModel: viewModel, astronaut: astronautList)) {
                                 ImageView(title: astronaut.name, url: astronaut.profileImage ?? "no image found FIXME")
-//                                    .onAppear() { elementOnAppear(astronaut)}
                             }
                         }
                     }
@@ -81,7 +80,6 @@ struct HorizontalAstronautFeed: View {
                         .padding(.top, 62)
                     ImageInteractionTab(url: astronaut.profileImage ?? "no image found FIXME", title: astronaut.name, text: astronaut.nationality, date: formatDate(astronaut.dob))
                     PhotoDetailsView(explanation: astronaut.bio, date: astronaut.nationality, title: astronaut.name)
-//                    Explanation(text: astronaut.bio)
                         .padding(.bottom, 55)
                 }.tag(astronaut.name)
             }
