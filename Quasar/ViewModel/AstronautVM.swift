@@ -11,22 +11,22 @@ class AstronautVM: ObservableObject {
     @Published var astronautList: AstronautList
     private var datasource: DataSource
     private var restClient: RESTClient
-    private var useNext: Bool
+//    private var useNext: Bool
     
     init() {
         restClient = SimpleRESTClientSpacedevs()
         datasource = DataSource(withClient: restClient)
         astronautList = AstronautList(count: 0, next: "", results: nil)
-        useNext = false
+//        useNext = false
     }
     
-    func isLastAstronaut(astronaut: Astronaut) -> Bool {
-        if let last = self.astronautList.results?.last {
-            useNext = true
-            return last == astronaut
-        }
-        return false
-    }
+//    func isLastAstronaut(astronaut: Astronaut) -> Bool {
+//        if let last = self.astronautList.results?.last {
+//            useNext = true
+//            return last == astronaut
+//        }
+//        return false
+//    }
     
     func loadAstronautList() {
         getNextAstronautList { success in

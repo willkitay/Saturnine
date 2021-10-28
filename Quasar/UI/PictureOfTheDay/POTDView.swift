@@ -114,7 +114,7 @@ struct HorizontalPOTDFeed: View {
                         .onAppear() { elementOnAppear(photo) }
                         .padding(.top, 63)
                     ImageInteractionTab(url: url, title: title, text: explanation, date: formatDate(date))
-                    PhotoDetailsView(explanation: explanation, date: formatDate(date), title: title)
+                    PhotoDetailsView(explanation: explanation, title: title)
                         .padding(.bottom, 55)
                 }.tag(title)
             }

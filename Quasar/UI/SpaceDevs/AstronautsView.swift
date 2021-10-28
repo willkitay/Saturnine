@@ -39,11 +39,11 @@ struct AstronautsView: View {
         }
     }
     
-    private func elementOnAppear(_ astronaut: Astronaut) {
-        if viewModel.isLastAstronaut(astronaut: astronaut) {
-            viewModel.loadAstronautList()
-        }
-    }
+//    private func elementOnAppear(_ astronaut: Astronaut) {
+//        if viewModel.isLastAstronaut(astronaut: astronaut) {
+//            viewModel.loadAstronautList()
+//        }
+//    }
 }
 
 struct HorizontalAstronautFeed: View {
@@ -79,7 +79,7 @@ struct HorizontalAstronautFeed: View {
                     }
                         .padding(.top, 62)
                     ImageInteractionTab(url: astronaut.profileImage ?? "no image found FIXME", title: astronaut.name, text: astronaut.nationality, date: formatDate(astronaut.dob))
-                    PhotoDetailsView(explanation: astronaut.bio, date: astronaut.nationality, title: astronaut.name)
+                    PhotoDetailsView(explanation: astronaut.bio, title: astronaut.name)
                         .padding(.bottom, 55)
                 }.tag(astronaut.name)
             }

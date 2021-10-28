@@ -88,7 +88,7 @@ struct HorizontalFavoriteFeed: View {
                         Image(systemName: "bookmark").foregroundColor(.background).font(.body).padding(10)
                     }
                     
-                    PhotoDetailsView(explanation: text, date: date, title: title)
+                    PhotoDetailsView(explanation: text, title: title)
                         .padding(.bottom, 55)
                 }.tag(title)
             }

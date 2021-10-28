@@ -130,3 +130,26 @@ struct MostPopularOptions: View {
         }
     }
 }
+
+struct RowOptions: View {
+    @State private var showingEvents = false
+    var eventVM: EventVM
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 0) {
+                NavigationLink(destination: EventView(viewModel: eventVM), isActive: $showingEvents) {
+                    Button(action: {
+                        eventVM.loadEventList()
+                        showingEvents.toggle()
+                    }) {
+                        Image("EventLogo")
+                            .resizable()
+                            .scaledToFill()
+                            .modifier(RegularCardView(text: "Events"))
+                    }
+                }
+            }
+        }
+    }
+}

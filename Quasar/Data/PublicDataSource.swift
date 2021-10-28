@@ -17,6 +17,7 @@ enum Endpoint {
     case SpaceX
     case Spacecraft
     case Astronaut
+    case Events
 }
 
 enum DataSourceError {
@@ -97,6 +98,12 @@ class DataSource {
         }
     }
     
+    func getEvents(completion: @escaping(EventList?, DataSourceError?) -> Void) {
+        getData(atEndpoint: .Events, withType: EventList.self) { data, error in
+            let eventList = data as? EventList
+            completion(eventList, error)
+        }
+    }
 }
 
 //MARK:- Private
@@ -135,7 +142,6 @@ extension DataSource {
     
     private func getURL(forEndpoint endpoint: Endpoint) -> URL? {
         let nasaAPIKey = "Z1oGFAgJL0yHHorJqZRhpKwb37rnIeENpO1CfA1T"
-        
         var urlString: URL?
         var components = URLComponents()
         switch endpoint {
@@ -204,8 +210,14 @@ extension DataSource {
                     URLQueryItem(name: "limit", value: "100"),
                 ]
                 urlString = components.url
-                
-                
+            case .Events:
+                components.scheme = "https"
+                components.host = "ll.thespacedevs.com"
+                components.path = "/2.2.0/event/upcoming/"
+                components.queryItems = [
+                    URLQueryItem(name: "limit", value: "50")
+                ]
+                urlString = components.url
             }
         return urlString
     }

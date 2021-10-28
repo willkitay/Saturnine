@@ -16,8 +16,8 @@ struct ContentView: View {
     @StateObject var spaceXViewModel = SpaceXViewModel()
     @StateObject var spacecraftVM = SpacecraftVM()
     @StateObject var astronautVM = AstronautVM()
+    @StateObject var eventVM = EventVM()
     @State private var showingFavorites = false
-    
     
     var body: some View {
         NavigationView {
@@ -39,6 +39,10 @@ struct ContentView: View {
                                 SectionTitle(title: "Mars Rovers")
                                 RoverOptions(perseveranceViewModel: perseveranceViewModel, curiosityViewModel: curiosityViewModel, opportunityViewModel: opportunityViewModel, spiritViewModel: spiritViewModel)
                                 GrayDivider()
+                            }
+                            Group {
+                                SectionTitle(title: "More")
+                                RowOptions(eventVM: eventVM)
                             }
                         } else {
                             FavoriteView()
