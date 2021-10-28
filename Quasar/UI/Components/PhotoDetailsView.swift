@@ -40,12 +40,11 @@ struct GridView: View {
 
 struct PhotoDetailsView: View {
     var explanation: String
-    var date: String
     var title: String
     
     var body: some View {
         VStack {
-            PhotoTitle(title: title)
+            PhotoTitle(title: title).padding([.leading, .trailing])
             Explanation(text: explanation)
         }
         .foregroundColor(.white)
@@ -129,7 +128,7 @@ struct PhotoDetailsView_Previews: PreviewProvider {
                 ZStack(alignment: .bottomTrailing) {
                     ImageView(title: title, url: url)
                 }
-                PhotoDetailsView(explanation: explanation, date: date, title: title)
+                PhotoDetailsView(explanation: explanation, title: title)
             }
         }
     }

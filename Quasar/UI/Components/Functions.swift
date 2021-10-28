@@ -32,6 +32,19 @@ func formatDateYearToSecond(_ date: String) -> String {
     return formattedDate
 }
 
+func formatDateYearToSecondZ(_ date: String) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+    guard let date = dateFormatter.date(from: date) else { return "error: date is nil" }
+    
+    dateFormatter.dateStyle = .medium
+    let formattedDate = dateFormatter.string(from: date)
+    return formattedDate
+}
+
+
 func downloadImage(with urlString : String , imageCompletionHandler: @escaping (UIImage?) -> Void){
     guard let url = URL.init(string: urlString) else {
         return  imageCompletionHandler(nil)

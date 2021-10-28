@@ -46,6 +46,8 @@
 		EC7BD99226F6A244004B1704 /* SpacecraftVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */; };
 		EC7BD99526F6A701004B1704 /* SpacecraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99426F6A701004B1704 /* SpacecraftView.swift */; };
 		EC7BD99726F70934004B1704 /* AstronautsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99626F70934004B1704 /* AstronautsView.swift */; };
+		EC7FEB94272A6E9300D5D4DC /* EventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FEB93272A6E9300D5D4DC /* EventVM.swift */; };
+		EC7FEB96272A704D00D5D4DC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FEB95272A704D00D5D4DC /* EventView.swift */; };
 		EC8FC18326F859790011B4FF /* AstronautVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8FC18226F859790011B4FF /* AstronautVM.swift */; };
 		EC9800AD26F16E9C0058803B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9800AC26F16E9C0058803B /* Functions.swift */; };
 		EC9800B026F1AADB0058803B /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800AF26F1AADB0058803B /* ImageViewerRemote */; };
@@ -118,6 +120,8 @@
 		EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftVM.swift; sourceTree = "<group>"; };
 		EC7BD99426F6A701004B1704 /* SpacecraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftView.swift; sourceTree = "<group>"; };
 		EC7BD99626F70934004B1704 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
+		EC7FEB93272A6E9300D5D4DC /* EventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVM.swift; sourceTree = "<group>"; };
+		EC7FEB95272A704D00D5D4DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		EC8FC18226F859790011B4FF /* AstronautVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautVM.swift; sourceTree = "<group>"; };
 		EC9800AC26F16E9C0058803B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		ECC4F00A26F2AC050062F02B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				BED42CB02630F5B6006D68E6 /* SpaceXLaunchVM.swift */,
 				EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */,
 				EC8FC18226F859790011B4FF /* AstronautVM.swift */,
+				EC7FEB93272A6E9300D5D4DC /* EventVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 			children = (
 				EC7BD99426F6A701004B1704 /* SpacecraftView.swift */,
 				EC7BD99626F70934004B1704 /* AstronautsView.swift */,
+				EC7FEB95272A704D00D5D4DC /* EventView.swift */,
 			);
 			path = SpaceDevs;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				BE280B1C262E063C004DEF43 /* PerseveranceVM.swift in Sources */,
 				BED42CB12630F5B6006D68E6 /* SpaceXLaunchVM.swift in Sources */,
 				EC7BD99526F6A701004B1704 /* SpacecraftView.swift in Sources */,
+				EC7FEB94272A6E9300D5D4DC /* EventVM.swift in Sources */,
 				BE280B37262E0724004DEF43 /* Colors.swift in Sources */,
 				EC7BD99726F70934004B1704 /* AstronautsView.swift in Sources */,
 				BE78428C2644DD77007451C9 /* FeedHeader.swift in Sources */,
@@ -508,6 +515,7 @@
 				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
 				BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */,
 				ECDD5E76267C4AE000B94A61 /* Main.xcdatamodeld in Sources */,
+				EC7FEB96272A704D00D5D4DC /* EventView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

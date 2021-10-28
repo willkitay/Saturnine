@@ -133,6 +133,34 @@ struct Spacecraft: Codable {
     }
 }
 
+struct Events: Codable {
+    let id: Int
+    let name: String
+    let description: String
+    let location: String?
+    let newsUrl: String?
+    let videoUrl: String?
+    let url: String
+    let date: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, description, location, date
+        case newsUrl = "news_url"
+        case url = "feature_image"
+        case videoUrl = "video_url"
+    }
+}
+
+struct EventList: Codable {
+    let count: Int
+    let next: String
+    let results: [Events]?
+    
+    enum CodingKeys: String, CodingKey {
+        case count, next, results
+    }
+}
+
 struct AstronautList: Codable {
     let count: Int
     let next: String
