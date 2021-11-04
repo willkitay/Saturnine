@@ -53,9 +53,18 @@
 		EC9800B026F1AADB0058803B /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800AF26F1AADB0058803B /* ImageViewerRemote */; };
 		EC9800B226F1AADB0058803B /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800B126F1AADB0058803B /* ImageViewer */; };
 		ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4F00A26F2AC050062F02B /* Extensions.swift */; };
+		ECD06D60272E592800B3A187 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ECD06D5F272E592800B3A187 /* SDWebImageSwiftUI */; };
+		ECD06D6B272F68EA00B3A187 /* MercuryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6A272F68EA00B3A187 /* MercuryView.swift */; };
+		ECD06D6D272F722000B3A187 /* VenusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6C272F722000B3A187 /* VenusView.swift */; };
+		ECD06D6F272F723400B3A187 /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6E272F723400B3A187 /* EarthView.swift */; };
+		ECD06D71272F723E00B3A187 /* MarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D70272F723E00B3A187 /* MarsView.swift */; };
+		ECD06D73272F726600B3A187 /* JupiterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D72272F726600B3A187 /* JupiterView.swift */; };
+		ECD06D75272F726D00B3A187 /* SaturnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D74272F726D00B3A187 /* SaturnView.swift */; };
+		ECD06D77272F729D00B3A187 /* NeptuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D76272F729D00B3A187 /* NeptuneView.swift */; };
 		ECDD5E76267C4AE000B94A61 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECDD5E74267C4AE000B94A61 /* Main.xcdatamodeld */; };
 		ECDD5E79267C4D1A00B94A61 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD5E78267C4D1A00B94A61 /* PersistenceController.swift */; };
 		ECDD5E7B267C5EEB00B94A61 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD5E7A267C5EEB00B94A61 /* FavoriteView.swift */; };
+		ECED3382272B6C8C004D6BF5 /* SunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED3381272B6C8C004D6BF5 /* SunView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,9 +134,17 @@
 		EC8FC18226F859790011B4FF /* AstronautVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautVM.swift; sourceTree = "<group>"; };
 		EC9800AC26F16E9C0058803B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		ECC4F00A26F2AC050062F02B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ECD06D6A272F68EA00B3A187 /* MercuryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryView.swift; sourceTree = "<group>"; };
+		ECD06D6C272F722000B3A187 /* VenusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusView.swift; sourceTree = "<group>"; };
+		ECD06D6E272F723400B3A187 /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
+		ECD06D70272F723E00B3A187 /* MarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsView.swift; sourceTree = "<group>"; };
+		ECD06D72272F726600B3A187 /* JupiterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JupiterView.swift; sourceTree = "<group>"; };
+		ECD06D74272F726D00B3A187 /* SaturnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnView.swift; sourceTree = "<group>"; };
+		ECD06D76272F729D00B3A187 /* NeptuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeptuneView.swift; sourceTree = "<group>"; };
 		ECDD5E75267C4AE000B94A61 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		ECDD5E78267C4D1A00B94A61 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		ECDD5E7A267C5EEB00B94A61 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		ECED3381272B6C8C004D6BF5 /* SunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD06D60272E592800B3A187 /* SDWebImageSwiftUI in Frameworks */,
 				EC9800B026F1AADB0058803B /* ImageViewerRemote in Frameworks */,
 				EC9800B226F1AADB0058803B /* ImageViewer in Frameworks */,
 				BE280BA2262E0AA6004DEF43 /* Kingfisher in Frameworks */,
@@ -244,6 +262,7 @@
 		BE280B0F262E05E7004DEF43 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ECED3380272B6C72004D6BF5 /* Planets */,
 				EC7BD99326F6A6DA004B1704 /* SpaceDevs */,
 				BE280B2A262E06F0004DEF43 /* PictureOfTheDay */,
 				BE280B2C262E0700004DEF43 /* MarsRovers */,
@@ -336,6 +355,21 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		ECED3380272B6C72004D6BF5 /* Planets */ = {
+			isa = PBXGroup;
+			children = (
+				ECED3381272B6C8C004D6BF5 /* SunView.swift */,
+				ECD06D6A272F68EA00B3A187 /* MercuryView.swift */,
+				ECD06D6C272F722000B3A187 /* VenusView.swift */,
+				ECD06D6E272F723400B3A187 /* EarthView.swift */,
+				ECD06D70272F723E00B3A187 /* MarsView.swift */,
+				ECD06D72272F726600B3A187 /* JupiterView.swift */,
+				ECD06D74272F726D00B3A187 /* SaturnView.swift */,
+				ECD06D76272F729D00B3A187 /* NeptuneView.swift */,
+			);
+			path = Planets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,6 +390,7 @@
 				BE280BA1262E0AA6004DEF43 /* Kingfisher */,
 				EC9800AF26F1AADB0058803B /* ImageViewerRemote */,
 				EC9800B126F1AADB0058803B /* ImageViewer */,
+				ECD06D5F272E592800B3A187 /* SDWebImageSwiftUI */,
 			);
 			productName = Quasar;
 			productReference = BE280ADB262E0511004DEF43 /* Quasar.app */;
@@ -431,6 +466,7 @@
 			packageReferences = (
 				BE280BA0262E0AA6004DEF43 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				EC9800AE26F1AADB0058803B /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+				ECD06D5E272E592800B3A187 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = BE280ADC262E0511004DEF43 /* Products */;
 			projectDirPath = "";
@@ -491,16 +527,20 @@
 				BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */,
 				BE280B83262E087F004DEF43 /* PhotoDetailsView.swift in Sources */,
 				BE280B74262E0809004DEF43 /* RoverDetailView.swift in Sources */,
+				ECED3382272B6C8C004D6BF5 /* SunView.swift in Sources */,
 				BE280B21262E0658004DEF43 /* SpiritVM.swift in Sources */,
 				BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */,
 				BE280B17262E0632004DEF43 /* OpportunityVM.swift in Sources */,
 				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
 				ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */,
+				ECD06D75272F726D00B3A187 /* SaturnView.swift in Sources */,
+				ECD06D71272F723E00B3A187 /* MarsView.swift in Sources */,
 				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
 				EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */,
 				BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
+				ECD06D6B272F68EA00B3A187 /* MercuryView.swift in Sources */,
 				EC8FC18326F859790011B4FF /* AstronautVM.swift in Sources */,
 				BE280B79262E0817004DEF43 /* SpiritView.swift in Sources */,
 				BE280B58262E0765004DEF43 /* ZoomableScrollView.swift in Sources */,
@@ -509,11 +549,15 @@
 				BE7842882644A050007451C9 /* HomePageComponents.swift in Sources */,
 				EC7BD99226F6A244004B1704 /* SpacecraftVM.swift in Sources */,
 				BE280B6F262E07FD004DEF43 /* PerseveranceView.swift in Sources */,
+				ECD06D6D272F722000B3A187 /* VenusView.swift in Sources */,
 				ECDD5E79267C4D1A00B94A61 /* PersistenceController.swift in Sources */,
+				ECD06D77272F729D00B3A187 /* NeptuneView.swift in Sources */,
 				BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */,
 				BE280ADF262E0511004DEF43 /* QuasarApp.swift in Sources */,
 				BE280B9C262E0A35004DEF43 /* Entities.swift in Sources */,
 				BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */,
+				ECD06D73272F726600B3A187 /* JupiterView.swift in Sources */,
+				ECD06D6F272F723400B3A187 /* EarthView.swift in Sources */,
 				ECDD5E76267C4AE000B94A61 /* Main.xcdatamodeld in Sources */,
 				EC7FEB96272A704D00D5D4DC /* EventView.swift in Sources */,
 			);
@@ -853,6 +897,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		ECD06D5E272E592800B3A187 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -870,6 +922,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC9800AE26F1AADB0058803B /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
 			productName = ImageViewer;
+		};
+		ECD06D5F272E592800B3A187 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECD06D5E272E592800B3A187 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

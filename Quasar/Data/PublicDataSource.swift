@@ -120,7 +120,7 @@ extension DataSource {
                 return
             }
             let decodedData = self.decodeData(data: data, type:type)
-            var error:DataSourceError?
+            var error: DataSourceError?
             if decodedData == nil {
                 error = .DataError
             }
