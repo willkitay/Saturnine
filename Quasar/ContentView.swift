@@ -31,8 +31,8 @@ struct ContentView: View {
                         }
                         if !showingFavorites {
                             Group {
-                                SectionTitle(title: "Most Popular")
-                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, spacecraftVM: spacecraftVM, astronautVM: astronautVM)
+                                SectionTitle(title: "Popular")
+                                MostPopularOptions(potdViewModel: potdViewModel, spaceXViewModel: spaceXViewModel, spacecraftVM: spacecraftVM, astronautVM: astronautVM, eventVM: eventVM)
                                 GrayDivider()
                             }
                             Group {
@@ -41,8 +41,8 @@ struct ContentView: View {
                                 GrayDivider()
                             }
                             Group {
-                                SectionTitle(title: "More")
-                                RowOptions(eventVM: eventVM)
+                                SectionTitle(title: "Our Solar System")
+                                SolarSystemOptions()
                             }
                         } else {
                             FavoriteView()

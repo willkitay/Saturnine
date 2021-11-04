@@ -1,6 +1,6 @@
 //
-//  POTDViewModel.swift
-//  QuazarV4
+//  POTDVM.swift
+//  Quasar
 //
 //  Created by Will on 3/19/21.
 //
