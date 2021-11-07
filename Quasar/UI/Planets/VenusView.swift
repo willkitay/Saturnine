@@ -16,7 +16,7 @@ struct VenusView: View {
                 planetTitle(title: "Venus")
                 planetText(text: venusSummary1)
                 planetImage(name: "venus3").padding([.top])
-                planetImageSubtext(text: "Taken by the Parker Solar Probe from 7,700 miles away. The bright rim around the planet is called nightglow, which happens when the oxygen atoms in the atmosphere recombine into molecules, giving off a slight glow. Courtesy of NASA, 2021").padding([.leading, .trailing, .bottom], 8)
+                planetImageSubtext(text: "Taken by the Parker Solar Probe from 7,700 miles away. The bright rim around the planet is called nightglow, which happens when the oxygen atoms in the atmosphere recombine into molecules, giving off a slight glow. Courtesy of NASA, 2021")
                 planetText(text: venusSummary2)
                 planetImage(name: "venus2").padding([.top, .bottom])
                 planetText(text: venusSummary3).padding(.bottom)

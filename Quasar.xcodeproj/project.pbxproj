@@ -43,6 +43,7 @@
 		BED42CB12630F5B6006D68E6 /* SpaceXLaunchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB02630F5B6006D68E6 /* SpaceXLaunchVM.swift */; };
 		BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB32630F73A006D68E6 /* SpaceXView.swift */; };
 		EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC145AA02679C49E00122647 /* ImageInteractionTab.swift */; };
+		EC3B5C0B27377A8A00D2142A /* PlanetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */; };
 		EC7BD99226F6A244004B1704 /* SpacecraftVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */; };
 		EC7BD99526F6A701004B1704 /* SpacecraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99426F6A701004B1704 /* SpacecraftView.swift */; };
 		EC7BD99726F70934004B1704 /* AstronautsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99626F70934004B1704 /* AstronautsView.swift */; };
@@ -127,6 +128,7 @@
 		BED42CB02630F5B6006D68E6 /* SpaceXLaunchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchVM.swift; sourceTree = "<group>"; };
 		BED42CB32630F73A006D68E6 /* SpaceXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXView.swift; sourceTree = "<group>"; };
 		EC145AA02679C49E00122647 /* ImageInteractionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractionTab.swift; sourceTree = "<group>"; };
+		EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetComponents.swift; sourceTree = "<group>"; };
 		EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftVM.swift; sourceTree = "<group>"; };
 		EC7BD99426F6A701004B1704 /* SpacecraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftView.swift; sourceTree = "<group>"; };
 		EC7BD99626F70934004B1704 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				ECD06D74272F726D00B3A187 /* SaturnView.swift */,
 				ECB7148A2734F37400FDB7B1 /* UranusView.swift */,
 				ECD06D76272F729D00B3A187 /* NeptuneView.swift */,
+				EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */,
 			);
 			path = Planets;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				EC7BD99226F6A244004B1704 /* SpacecraftVM.swift in Sources */,
 				BE280B6F262E07FD004DEF43 /* PerseveranceView.swift in Sources */,
 				ECD06D6D272F722000B3A187 /* VenusView.swift in Sources */,
+				EC3B5C0B27377A8A00D2142A /* PlanetComponents.swift in Sources */,
 				ECDD5E79267C4D1A00B94A61 /* PersistenceController.swift in Sources */,
 				ECD06D77272F729D00B3A187 /* NeptuneView.swift in Sources */,
 				BE280B60262E07E2004DEF43 /* CuriosityView.swift in Sources */,

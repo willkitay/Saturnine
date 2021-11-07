@@ -234,7 +234,7 @@ struct SolarSystemOptions: View {
                 }
                 NavigationLink(destination: UranusView(), isActive: $showingUranus) {
                     Button(action: {
-                        showingSaturn.toggle()
+                        showingUranus.toggle()
                     }) {
                         Image("uranus")
                             .resizable()
