@@ -144,7 +144,7 @@ struct HorizontalOpportunityFeed: View {
                         .padding(.top, 62)
                         ImageInteractionTab(url: photo.url, title: "Mars Opportunity Rover", text: cameraName, date: formatDate(photo.earthDate))
                         RoverDescription(date: photo.earthDate, camera: cameraAcronym, cameraDescription: cameraName)
-                    }.tag(id)
+                    }.tag(photo.url)
                 }
             }
         }
