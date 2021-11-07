@@ -155,6 +155,7 @@ struct SolarSystemOptions: View {
     @State private var showingJupiter = false
     @State private var showingSaturn = false
     @State private var showingNeptune = false
+    @State private var showingUranus = false
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -165,8 +166,8 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("sun")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "The Sun"))
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "     The Sun"))
                     }
                 }
                 NavigationLink(destination: MercuryView(), isActive: $showingMercury) {
@@ -175,8 +176,9 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("mercury")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Mercury"))
+                            .scaledToFit()
+                            .padding()
+                            .modifier(RegularCardView(text: "     Mercury"))
                     }
                 }
                 NavigationLink(destination: VenusView(), isActive: $showingVenus) {
@@ -185,8 +187,8 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("venus")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Venus"))
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "       Venus"))
                     }
                 }
                 NavigationLink(destination: EarthView(), isActive: $showingEarth) {
@@ -195,8 +197,8 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("earth")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Earth"))
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "       Earth"))
                     }
                 }
                 NavigationLink(destination: MarsView(), isActive: $showingMars) {
@@ -205,8 +207,8 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("mars")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Mars"))
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "        Mars"))
                     }
                 }
                 NavigationLink(destination: JupiterView(), isActive: $showingJupiter) {
@@ -215,8 +217,9 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("jupiter")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Jupiter"))
+                            .aspectRatio(contentMode: .fit)
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "      Jupiter"))
                     }
                 }
                 NavigationLink(destination: SaturnView(), isActive: $showingSaturn) {
@@ -225,8 +228,18 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("saturn")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Saturn"))
+                            .aspectRatio(contentMode: .fit)
+                            .modifier(RegularCardView(text: "      Saturn"))
+                    }
+                }
+                NavigationLink(destination: UranusView(), isActive: $showingUranus) {
+                    Button(action: {
+                        showingSaturn.toggle()
+                    }) {
+                        Image("uranus")
+                            .resizable()
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "      Uranus"))
                     }
                 }
                 NavigationLink(destination: NeptuneView(), isActive: $showingNeptune) {
@@ -235,8 +248,8 @@ struct SolarSystemOptions: View {
                     }) {
                         Image("neptune")
                             .resizable()
-                            .scaledToFill()
-                            .modifier(RegularCardView(text: "Neptune"))
+                            .scaledToFit()
+                            .modifier(RegularCardView(text: "     Neptune"))
                     }
                 }
             }

@@ -52,6 +52,7 @@
 		EC9800AD26F16E9C0058803B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9800AC26F16E9C0058803B /* Functions.swift */; };
 		EC9800B026F1AADB0058803B /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800AF26F1AADB0058803B /* ImageViewerRemote */; };
 		EC9800B226F1AADB0058803B /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = EC9800B126F1AADB0058803B /* ImageViewer */; };
+		ECB7148B2734F37400FDB7B1 /* UranusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7148A2734F37400FDB7B1 /* UranusView.swift */; };
 		ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4F00A26F2AC050062F02B /* Extensions.swift */; };
 		ECD06D60272E592800B3A187 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ECD06D5F272E592800B3A187 /* SDWebImageSwiftUI */; };
 		ECD06D6B272F68EA00B3A187 /* MercuryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6A272F68EA00B3A187 /* MercuryView.swift */; };
@@ -133,6 +134,7 @@
 		EC7FEB95272A704D00D5D4DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		EC8FC18226F859790011B4FF /* AstronautVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautVM.swift; sourceTree = "<group>"; };
 		EC9800AC26F16E9C0058803B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		ECB7148A2734F37400FDB7B1 /* UranusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusView.swift; sourceTree = "<group>"; };
 		ECC4F00A26F2AC050062F02B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECD06D6A272F68EA00B3A187 /* MercuryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryView.swift; sourceTree = "<group>"; };
 		ECD06D6C272F722000B3A187 /* VenusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusView.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				ECD06D70272F723E00B3A187 /* MarsView.swift */,
 				ECD06D72272F726600B3A187 /* JupiterView.swift */,
 				ECD06D74272F726D00B3A187 /* SaturnView.swift */,
+				ECB7148A2734F37400FDB7B1 /* UranusView.swift */,
 				ECD06D76272F729D00B3A187 /* NeptuneView.swift */,
 			);
 			path = Planets;
@@ -531,6 +534,7 @@
 				BE280B21262E0658004DEF43 /* SpiritVM.swift in Sources */,
 				BE280B8D262E0891004DEF43 /* POTDView.swift in Sources */,
 				BE280B17262E0632004DEF43 /* OpportunityVM.swift in Sources */,
+				ECB7148B2734F37400FDB7B1 /* UranusView.swift in Sources */,
 				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
 				ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */,
