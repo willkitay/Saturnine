@@ -22,25 +22,19 @@ Home                  | Picture of the Day        |  Favorites                  
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448">
 
-## Priority 
+## Remaining 
+- [ ] Alert when user has poor connection
+- [ ] Implement skeleton loader to present before GET request completes
+- [ ] Notifications for new photos
 - [ ] Trivia game
 - [ ] NASA live streams
 - [ ] Media feeds (e.g. Twitter, Instagram)
-- [ ] Expand news feed feature
-- [ ] Milky Way planet info+animation interactive feature
 
 ## In the future
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
-- [ ] Implement TheSpaceDevs API features - ~~spacecraft~~, ~~astronauts~~, space stations, events
-- [ ] Implement TheSpaceDevs news api feature
 - [ ] Implement Updating homepage image buttons
 - [ ] Gray-out unavilable rover dates in picker
-
-## Waiting for iOS15
-- [ ] Implement skeleton loader to present before get request completes
-- [ ] Pull to refresh all image feeds
-- [ ] Fix preset email color change bug
 
 ## Completed
 - [X] Redesign homepage UI
@@ -53,3 +47,6 @@ Home                  | Picture of the Day        |  Favorites                  
 - [X] Ability to 'favorite' images and view favorited images
 - [X] Spacecraft feature
 - [X] Astronaut feature
+- [X] Expand news feed feature
+- [X] Implement TheSpaceDevs API features: ~~spacecraft~~, ~~astronauts~~, ~~space stations~~, ~~events~~
+- [X] ~~Implement TheSpaceDevs news api feature~~
