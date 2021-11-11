@@ -1,5 +1,5 @@
 
-# Saturnine
+# Saturnine --
 An iOS app that displays space related content feeds. 
 - Explore alongside NASA's rovers as they explore the surface of Mars.
 - Catch up on events such as spacewalks, engine tests, landings, and more.
@@ -10,6 +10,7 @@ An iOS app that displays space related content feeds.
 > Uses Kingfisher for asynchronous image loading and caching.
 > MVVM architecture.
 
+Join beta testing at https://testflight.apple.com/join/X0nu4Efb
 ![home](/screenshots/home.jpg)|![potd](/screenshots/potd.jpg)|![spacecraft](/screenshots/spacecraft.jpg)
 | :-------------------------:|:-------------------------:|:-------------------------:|
 ![rover](/screenshots/rover.jpg)|![venus](/screenshots/venus.jpg)|![favorites](/screenshots/favorites.jpg)
