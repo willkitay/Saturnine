@@ -1,30 +1,25 @@
 
 # Saturnine
-An iOS app that displays various space related content feeds.
-- NASA's Astronomy Picture of the Day
-- Mars Rovers - Perseverance, Opportunity, Curiosity, Spirit
-- Space related news
-- SpaceX rocket launches
-- More to come!
+An iOS app that displays space related content feeds. 
+- Explore alongside NASA's rovers as they explore the surface of Mars.
+- Catch up on events such as spacewalks, engine tests, landings, and more.
+- Meet the astronauts we rely on to blaze the trails.
+- Explore the universe and meet our galactic neighbors.
 
 > Built with SwiftUI and UIKit.
-
 > Uses Kingfisher for asynchronous image loading and caching.
+> MVVM architecture.
 
-> Utilizes MVVM architecture.
-> 
 ![home](/screenshots/home.jpg)|![potd](/screenshots/potd.jpg)|![spacecraft](/screenshots/spacecraft.jpg)
 | :-------------------------:|:-------------------------:|:-------------------------:|
 ![rover](/screenshots/rover.jpg)|![venus](/screenshots/venus.jpg)|![favorites](/screenshots/favorites.jpg)
 
-## Remaining 
+## TODO 
 - [ ] Alert when user has poor connection
 - [ ] Notifications for new photos
 - [ ] Trivia game
 - [ ] NASA live streams
 - [ ] Media feeds (e.g. Twitter, Instagram)
-
-## In the future
 - [ ] Rework image magnification, (double tap, pinch to zoom, swipe to return to normal)
 - [ ] Implement notifications for Picture of the Day, news articles
 - [ ] Implement Updating homepage image buttons
