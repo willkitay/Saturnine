@@ -54,7 +54,7 @@ struct Header: View {
 
 struct ModalView: View {
     @State private var receivingPOTD = false
-    private let about = "From staring through the eyes of the Perseverance rover to gazing at interstellar galaxies, Supernova will take you on a journey through our universe. Built for students, scientists, and passionate people."
+    private let about = "From staring through the eyes of the Perseverance rover to gazing at interstellar galaxies, Saturnine will take you on a journey through our universe. Built for students, scientists, and passionate people."
     @State private var showingPrivacyPolicy = false
     @State private var showingTerms = false
     @State var contactUsRequest: Result<MFMailComposeResult, Error>? = nil
@@ -110,7 +110,7 @@ struct ModalView: View {
         }
         .disabled(!MFMailComposeViewController.canSendMail())
         .sheet(isPresented: $isShowingContactUs) {
-            MailView(result: $contactUsRequest, recipients: ["SupernovaUserInteraction@gmail.com"]).edgesIgnoringSafeArea(.bottom)
+            MailView(result: $contactUsRequest, recipients: ["SaturnineUserInteraction@gmail.com"]).edgesIgnoringSafeArea(.bottom)
                
         }
     }
@@ -124,7 +124,7 @@ struct ModalView: View {
         }
         .disabled(!MFMailComposeViewController.canSendMail())
         .sheet(isPresented: $isShowingBugReport) {
-            MailView(result: $bugReportRequest, recipients: ["SupernovaBugReport@gmail.com"]).edgesIgnoringSafeArea(.bottom)
+            MailView(result: $bugReportRequest, recipients: ["SaturnineBugReport@gmail.com"]).edgesIgnoringSafeArea(.bottom)
         }
     }
     
