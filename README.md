@@ -7,7 +7,9 @@ An iOS app that displays space related content feeds.
 - Explore the universe and meet our galactic neighbors.
 
 > Built with SwiftUI and UIKit.
+
 > Uses Kingfisher for asynchronous image loading and caching.
+
 > MVVM architecture.
 
 Join beta testing at https://testflight.apple.com/join/X0nu4Efb
