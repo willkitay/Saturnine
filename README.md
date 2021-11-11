@@ -13,19 +13,9 @@ An iOS app that displays various space related content feeds.
 
 > Utilizes MVVM architecture.
 > 
-![home](/GifDemo/home.JPG")| ![potd](/GifDemo/potd.jpg")|![spacecraft](/GifDemo/spacecraft.jpg")
+![home](/screenshots/home.JPG")| ![potd](/screenshots/potd.jpg")|![spacecraft](/screenshots/spacecraft.jpg")
 | :-------------------------:|:-------------------------:|:-------------------------:|
-![rover](/GifDemo/rover.jpg") | ![venus](/GifDemo/venus.jpg")|![favorites](/GifDemo/favorites.jpg")
-
-
-
-<!-- Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/GifDemo/gif1.gif" width="207" height="448">|<img src="/GifDemo/gif2.gif" width="207" height="448">|<img src="/GifDemo/gif3.gif" width="207" height="448">|<img src="/GifDemo/gif4.gif" width="207" height="448">
-
-Home                  | Picture of the Day        |  Favorites                     | SpaceX
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448"> -->
+![rover](/screenshots/rover.jpg") | ![venus](/screenshots/venus.jpg")|![favorites](/screenshots/favorites.jpg")
 
 ## Remaining 
 - [ ] Alert when user has poor connection
