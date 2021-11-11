@@ -13,7 +13,7 @@ An iOS app that displays various space related content feeds.
 
 > Utilizes MVVM architecture.
 > 
-![home](/GifDemo/home.jpg")| ![potd](/GifDemo/potd.jpg")|![spacecraft](/GifDemo/spacecraft.jpg")
+![home](/GifDemo/home.JPG")| ![potd](/GifDemo/potd.jpg")|![spacecraft](/GifDemo/spacecraft.jpg")
 | :-------------------------:|:-------------------------:|:-------------------------:|
 ![rover](/GifDemo/rover.jpg") | ![venus](/GifDemo/venus.jpg")|![favorites](/GifDemo/favorites.jpg")
 
