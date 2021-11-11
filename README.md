@@ -13,9 +13,9 @@ An iOS app that displays various space related content feeds.
 
 > Utilizes MVVM architecture.
 > 
-![home](../screenshots/home.jpg")| ![potd](../screenshots/potd.jpg")|![spacecraft](../screenshots/spacecraft.jpg")
+![home](screenshots/home.jpg")| ![potd](/screenshots/potd.jpg")|![spacecraft](/screenshots/spacecraft.jpg")
 | :-------------------------:|:-------------------------:|:-------------------------:|
-![rover](../screenshots/rover.jpg") | ![venus](../screenshots/venus.jpg")|![favorites](../screenshots/favorites.jpg")
+![rover](/screenshots/rover.jpg") | ![venus](/screenshots/venus.jpg")|![favorites](/screenshots/favorites.jpg")
 
 ## Remaining 
 - [ ] Alert when user has poor connection
