@@ -11,11 +11,13 @@ class CuriosityViewModel: ObservableObject {
     @Published var curiosity: Curiosity
     private var dataSource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     var date = Date() {
         didSet {
             loadCuriosityPhotos()
         }
     }
+    
 
     init() {
         restClient = SimpleRESTClient()
@@ -43,8 +45,14 @@ class CuriosityViewModel: ObservableObject {
             DispatchQueue.main.async {
                 if let photos = latestPhotos {
                     self.curiosity = photos
+                    if photos.photos!.count > 0 {
+                        self.fetchSuccess = true
+                    } else {
+                        self.fetchSuccess = false
+                    }
                     completion(true)
                 } else {
+                    self.fetchSuccess = false
                     completion(false)
                 }
             }

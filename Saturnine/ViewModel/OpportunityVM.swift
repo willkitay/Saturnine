@@ -12,6 +12,7 @@ class OpportunityViewModel: ObservableObject {
     @Published var opportunity: Opportunity
     private var dataSource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     var date = Date() {
         didSet {
             loadOpportunityPhotos()
@@ -43,8 +44,14 @@ class OpportunityViewModel: ObservableObject {
             DispatchQueue.main.async {
                 if let photos = latestPhotos {
                     self.opportunity = photos
+                    if photos.photos!.count > 0 {
+                        self.fetchSuccess = true
+                    } else {
+                        self.fetchSuccess = false
+                    }
                     completion(true)
                 } else {
+                    self.fetchSuccess = false
                     completion(false)
                 }
             }

@@ -16,15 +16,7 @@ struct SpacecraftView: View {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
                 header
-                if let spacecraftList = viewModel.spacecraftList.results?.sorted(by: { $0.maidenLaunch > $1.maidenLaunch }) {
-                    LazyVStack {
-                        ForEach(spacecraftList, id: \.id) { craft in
-                            NavigationLink(destination: HorizontalSpacecraftFeed(title: craft.name, viewModel: viewModel, spacecraft: spacecraftList)) {
-                                ImageView(title: craft.name, url: craft.imageUrl)
-                            }
-                        }
-                    }
-                }
+                content
             }
         }
     }
@@ -36,6 +28,37 @@ struct SpacecraftView: View {
                 .scaledToFit()
                 .padding(.top)
             FeedHeader(title: "Spacecraft", text: "Explore the spacecraft we use to stay in orbit.")
+        }
+    }
+    
+    var spacecraft: some View {
+        LazyVStack {
+            if let spacecraftList = viewModel.spacecraftList.results?.sorted(by: { $0.maidenLaunch > $1.maidenLaunch }) {
+                ForEach(spacecraftList, id: \.id) { craft in
+                    NavigationLink(destination: HorizontalSpacecraftFeed(title: craft.name, viewModel: viewModel, spacecraft: spacecraftList)) {
+                        ImageView(title: craft.name, url: craft.imageUrl)
+                    }
+                }
+            }
+        }
+    }
+    
+    var content: some View {
+        VStack {
+            if viewModel.fetchSuccess == true {
+                spacecraft
+            } else {
+                if viewModel.fetchSuccess == false {
+                    Text("No images available.")
+                        .foregroundColor(.white)
+                        .padding(.top, 40)
+                    
+                } else {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
+            }
         }
     }
 }

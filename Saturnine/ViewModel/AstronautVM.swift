@@ -11,6 +11,7 @@ class AstronautVM: ObservableObject {
     @Published var astronautList: AstronautList
     private var datasource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
 //    private var useNext: Bool
     
     init() {
@@ -31,8 +32,10 @@ class AstronautVM: ObservableObject {
     func loadAstronautList() {
         getNextAstronautList { success in
             if success {
+                self.fetchSuccess = true
                 print("fetched AstronautList")
             } else {
+                self.fetchSuccess = false
                 print("Error: unable to fetch AstronautList")
             }
         }

@@ -11,12 +11,13 @@ class PerseveranceViewModel: ObservableObject {
     @Published var perseverance: Perseverance
     private var dataSource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     var date = Date() {
         didSet {
             loadPerseverancePhotos()
         }
     }
-
+    
     init() {
         restClient = SimpleRESTClient()
         dataSource = DataSource(withClient: restClient)
@@ -42,9 +43,15 @@ class PerseveranceViewModel: ObservableObject {
             DispatchQueue.main.async {
                 if let photos = latestPhotos {
                     self.perseverance = photos
+                    if photos.photos!.count > 0 {
+                        self.fetchSuccess = true
+                    } else {
+                        self.fetchSuccess = false
+                    }
                     completion(true)
                 } else {
                     completion(false)
+                    self.fetchSuccess = false
                 }
             }
         }

@@ -11,6 +11,7 @@ class EventVM: ObservableObject {
     @Published var eventList: EventList
     private var datasource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     
     init() {
         restClient = SimpleRESTClientSpacedevs()
@@ -22,8 +23,10 @@ class EventVM: ObservableObject {
         getNextEventList { success in
             if success {
                 print("fetched EventList")
+                self.fetchSuccess = true
             } else {
                 print("Error: unable to fetch EventList")
+                self.fetchSuccess = false
             }
         }
     }

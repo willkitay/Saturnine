@@ -19,14 +19,36 @@ struct EventView: View {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
                 header
-                if let eventList = viewModel.eventList.results {
-                    LazyVStack {
-                        ForEach(eventList.sorted(by: { $0.id > $1.id }), id: \.id) { event in
-                            NavigationLink(destination: HorizontalEventFeed(id: event.id, viewModel: viewModel, event: eventList)) {
-                                ImageView(title: event.name, url: event.url)
-                            }
-                        }
+                content
+            }
+        }
+    }
+    
+    var events: some View {
+        LazyVStack {
+            if let eventList = viewModel.eventList.results {
+                ForEach(eventList.sorted(by: { $0.id > $1.id }), id: \.id) { event in
+                    NavigationLink(destination: HorizontalEventFeed(id: event.id, viewModel: viewModel, event: eventList)) {
+                        ImageView(title: event.name, url: event.url)
                     }
+                }
+            }
+        }
+    }
+    
+    var content: some View {
+        VStack {
+            if viewModel.fetchSuccess == true {
+                events
+            } else {
+                if viewModel.fetchSuccess == false {
+                    Text("No images available.")
+                        .foregroundColor(.white)
+                        .padding(.top, 40)
+                } else {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
                 }
             }
         }

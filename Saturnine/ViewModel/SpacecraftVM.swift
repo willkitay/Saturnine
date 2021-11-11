@@ -11,6 +11,7 @@ class SpacecraftVM: ObservableObject {
     @Published var spacecraftList: SpacecraftList
     private var datasource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     
     init() {
         restClient = SimpleRESTClientSpacedevs()
@@ -22,8 +23,10 @@ class SpacecraftVM: ObservableObject {
         getNextSpacecraftList { success in
             if success {
                 print("fetched SpacecraftList")
+                self.fetchSuccess = true
             } else {
                 print("Error: unable to load SpacecraftList")
+                self.fetchSuccess = false
             }
         }
     }

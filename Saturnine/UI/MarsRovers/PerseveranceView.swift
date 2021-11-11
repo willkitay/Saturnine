@@ -26,30 +26,59 @@ struct PerseveranceView: View {
                 datePicker
                 ScrollView(showsIndicators: true) {
                     header
-                    if let photos = viewModel.perseverance.photos {
-                        if isGrid {
-                            LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
-                                ForEach(photos, id: \.id) { photo in
-                                    NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
-                                        GridView(title: photo.camera.name, url: photo.url)
-                                    }
-                                }
-                            }.padding([.leading, .trailing], 5)
-                        } else {
-                            LazyVStack {
-                                ForEach(photos, id: \.id) { photo in
-                                    NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
-                                        ImageView(title: photo.camera.name, url: photo.url)
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    content
                 }
             }
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
             ToolbarItem(placement: .navigationBarTrailing) { toolbarButton }
+        }
+    }
+    
+    var content: some View {
+        VStack {
+            if viewModel.fetchSuccess == true {
+                if isGrid {
+                    gridView
+                } else {
+                    stackView
+                }
+            } else {
+                if viewModel.fetchSuccess == false {
+                    Text("No images available on this date.")
+                        .foregroundColor(.white)
+                        .padding(.top, 40)
+                    
+                } else {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
+            }
+        }
+    }
+    
+    var gridView: some View {
+        LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+            if let photos = viewModel.perseverance.photos {
+                ForEach(photos, id: \.id) { photo in
+                    NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
+                        GridView(title: photo.camera.name, url: photo.url)
+                    }
+                }.padding([.leading, .trailing], 5)
+            }
+        }
+    }
+    
+    var stackView: some View {
+        LazyVStack {
+            if let photos = viewModel.perseverance.photos {
+                ForEach(photos, id: \.id) { photo in
+                    NavigationLink(destination: HorizontalPerseveranceFeed(id: photo.id, viewModel: viewModel)) {
+                        ImageView(title: photo.camera.name, url: photo.url)
+                    }
+                }
+            }
         }
     }
     

@@ -11,6 +11,7 @@ class SpiritViewModel: ObservableObject {
     @Published var spirit: Spirit
     private var dataSource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     var date = Date() {
         didSet {
             loadSpiritPhotos()
@@ -41,14 +42,16 @@ class SpiritViewModel: ObservableObject {
         dataSource.getSpiritPhotos() { latestPhotos, _ in
             DispatchQueue.main.async {
                 if let photos = latestPhotos {
-//                    ForEach(photos, id: \.id) { photo in
-//                        photo.url = photo.url.replacingOccurrences(of: "http", with: "https")
-//                    }
-                    
+                    if photos.photos!.count > 0 {
+                        self.fetchSuccess = true
+                    } else {
+                        self.fetchSuccess = false
+                    }
                     self.spirit = photos
                     completion(true)
                 } else {
                     completion(false)
+                    self.fetchSuccess = false
                 }
             }
         }

@@ -16,14 +16,37 @@ struct AstronautsView: View {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
                 header
-                if let astronautList = viewModel.astronautList.results {
-                    LazyVStack {
-                        ForEach(astronautList, id: \.id) { astronaut in
-                            NavigationLink(destination: HorizontalAstronautFeed(title: astronaut.name, viewModel: viewModel, astronaut: astronautList)) {
-                                ImageView(title: astronaut.name, url: astronaut.profileImage ?? "no image found FIXME")
-                            }
-                        }
+                content
+            }
+        }
+    }
+    
+    var astronauts: some View {
+        LazyVStack {
+            if let astronautList = viewModel.astronautList.results {
+                ForEach(astronautList, id: \.id) { astronaut in
+                    NavigationLink(destination: HorizontalAstronautFeed(title: astronaut.name, viewModel: viewModel, astronaut: astronautList)) {
+                        ImageView(title: astronaut.name, url: astronaut.profileImage ?? "no image found FIXME")
                     }
+                }
+            }
+        }
+    }
+    
+    var content: some View {
+        VStack {
+            if viewModel.fetchSuccess == true {
+                astronauts
+            } else {
+                if viewModel.fetchSuccess == false {
+                    Text("No images available.")
+                        .foregroundColor(.white)
+                        .padding(.top, 40)
+                    
+                } else {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
                 }
             }
         }
