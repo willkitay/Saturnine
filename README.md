@@ -1,5 +1,5 @@
 
-# Saturnine --
+# Saturnine
 An iOS app that displays space related content feeds. 
 - Explore alongside NASA's rovers as they explore the surface of Mars.
 - Catch up on events such as spacewalks, engine tests, landings, and more.
