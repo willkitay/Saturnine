@@ -11,6 +11,7 @@ class SpaceXViewModel: ObservableObject {
     @Published var launchFeed: [SpaceX] = []
     private var dataSource: DataSource
     private var restClient: RESTClient
+    var fetchSuccess: Bool? = nil
     
     init() {
         restClient = SimpleRESTClient()
@@ -32,9 +33,11 @@ class SpaceXViewModel: ObservableObject {
             DispatchQueue.main.async {
                 if let launches = launches {
                     self.launchFeed.append(contentsOf: launches.reversed())
+                    self.fetchSuccess = true
                     completion(true)
                 } else {
                     completion(false)
+                    self.fetchSuccess = false
                 }
             }
         }

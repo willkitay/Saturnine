@@ -89,6 +89,7 @@ struct Rover: Codable {
 }
 
 struct SpaceX: Codable {
+    let id: String
     let name: String
     let date: String
     let details: String?
@@ -99,6 +100,7 @@ struct SpaceX: Codable {
         case date = "date_utc"
         case details = "details"
         case links = "links"
+        case id = "id"
     }
 }
 

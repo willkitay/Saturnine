@@ -18,30 +18,59 @@ struct SpaceXView: View {
             Color.background.edgesIgnoringSafeArea([.all])
             ScrollView(showsIndicators: true) {
                 header
-                if isGrid {
-                    LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
-                        ForEach(viewModel.launchFeed, id: \.date) { launch in
-                            if let url = launch.links.flickr.original?.first {
-                                NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
-                                    GridView(title: launch.name, url: url)
-                                }
-                            }
-                        }
-                    }.padding([.leading, .trailing], 5)
-                } else {
-                    LazyVStack {
-                        ForEach(viewModel.launchFeed, id: \.date) { launch in
-                            if let url = launch.links.flickr.original?.first {
-                                NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
-                                    ImageView(title: launch.name, url: url)
-                                }
-                            }
-                        }
-                    }
-                }
+                content
             }
         }.toolbar {
             ToolbarItem(placement: .navigationBarTrailing) { columnToGridButton }
+        }
+    }
+    
+    var content: some View {
+        VStack {
+            if viewModel.fetchSuccess == true {
+                if isGrid {
+                    gridView
+                } else {
+                    stackView
+                }
+            } else {
+                if viewModel.fetchSuccess == false {
+                    Text("No images available.")
+                        .foregroundColor(.white)
+                        .padding(.top, 40)
+                    
+                } else {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
+            }
+        }
+    }
+    
+    var gridView: some View {
+        LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 0), count: 3), spacing: 0) {
+            ForEach(viewModel.launchFeed, id: \.id) { launch in
+                if let url = launch.links.flickr.original?.first,
+                   let _ = launch.details {
+                    NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
+                        GridView(title: launch.name, url: url)
+                    }
+                }
+            }
+        }.padding([.leading, .trailing], 5)
+    }
+    
+    var stackView: some View {
+        LazyVStack {
+            ForEach(viewModel.launchFeed, id: \.id) { launch in
+                if let url = launch.links.flickr.original?.first,
+                   let _ = launch.details {
+                    NavigationLink(destination: HorizontalSpaceXFeed(title: launch.name, viewModel: viewModel, launch: launch)) {
+                        ImageView(title: launch.name, url: url)
+                    }
+                }
+            }
         }
     }
     
@@ -95,7 +124,7 @@ struct HorizontalSpaceXFeed: View {
     var spaceXTabViewCell: some View {
         ScrollView {
             TabView(selection: $currentTitle) {
-                ForEach(viewModel.launchFeed, id: \.name) { launch in
+                ForEach(viewModel.launchFeed, id: \.id) { launch in
                     if (launch.links.flickr.original?.first) != nil {
                         if let images = launch.links.flickr.original,
                            let expl = launch.details {
