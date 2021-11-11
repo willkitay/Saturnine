@@ -13,18 +13,23 @@ An iOS app that displays various space related content feeds.
 
 > Utilizes MVVM architecture.
 
+![home](/GifDemo/home.png")
+![potd](/GifDemo/potd.png")
+![rover](/GifDemo/rover.png")
+![venus](/GifDemo/venus.png")
+![spacecraft](/GifDemo/spacecraft.png")
+![favorites](/GifDemo/favorites.png")
 
-Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
+<!-- Home Page                  |  Perseverance Rover       | Spacecraft                | Rocket Launches
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 <img src="/GifDemo/gif1.gif" width="207" height="448">|<img src="/GifDemo/gif2.gif" width="207" height="448">|<img src="/GifDemo/gif3.gif" width="207" height="448">|<img src="/GifDemo/gif4.gif" width="207" height="448">
 
 Home                  | Picture of the Day        |  Favorites                     | SpaceX
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448">
+<img src="/GifDemo/img2.PNG" width="207" height="448">|<img src="/GifDemo/img1.PNG" width="207" height="448">|<img src="/GifDemo/img4.PNG" width="207" height="448">|<img src="/GifDemo/img3.PNG" width="207" height="448"> -->
 
 ## Remaining 
 - [ ] Alert when user has poor connection
-- [ ] Implement skeleton loader to present before GET request completes
 - [ ] Notifications for new photos
 - [ ] Trivia game
 - [ ] NASA live streams
@@ -50,3 +55,4 @@ Home                  | Picture of the Day        |  Favorites                  
 - [X] Expand news feed feature
 - [X] Implement TheSpaceDevs API features: ~~spacecraft~~, ~~astronauts~~, ~~space stations~~, ~~events~~
 - [X] ~~Implement TheSpaceDevs news api feature~~
+- [X] Implement skeleton loader to present before GET request completes
