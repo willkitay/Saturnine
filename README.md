@@ -13,7 +13,7 @@ An iOS app that displays space related content feeds.
 > MVVM architecture.
 
 Join beta testing at https://testflight.apple.com/join/X0nu4Efb
-![home](/screenshots/home.jpg)|![potd](/screenshots/potd.jpg)|![spacecraft](/screenshots/spacecraft.jpg)
+![homescreen](/screenshots/homescreen.jpg)|![potd](/screenshots/potd.jpg)|![spacecraft](/screenshots/spacecraft.jpg)
 | :-------------------------:|:-------------------------:|:-------------------------:|
 ![rover](/screenshots/rover.jpg)|![venus](/screenshots/venus.jpg)|![favorites](/screenshots/favorites.jpg)
 
