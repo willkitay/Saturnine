@@ -36,13 +36,13 @@ struct ContentView: View {
                                 GrayDivider()
                             }
                             Group {
-                                SectionTitle(title: "Mars Rovers")
-                                RoverOptions(perseveranceViewModel: perseveranceViewModel, curiosityViewModel: curiosityViewModel, opportunityViewModel: opportunityViewModel, spiritViewModel: spiritViewModel)
+                                SectionTitle(title: "The Solar System")
+                                SolarSystemOptions()
                                 GrayDivider()
                             }
                             Group {
-                                SectionTitle(title: "Our Solar System")
-                                SolarSystemOptions()
+                                SectionTitle(title: "Mars Rovers")
+                                RoverOptions(perseveranceViewModel: perseveranceViewModel, curiosityViewModel: curiosityViewModel, opportunityViewModel: opportunityViewModel, spiritViewModel: spiritViewModel)
                             }
                         } else {
                             FavoriteView()

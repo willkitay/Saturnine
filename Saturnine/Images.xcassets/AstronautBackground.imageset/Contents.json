@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "astronautbackground.png",
+      "filename" : "astronautbackground_1x-removebg-preview.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "astronautbackground_2x-removebg-preview.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "astronautbackground_3x-removebg-preview.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

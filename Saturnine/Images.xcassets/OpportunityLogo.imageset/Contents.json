@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "opportunity.png",
+      "filename" : "opportunity@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "opportunity@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "opportunity@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

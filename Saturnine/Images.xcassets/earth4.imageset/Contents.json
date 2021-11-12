@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "earth4.png",
+      "filename" : "earth4@1x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "earth4@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "earth4@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
