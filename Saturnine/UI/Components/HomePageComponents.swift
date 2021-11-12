@@ -28,7 +28,6 @@ struct Header: View {
             .font(.custom("Default font design", size: 40)).bold()
             .foregroundColor(.white)
             .padding(.leading)
-            .padding(.bottom, 2.5)
     }
     
     var modalButton: some View {
@@ -38,7 +37,7 @@ struct Header: View {
             Image(systemName: "info.circle")
                 .font(.system(size: 20))
                 .foregroundColor(.white)
-                .padding()
+                .padding([.top, .trailing])
                 .padding(.trailing, 10)
         }
     }
@@ -54,7 +53,7 @@ struct Header: View {
 
 struct ModalView: View {
     @State private var receivingPOTD = false
-    private let about = "From staring through the eyes of the Perseverance rover to gazing at interstellar galaxies, Saturnine will take you on a journey through our universe. Built for students, scientists, and passionate people."
+    private let about = "From staring through the eyes of the Mars rovers to gazing at interstellar galaxies, Saturnine will take you on a journey through our universe. Built for students, scientists, and passionate people."
     @State private var showingPrivacyPolicy = false
     @State private var showingTerms = false
     @State var contactUsRequest: Result<MFMailComposeResult, Error>? = nil
@@ -80,8 +79,6 @@ struct ModalView: View {
                         Spacer()
                     }
                     GrayDivider()
-//                    pictureOfTheDayNotification
-//                    GrayDivider()
                     HStack {
                         privacyPolicy
                         Text("•")
@@ -128,14 +125,6 @@ struct ModalView: View {
         }
     }
     
-//    var pictureOfTheDayNotification: some View {
-//        Toggle(isOn: $receivingPOTD) {
-//            Text("Picture of the Day").padding()
-//            // TODO: add notification functionality
-//
-//        }.padding([.leading, .trailing])
-//    }
-    
     var privacyPolicy: some View {
         NavigationLink(destination: PrivacyPolicy(), isActive: $showingPrivacyPolicy) {
             Button(action: {
@@ -165,45 +154,96 @@ struct SectionTitle: View {
             Text(title)
                 .foregroundColor(.white)
                 .padding(.leading)
+                .padding(.bottom, 10)
                 .font(.callout.bold())
         }
     }
 }
 
-struct MostPopularView: ViewModifier {
+struct LargeCardView: View {
+    let image: String
     let text: String
-    let subText: String
-    func body(content: Content) -> some View {
-        VStack {
-            content
+    let subtext: String
+    
+    var body: some View {
+        ZStack {
+            Image(image)
+                .resizable()
+                .scaledToFill()
                 .frame(width: 200, height: 250)
-                .overlay(
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Spacer()
-                            HStack {
-                                Text(text)
-                                    .foregroundColor(.white)
-                                    .font(.title2)
-                                    .padding(.leading)
-                            }
-                            HStack {
-                                Text(subText)
-                                    .font(.caption)
-                                    .foregroundColor(.white)
-                                    .padding(.leading)
-                                Spacer()
-                            }
-                        }.frame(width: 200, height: 250)
-                    }
-                    .frame(width: 200, height: 250)
-                    .padding(.bottom, 20)
-                )
                 .cornerRadius(25)
-                .foregroundColor(.white)
-                .font(.title2.bold())
                 .padding(.leading)
+            VStack(alignment: .leading) {
+                Spacer()
+                HStack {
+                    Text(text)
+                        .foregroundColor(.white)
+                        .font(.title2)
+                        .minimumScaleFactor(0.5)
+                        .padding(.leading, 30)
+                    Spacer()
+                }
+                HStack {
+                    Text(subtext)
+                        .font(.caption)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 10)
+                        .minimumScaleFactor(0.5)
+                        .padding(.leading, 30)
+                    Spacer()
+                }
+            }
         }
+    }
+}
+
+struct ImageCardView: View {
+    let image: String
+    let text: String
+    
+    var body: some View {
+        ZStack {
+            Image(image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 150, height: 175)
+                .cornerRadius(15)
+            VStack {
+                Spacer()
+                HStack {
+                    Text(text)
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .padding(.leading, 10)
+                        .padding(.bottom, 10)
+                        .minimumScaleFactor(0.5)
+                    Spacer()
+                }
+            }
+            
+        }.padding([.leading, .trailing], 10)
+    }
+}
+
+struct TransparentCardView: View {
+    let image: String
+    let text: String
+    var body: some View {
+        VStack {
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+            HStack {
+                Text(text)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .padding(.leading, 45)
+                    .minimumScaleFactor(0.5)
+                Spacer()
+            }
+            
+        }.padding([.leading, .trailing], 5)
     }
 }
 
@@ -253,40 +293,10 @@ struct TermsAndConditions: View {
     }
 }
 
-struct RegularCardView: ViewModifier {
-    let text: String
-    func body(content: Content) -> some View {
-        VStack {
-            content
-                .frame(width: 125, height: 175)
-                .overlay(
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Spacer()
-                            HStack {
-                                Text(text)
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                    .padding(.leading, 5)
-                                Spacer()
-                            }
-                        }
-                        .frame(width: 125, height: 175)
-                    }
-                    .frame(width: 125, height: 175)
-                    .padding(.bottom, 20)
-                )
-                .cornerRadius(15)
-                .foregroundColor(.white)
-                .font(.title2.bold())
-                .padding(.leading)
-        }
-    }
-}
-
 struct HomePageComponent_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+//        ContentView()
+        TransparentCardView(image: "mars", text: "Mars")
     }
 }
 
