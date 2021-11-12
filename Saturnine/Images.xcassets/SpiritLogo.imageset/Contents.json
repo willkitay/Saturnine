@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "spirit.png",
+      "filename" : "spirit@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "spirit@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "spirit@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

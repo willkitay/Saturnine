@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sun-size.png",
+      "filename" : "sun-size@1x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "sun-size@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "sun-size@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

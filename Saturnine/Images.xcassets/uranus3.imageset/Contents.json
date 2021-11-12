@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "uranus3.png",
+      "filename" : "uranus3@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "uranus3@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "uranus3@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

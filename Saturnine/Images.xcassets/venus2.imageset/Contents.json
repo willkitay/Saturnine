@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "venus2.png",
+      "filename" : "venus2@1x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "venus2@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "venus2@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

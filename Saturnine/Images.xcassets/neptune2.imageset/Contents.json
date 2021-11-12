@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "neptune.png",
+      "filename" : "neptune@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "neptune@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "neptune@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

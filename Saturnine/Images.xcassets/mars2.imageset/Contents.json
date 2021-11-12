@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mars2.png",
+      "filename" : "mars2@1x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "mars2@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "mars2@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

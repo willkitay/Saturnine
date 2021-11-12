@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "jupiter3.png",
+      "filename" : "jupiter3@1x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "jupiter3@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "jupiter3@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
