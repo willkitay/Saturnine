@@ -1,10 +1,13 @@
 
 # Saturnine
-An iOS app that displays space related content feeds. 
-- Explore alongside NASA's rovers as they explore the surface of Mars.
-- Catch up on events such as spacewalks, engine tests, landings, and more.
-- Meet the astronauts we rely on to blaze the trails.
-- Explore the universe and meet our galactic neighbors.
+Explore the galaxy with Saturnine - trek through Mars alongside NASA's rovers, catch up on events such as spacewalks, engine tests, and landings, or browse through the picture of the day gallery. 
+
+Features include:
+- Mars rover image feeds
+- NASA picture of the day gallery
+- Learn about our solar system
+- Discover the spacecraft and astronauts we rely on
+- Save or share your favorite images
 
 > Built with SwiftUI and UIKit.
 
