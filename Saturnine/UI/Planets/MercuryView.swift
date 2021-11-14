@@ -12,14 +12,19 @@ struct MercuryView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView {
-                planetImage(name: "mercury")
-                planetTitle(title: "Mercury")
-                planetText(text: mercurySummary1)
-                planetImage(name: "mercury2").padding([.top, .bottom])
-                planetText(text: mercurySummary2)
-                planetImage(name: "mercury3").padding([.top, .bottom])
-                planetText(text: mercurySummary3)
-                planetImage(name: "mercury4").padding([.top])
+                planetImage(name: "mercury").padding([.leading, .trailing])
+                Group {
+                    planetTitle(title: "Mercury")
+                    planetText(text: mercurySummary1)
+                    planetImage(name: "mercury2").padding(.top)
+                    planetImageSubtext(text: "Size comparison of Mercury and Earth. Approximate scale is 29 km/px.")
+                    planetText(text: mercurySummary2)
+                    planetImage(name: "mercury3").padding(.top)
+                    planetImageSubtext(text: "Mercury's relative geological makeup consists of a solid inner core, and a liquid outer core beneath the mantle.")
+                    planetText(text: mercurySummary3)
+                    planetImage(name: "mercury4").padding(.top)
+                    planetImageSubtext(text: "The cratered surface of Mercury. Courtesy of NASA.")
+                }
             }
         }
     }

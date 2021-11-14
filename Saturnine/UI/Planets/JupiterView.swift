@@ -12,7 +12,7 @@ struct JupiterView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView {
-                planetImage(name: "jupiter")
+                planetImage(name: "jupiter").padding([.leading, .trailing])
                 Group {
                     planetTitle(title: "Jupiter")
                     planetText(text: jupiterSummary1)

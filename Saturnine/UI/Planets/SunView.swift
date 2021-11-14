@@ -11,14 +11,19 @@ struct SunView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView {
-                planetImage(name: "sun")
-                planetTitle(title: "The Sun")
-                planetText(text: sunSummary1)
-                planetImage(name: "sun2").padding([.top, .bottom])
-                planetText(text: sunSummary2)
-                planetImage(name: "sun3").padding([.top, .bottom])
-                planetText(text: sunSummary3)
-                planetImage(name: "sun4").padding([.top, .bottom])
+                planetImage(name: "sun").padding([.leading, .trailing])
+                Group {
+                    planetTitle(title: "The Sun")
+                    planetText(text: sunSummary1)
+                    planetImage(name: "sun2").padding(.top)
+                    planetImageSubtext(text: "Our Sun is a medium-sized star with a radius of about 435,000 miles. The Sun is far more massive than our home planet: it would take more than 330,000 Earths to match the mass of the Sun, and it would take 1.3 million Earths to fill the Sun's volume.")
+                    planetText(text: sunSummary2)
+                    planetImage(name: "sun3").padding(.top)
+                    planetImageSubtext(text: "The small yellow star on the left is the sun the way it is now. The large red star on the right is what the sun will look like when it turns into a red giant.")
+                    planetText(text: sunSummary3)
+                    planetImage(name: "sun4").padding(.top)
+                    planetImageSubtext(text: "The sun and its orbiting planets.")
+                }
             }
         }
     }

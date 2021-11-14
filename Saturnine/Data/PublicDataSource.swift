@@ -141,7 +141,7 @@ extension DataSource {
     }
     
     private func getURL(forEndpoint endpoint: Endpoint) -> URL? {
-        let nasaAPIKey = "Z1oGFAgJL0yHHorJqZRhpKwb37rnIeENpO1CfA1T"
+        let nasaAPIKey = nasaAPIKey
         var urlString: URL?
         var components = URLComponents()
         switch endpoint {
@@ -207,7 +207,7 @@ extension DataSource {
                 components.path = "/2.2.0/astronaut/"
                 components.queryItems = [
                     URLQueryItem(name: "ordering", value: "-date_of_birth"),
-                    URLQueryItem(name: "limit", value: "100"),
+                    URLQueryItem(name: "limit", value: "75"),
                 ]
                 urlString = components.url
             case .Events:
@@ -215,7 +215,7 @@ extension DataSource {
                 components.host = "ll.thespacedevs.com"
                 components.path = "/2.2.0/event/upcoming/"
                 components.queryItems = [
-                    URLQueryItem(name: "limit", value: "50")
+                    URLQueryItem(name: "limit", value: "75")
                 ]
                 urlString = components.url
             }
@@ -225,7 +225,7 @@ extension DataSource {
     private func decrementStartDate() -> String {
         endDate = startDate
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: startDate)
-        dateComponents.day! -= 10
+        dateComponents.day! -= 25 
         let newStartDate = Calendar.current.date(from: dateComponents)
         dateComponents.day! -= 1
         startDate = Calendar.current.date(from: dateComponents)!
