@@ -54,8 +54,7 @@ struct PersistenceController {
             do {
                 try context.save()
             } catch {
-                print("Error saving to favorites") //FIXME
-                // Show some error here
+                print("Error saving to favorites")
             }
         }
     }

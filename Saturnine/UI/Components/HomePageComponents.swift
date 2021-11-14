@@ -12,14 +12,22 @@ struct Header: View {
     @State private var showModal = false
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                title
+            HStack(alignment: .top) {
+                Image("Saturnine")
+                    .resizable()
+                    .frame(width: 75, height: 75)
+                    .cornerRadius(15)
+                    .padding([.leading, .top, .bottom])
+                    .padding(.trailing, 5)
+                VStack(alignment: .leading) {
+                    title
+                    headerSubtext
+                }
                 Spacer()
                 NavigationLink(destination: ModalView(), isActive: $showModal) {
                     modalButton
                 }
             }
-            headerSubtext
         }
     }
     
@@ -27,7 +35,14 @@ struct Header: View {
         Text("Saturnine")
             .font(.custom("Default font design", size: 40)).bold()
             .foregroundColor(.white)
-            .padding(.leading)
+            .padding(.top)
+    }
+    
+    var headerSubtext: some View {
+        Text("Discover the cosmos")
+            .font(.subheadline)
+            .foregroundColor(.white)
+            .padding(.leading, 3)
     }
     
     var modalButton: some View {
@@ -39,15 +54,8 @@ struct Header: View {
                 .foregroundColor(.white)
                 .padding([.top, .trailing])
                 .padding(.trailing, 10)
+                .padding(.top)
         }
-    }
-    
-    var headerSubtext: some View {
-        Text("Discover the cosmos")
-            .font(.subheadline)
-            .foregroundColor(.white)
-            .padding(.leading)
-            .padding(.bottom, 25)
     }
 }
 

@@ -11,8 +11,8 @@
 		BE280AE1262E0511004DEF43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AE0262E0511004DEF43 /* ContentView.swift */; };
 		BE280AE3262E0515004DEF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280AE2262E0515004DEF43 /* Assets.xcassets */; };
 		BE280AE6262E0515004DEF43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE280AE5262E0515004DEF43 /* Preview Assets.xcassets */; };
-		BE280AF1262E0515004DEF43 /* QuasarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AF0262E0515004DEF43 /* QuasarTests.swift */; };
-		BE280AFC262E0515004DEF43 /* QuasarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AFB262E0515004DEF43 /* QuasarUITests.swift */; };
+		BE280AF1262E0515004DEF43 /* SaturnineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AF0262E0515004DEF43 /* SaturnineTests.swift */; };
+		BE280AFC262E0515004DEF43 /* SaturnineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280AFB262E0515004DEF43 /* SaturnineUITests.swift */; };
 		BE280B12262E0627004DEF43 /* CuriosityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B11262E0627004DEF43 /* CuriosityVM.swift */; };
 		BE280B17262E0632004DEF43 /* OpportunityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B16262E0632004DEF43 /* OpportunityVM.swift */; };
 		BE280B1C262E063C004DEF43 /* PerseveranceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE280B1B262E063C004DEF43 /* PerseveranceVM.swift */; };
@@ -91,10 +91,10 @@
 		BE280AE5262E0515004DEF43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BE280AE7262E0515004DEF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE280AEC262E0515004DEF43 /* SaturnineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaturnineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE280AF0262E0515004DEF43 /* QuasarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuasarTests.swift; sourceTree = "<group>"; };
+		BE280AF0262E0515004DEF43 /* SaturnineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnineTests.swift; sourceTree = "<group>"; };
 		BE280AF2262E0515004DEF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE280AF7262E0515004DEF43 /* SaturnineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaturnineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE280AFB262E0515004DEF43 /* QuasarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuasarUITests.swift; sourceTree = "<group>"; };
+		BE280AFB262E0515004DEF43 /* SaturnineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturnineUITests.swift; sourceTree = "<group>"; };
 		BE280AFD262E0515004DEF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE280B11262E0627004DEF43 /* CuriosityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityVM.swift; sourceTree = "<group>"; };
 		BE280B16262E0632004DEF43 /* OpportunityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityVM.swift; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		BE280AEF262E0515004DEF43 /* SaturnineTests */ = {
 			isa = PBXGroup;
 			children = (
-				BE280AF0262E0515004DEF43 /* QuasarTests.swift */,
+				BE280AF0262E0515004DEF43 /* SaturnineTests.swift */,
 				BE280AF2262E0515004DEF43 /* Info.plist */,
 			);
 			path = SaturnineTests;
@@ -233,7 +233,7 @@
 		BE280AFA262E0515004DEF43 /* SaturnineUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BE280AFB262E0515004DEF43 /* QuasarUITests.swift */,
+				BE280AFB262E0515004DEF43 /* SaturnineUITests.swift */,
 				BE280AFD262E0515004DEF43 /* Info.plist */,
 			);
 			path = SaturnineUITests;
@@ -564,7 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE280AF1262E0515004DEF43 /* QuasarTests.swift in Sources */,
+				BE280AF1262E0515004DEF43 /* SaturnineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE280AFC262E0515004DEF43 /* QuasarUITests.swift in Sources */,
+				BE280AFC262E0515004DEF43 /* SaturnineUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

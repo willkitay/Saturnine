@@ -225,7 +225,7 @@ extension DataSource {
     private func decrementStartDate() -> String {
         endDate = startDate
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: startDate)
-        dateComponents.day! -= 25 
+        dateComponents.day! -= 25
         let newStartDate = Calendar.current.date(from: dateComponents)
         dateComponents.day! -= 1
         startDate = Calendar.current.date(from: dateComponents)!
