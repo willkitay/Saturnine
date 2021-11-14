@@ -12,15 +12,19 @@ struct VenusView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView {
-                planetImage(name: "venus")
-                planetTitle(title: "Venus")
-                planetText(text: venusSummary1)
-                planetImage(name: "venus3").padding([.top])
-                planetImageSubtext(text: "Taken by the Parker Solar Probe from 7,700 miles away. The bright rim around the planet is called nightglow, which happens when the oxygen atoms in the atmosphere recombine into molecules, giving off a slight glow. Courtesy of NASA, 2021")
-                planetText(text: venusSummary2)
-                planetImage(name: "venus2").padding([.top, .bottom])
-                planetText(text: venusSummary3).padding(.bottom)
-                planetImage(name: "venus4")
+                planetImage(name: "venus").padding([.leading, .trailing])
+                Group {
+                    planetTitle(title: "Venus")
+                    planetText(text: venusSummary1)
+                    planetImage(name: "venus3").padding(.top)
+                    planetImageSubtext(text: "Taken by the Parker Solar Probe from 7,700 miles away. The bright rim around the planet is called nightglow, which happens when the oxygen atoms in the atmosphere recombine into molecules, giving off a slight glow. Courtesy of NASA, 2021")
+                    planetText(text: venusSummary2)
+                    planetImage(name: "venus2").padding(.top)
+                    planetImageSubtext(text: "The surface of Venus as seen by the Soviet Venera 13 probe, which landed on March 1, 1982. Image via Don P. Mitchell.")
+                    planetText(text: venusSummary3).padding(.bottom)
+                    planetImage(name: "venus4")
+                    planetImageSubtext(text: "Venus hides a wealth of information that could help us better understand Earth and exoplanets. NASA's JPL is designing mission concepts to survive the planet's extreme temperatures and atmospheric pressure. This image is a composite of data from NASA's Magellan spacecraft and Pioneer Venus Orbiter. Courtesy of NASA and JP-Caltech")
+                }
             }
         }
     }

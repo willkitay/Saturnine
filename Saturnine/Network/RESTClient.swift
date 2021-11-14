@@ -7,7 +7,7 @@
 
 import Foundation
 
-let token = "7264bbbf3ff5985904d465119527c1051c06b621"
+let token = spaceDevsToken
 
 enum RESTClientError : Error {
     case error(String)
@@ -24,7 +24,6 @@ class SimpleRESTClientSpacedevs: RESTClient {
         let session = URLSession.shared
         let task = session.dataTask(with: url) { (data, response, error) in
             completion(data)
-        
         }
         task.resume()
     }

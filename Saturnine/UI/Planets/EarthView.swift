@@ -12,16 +12,19 @@ struct EarthView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView {
-                planetImage(name: "earth")
-                planetTitle(title: "Earth")
-                planetText(text: earthSummary1)
-                planetImage(name: "earth2").padding(.top)
-                planetImageSubtext(text: "The famous 'Earthrise' photo taken by Apollo 8 astronauts during their trip around the moon on Dec. 24, 1968.")
-                planetText(text: earthSummary2)
-                planetImage(name: "earth3").padding(.top)
-                planetImageSubtext(text: "Through the brilliance of Saturn’s rings, Cassini caught a glimpse of a far-away planet and its moon. At a distance of just under 900 million miles, Earth shines bright among the many stars in the sky, distinguished by its bluish tint.")
-                planetText(text: earthSummary3)
-                planetImage(name: "earth4").padding([.top])
+                planetImage(name: "earth").padding([.leading, .trailing])
+                Group {
+                    planetTitle(title: "Earth")
+                    planetText(text: earthSummary1)
+                    planetImage(name: "earth2").padding(.top)
+                    planetImageSubtext(text: "The famous 'Earthrise' photo taken by Apollo 8 astronauts during their trip around the moon on Dec. 24, 1968.")
+                    planetText(text: earthSummary2)
+                    planetImage(name: "earth3").padding(.top)
+                    planetImageSubtext(text: "Through the brilliance of Saturn’s rings, Cassini caught a glimpse of a far-away planet and its moon. At a distance of just under 900 million miles, Earth shines bright among the many stars in the sky, distinguished by its bluish tint.")
+                    planetText(text: earthSummary3)
+                    planetImage(name: "earth4").padding(.top)
+                    planetImageSubtext(text: "Earth as seen from the ISS at night. Courtesy of NASA.")
+                }
             }
         }
     }

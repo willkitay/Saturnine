@@ -44,6 +44,7 @@
 		BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB32630F73A006D68E6 /* SpaceXView.swift */; };
 		EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC145AA02679C49E00122647 /* ImageInteractionTab.swift */; };
 		EC3B5C0B27377A8A00D2142A /* PlanetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */; };
+		EC666FB42740B2BE0055E96B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666FB32740B2BE0055E96B /* Constants.swift */; };
 		EC7BD99226F6A244004B1704 /* SpacecraftVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */; };
 		EC7BD99526F6A701004B1704 /* SpacecraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99426F6A701004B1704 /* SpacecraftView.swift */; };
 		EC7BD99726F70934004B1704 /* AstronautsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99626F70934004B1704 /* AstronautsView.swift */; };
@@ -52,7 +53,6 @@
 		EC8FC18326F859790011B4FF /* AstronautVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8FC18226F859790011B4FF /* AstronautVM.swift */; };
 		EC9800AD26F16E9C0058803B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9800AC26F16E9C0058803B /* Functions.swift */; };
 		ECB7148B2734F37400FDB7B1 /* UranusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7148A2734F37400FDB7B1 /* UranusView.swift */; };
-		ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4F00A26F2AC050062F02B /* Extensions.swift */; };
 		ECD06D6B272F68EA00B3A187 /* MercuryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6A272F68EA00B3A187 /* MercuryView.swift */; };
 		ECD06D6D272F722000B3A187 /* VenusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6C272F722000B3A187 /* VenusView.swift */; };
 		ECD06D6F272F723400B3A187 /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6E272F723400B3A187 /* EarthView.swift */; };
@@ -126,6 +126,7 @@
 		BED42CB32630F73A006D68E6 /* SpaceXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXView.swift; sourceTree = "<group>"; };
 		EC145AA02679C49E00122647 /* ImageInteractionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractionTab.swift; sourceTree = "<group>"; };
 		EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetComponents.swift; sourceTree = "<group>"; };
+		EC666FB32740B2BE0055E96B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftVM.swift; sourceTree = "<group>"; };
 		EC7BD99426F6A701004B1704 /* SpacecraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftView.swift; sourceTree = "<group>"; };
 		EC7BD99626F70934004B1704 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		EC8FC18226F859790011B4FF /* AstronautVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautVM.swift; sourceTree = "<group>"; };
 		EC9800AC26F16E9C0058803B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		ECB7148A2734F37400FDB7B1 /* UranusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusView.swift; sourceTree = "<group>"; };
-		ECC4F00A26F2AC050062F02B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECD06D6A272F68EA00B3A187 /* MercuryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryView.swift; sourceTree = "<group>"; };
 		ECD06D6C272F722000B3A187 /* VenusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenusView.swift; sourceTree = "<group>"; };
 		ECD06D6E272F723400B3A187 /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
@@ -197,18 +197,18 @@
 		BE280ADD262E0511004DEF43 /* Saturnine */ = {
 			isa = PBXGroup;
 			children = (
-				BE280ADE262E0511004DEF43 /* SaturnineApp.swift */,
+				BE280AE2262E0515004DEF43 /* Assets.xcassets */,
+				BE280BA6262E0B96004DEF43 /* Colors.xcassets */,
 				BE280AE0262E0511004DEF43 /* ContentView.swift */,
+				ECDD5E77267C4C0400B94A61 /* Controllers */,
+				BE280B0C262E05D9004DEF43 /* Data */,
+				BE7842852643929C007451C9 /* Images.xcassets */,
+				BE280AE7262E0515004DEF43 /* Info.plist */,
+				BE280B0E262E05E3004DEF43 /* Network */,
+				BE280AE4262E0515004DEF43 /* Preview Content */,
+				BE280ADE262E0511004DEF43 /* SaturnineApp.swift */,
 				BE280B0F262E05E7004DEF43 /* UI */,
 				BE280B10262E05EB004DEF43 /* ViewModel */,
-				BE280B0C262E05D9004DEF43 /* Data */,
-				BE280B0E262E05E3004DEF43 /* Network */,
-				ECDD5E77267C4C0400B94A61 /* Controllers */,
-				BE280AE7262E0515004DEF43 /* Info.plist */,
-				BE280AE2262E0515004DEF43 /* Assets.xcassets */,
-				BE7842852643929C007451C9 /* Images.xcassets */,
-				BE280BA6262E0B96004DEF43 /* Colors.xcassets */,
-				BE280AE4262E0515004DEF43 /* Preview Content */,
 			);
 			path = Saturnine;
 			sourceTree = "<group>";
@@ -242,9 +242,10 @@
 		BE280B0C262E05D9004DEF43 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */,
+				EC666FB32740B2BE0055E96B /* Constants.swift */,
 				BE280B9B262E0A35004DEF43 /* Entities.swift */,
 				ECDD5E74267C4AE000B94A61 /* Main.xcdatamodeld */,
+				BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -321,7 +322,6 @@
 				BE280B36262E0724004DEF43 /* Colors.swift */,
 				ECDD5E7A267C5EEB00B94A61 /* FavoriteView.swift */,
 				EC9800AC26F16E9C0058803B /* Functions.swift */,
-				ECC4F00A26F2AC050062F02B /* Extensions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -356,16 +356,16 @@
 		ECED3380272B6C72004D6BF5 /* Planets */ = {
 			isa = PBXGroup;
 			children = (
-				ECED3381272B6C8C004D6BF5 /* SunView.swift */,
-				ECD06D6A272F68EA00B3A187 /* MercuryView.swift */,
-				ECD06D6C272F722000B3A187 /* VenusView.swift */,
 				ECD06D6E272F723400B3A187 /* EarthView.swift */,
-				ECD06D70272F723E00B3A187 /* MarsView.swift */,
 				ECD06D72272F726600B3A187 /* JupiterView.swift */,
-				ECD06D74272F726D00B3A187 /* SaturnView.swift */,
-				ECB7148A2734F37400FDB7B1 /* UranusView.swift */,
+				ECD06D70272F723E00B3A187 /* MarsView.swift */,
+				ECD06D6A272F68EA00B3A187 /* MercuryView.swift */,
 				ECD06D76272F729D00B3A187 /* NeptuneView.swift */,
 				EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */,
+				ECD06D74272F726D00B3A187 /* SaturnView.swift */,
+				ECED3381272B6C8C004D6BF5 /* SunView.swift */,
+				ECB7148A2734F37400FDB7B1 /* UranusView.swift */,
+				ECD06D6C272F722000B3A187 /* VenusView.swift */,
 			);
 			path = Planets;
 			sourceTree = "<group>";
@@ -529,10 +529,10 @@
 				ECB7148B2734F37400FDB7B1 /* UranusView.swift in Sources */,
 				BEACE7D3263006AD00187BCE /* FullScreenView.swift in Sources */,
 				BE280B92262E09D2004DEF43 /* RESTClient.swift in Sources */,
-				ECC4F00B26F2AC050062F02B /* Extensions.swift in Sources */,
 				ECD06D75272F726D00B3A187 /* SaturnView.swift in Sources */,
 				ECD06D71272F723E00B3A187 /* MarsView.swift in Sources */,
 				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
+				EC666FB42740B2BE0055E96B /* Constants.swift in Sources */,
 				EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */,
 				BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,

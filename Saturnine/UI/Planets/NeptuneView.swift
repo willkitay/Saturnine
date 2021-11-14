@@ -12,7 +12,7 @@ struct NeptuneView: View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
             ScrollView {
-                planetImage(name: "neptune")
+                planetImage(name: "neptune").padding([.leading, .trailing])
                 Group {
                     planetTitle(title: "Neptune")
                     planetText(text: neptuneSummary1)
