@@ -44,13 +44,13 @@
 		BED42CB42630F73B006D68E6 /* SpaceXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED42CB32630F73A006D68E6 /* SpaceXView.swift */; };
 		EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC145AA02679C49E00122647 /* ImageInteractionTab.swift */; };
 		EC3B5C0B27377A8A00D2142A /* PlanetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */; };
-		EC666FB42740B2BE0055E96B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC666FB32740B2BE0055E96B /* Constants.swift */; };
 		EC7BD99226F6A244004B1704 /* SpacecraftVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */; };
 		EC7BD99526F6A701004B1704 /* SpacecraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99426F6A701004B1704 /* SpacecraftView.swift */; };
 		EC7BD99726F70934004B1704 /* AstronautsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BD99626F70934004B1704 /* AstronautsView.swift */; };
 		EC7FEB94272A6E9300D5D4DC /* EventVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FEB93272A6E9300D5D4DC /* EventVM.swift */; };
 		EC7FEB96272A704D00D5D4DC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7FEB95272A704D00D5D4DC /* EventView.swift */; };
 		EC8FC18326F859790011B4FF /* AstronautVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8FC18226F859790011B4FF /* AstronautVM.swift */; };
+		EC9599AF27410B6F00C73886 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9599AE27410B6F00C73886 /* Constants.swift */; };
 		EC9800AD26F16E9C0058803B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9800AC26F16E9C0058803B /* Functions.swift */; };
 		ECB7148B2734F37400FDB7B1 /* UranusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB7148A2734F37400FDB7B1 /* UranusView.swift */; };
 		ECD06D6B272F68EA00B3A187 /* MercuryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD06D6A272F68EA00B3A187 /* MercuryView.swift */; };
@@ -126,13 +126,13 @@
 		BED42CB32630F73A006D68E6 /* SpaceXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXView.swift; sourceTree = "<group>"; };
 		EC145AA02679C49E00122647 /* ImageInteractionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractionTab.swift; sourceTree = "<group>"; };
 		EC3B5C0A27377A8A00D2142A /* PlanetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetComponents.swift; sourceTree = "<group>"; };
-		EC666FB32740B2BE0055E96B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EC7BD99126F6A244004B1704 /* SpacecraftVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftVM.swift; sourceTree = "<group>"; };
 		EC7BD99426F6A701004B1704 /* SpacecraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacecraftView.swift; sourceTree = "<group>"; };
 		EC7BD99626F70934004B1704 /* AstronautsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsView.swift; sourceTree = "<group>"; };
 		EC7FEB93272A6E9300D5D4DC /* EventVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVM.swift; sourceTree = "<group>"; };
 		EC7FEB95272A704D00D5D4DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		EC8FC18226F859790011B4FF /* AstronautVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautVM.swift; sourceTree = "<group>"; };
+		EC9599AE27410B6F00C73886 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EC9800AC26F16E9C0058803B /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		ECB7148A2734F37400FDB7B1 /* UranusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusView.swift; sourceTree = "<group>"; };
 		ECD06D6A272F68EA00B3A187 /* MercuryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryView.swift; sourceTree = "<group>"; };
@@ -242,10 +242,10 @@
 		BE280B0C262E05D9004DEF43 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				EC666FB32740B2BE0055E96B /* Constants.swift */,
 				BE280B9B262E0A35004DEF43 /* Entities.swift */,
 				ECDD5E74267C4AE000B94A61 /* Main.xcdatamodeld */,
 				BE280B96262E0A1A004DEF43 /* PublicDataSource.swift */,
+				EC9599AE27410B6F00C73886 /* Constants.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 				ECD06D75272F726D00B3A187 /* SaturnView.swift in Sources */,
 				ECD06D71272F723E00B3A187 /* MarsView.swift in Sources */,
 				BE280B53262E075C004DEF43 /* Navigation.swift in Sources */,
-				EC666FB42740B2BE0055E96B /* Constants.swift in Sources */,
+				EC9599AF27410B6F00C73886 /* Constants.swift in Sources */,
 				EC145AA12679C49E00122647 /* ImageInteractionTab.swift in Sources */,
 				BE280B97262E0A1A004DEF43 /* PublicDataSource.swift in Sources */,
 				BE280B6A262E07F6004DEF43 /* OpportunityView.swift in Sources */,
