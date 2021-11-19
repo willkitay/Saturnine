@@ -15,7 +15,7 @@ Features include:
 
 > MVVM architecture.
 
-Join beta testing at https://testflight.apple.com/join/X0nu4Efb
+[Available on the App Store](https://apps.apple.com/us/app/saturnine/id1594529925)
 ![homescreen](/screenshots/homescreen.jpg)|![potd](/screenshots/potd.jpg)|![spacecraft](/screenshots/spacecraft.jpg)
 | :-------------------------:|:-------------------------:|:-------------------------:|
 ![rover](/screenshots/rover.jpg)|![venus](/screenshots/venus.jpg)|![favorites](/screenshots/favorites.jpg)
