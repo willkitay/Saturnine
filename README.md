@@ -10,9 +10,7 @@ Features include:
 - Save or share your favorite images
 
 > Built with SwiftUI and UIKit.
-
 > Uses Kingfisher for asynchronous image loading and caching.
-
 > MVVM architecture.
 
 [Available on the App Store](https://apps.apple.com/us/app/saturnine/id1594529925)
